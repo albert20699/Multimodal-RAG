@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+Lib/
+Scripts/
+Include/
+pyvenv.cfg
+.env
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Data folders
+RAG_processed_data/
+chroma_db/
+share/
+
+# Logs / Caches
+*.log
+*.tmp
+.cache/
+*.json
+
+# Test scripts
+test*.py

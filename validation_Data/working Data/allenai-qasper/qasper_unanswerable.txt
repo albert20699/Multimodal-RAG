@@ -1,0 +1,1 @@
+For "unanswerable" data, due to its lack of reference value, no processing is required.
