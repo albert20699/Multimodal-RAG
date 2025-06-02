@@ -8,16 +8,16 @@ Lib/
 Scripts/
 Include/
 pyvenv.cfg
-.env
 
 # VSCode / PyCharm
 .vscode/
 .idea/
 
-# Data folders
+# Data
 RAG_processed_data/
 chroma_db/
 share/
+.env
 
 # Logs / Caches
 *.log
