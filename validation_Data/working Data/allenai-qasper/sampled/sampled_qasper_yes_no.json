@@ -1,0 +1,492 @@
+[
+  {
+    "paper_id": "2001.00137",
+    "question": "Do they report results only on English datasets?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Even though this corpus has incorrect sentences and their emotional labels, they lack their respective corrected sentences, necessary for the training of our model. In order to obtain this missing information, we outsource native English speakers from an unbiased and anonymous platform, called Amazon Mechanical Turk (MTurk) BIBREF19, which is a paid marketplace for Human Intelligence Tasks (HITs). We use this platform to create tasks for native English speakers to format the original incorrect tweets into correct sentences. Some examples are shown in Table TABREF12.",
+        "The dataset used to evaluate the models' performance is the Chatbot Natural Language Unerstanding (NLU) Evaluation Corpus, introduced by Braun et al. BIBREF20 to test NLU services. It is a publicly available benchmark and is composed of sentences obtained from a German Telegram chatbot used to answer questions about public transport connections. The dataset has two intents, namely Departure Time and Find Connection with 100 train and 106 test samples, shown in Table TABREF18. Even though English is the main language of the benchmark, this dataset contains a few German station and street names."
+      ],
+      "highlighted_evidence": [
+        "Even though this corpus has incorrect sentences and their emotional labels, they lack their respective corrected sentences, necessary for the training of our model. In order to obtain this missing information, we outsource native English speakers from an unbiased and anonymous platform, called Amazon Mechanical Turk (MTurk) BIBREF19, which is a paid marketplace for Human Intelligence Tasks (HITs). We use this platform to create tasks for native English speakers to format the original incorrect tweets into correct sentences. Some examples are shown in Table TABREF12.",
+        "The dataset used to evaluate the models' performance is the Chatbot Natural Language Unerstanding (NLU) Evaluation Corpus, introduced by Braun et al. BIBREF20 to test NLU services. It is a publicly available benchmark and is composed of sentences obtained from a German Telegram chatbot used to answer questions about public transport connections. The dataset has two intents, namely Departure Time and Find Connection with 100 train and 106 test samples, shown in Table TABREF18. Even though English is the main language of the benchmark, this dataset contains a few German station and street names."
+      ]
+    }
+  },
+  {
+    "paper_id": "2001.00137",
+    "question": "Do they test their approach on a dataset without incomplete data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "The incomplete dataset used for training is composed of lower-cased incomplete data obtained by manipulating the original corpora. The incomplete sentences with STT error are obtained in a 2-step process shown in Fig. FIGREF22. The first step is to apply a TTS module to the available complete sentence. Here, we apply gtts , a Google Text-to-Speech python library, and macsay , a terminal command available in Mac OS as say. The second step consists of applying an STT module to the obtained audio files in order to obtain text containing STT errors. The STT module used here was witai , freely available and maintained by Wit.ai. The mentioned TTS and STT modules were chosen according to code availability and whether it's freely available or has high daily usage limitations."
+      ],
+      "highlighted_evidence": [
+        "The incomplete dataset used for training is composed of lower-cased incomplete data obtained by manipulating the original corpora."
+      ]
+    }
+  },
+  {
+    "paper_id": "2001.00137",
+    "question": "Do they test their approach on a dataset without incomplete data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "In order to evaluate the performance of our model, we need access to a naturally noisy dataset with real human errors. Poor quality texts obtained from Twitter, called tweets, are then ideal for our task. For this reason, we choose Kaggle's two-class Sentiment140 dataset BIBREF18, which consists of spoken text being used in writing and without strong consideration for grammar or sentence correctness. Thus, it has many mistakes, as specified in Table TABREF11.",
+        "In the intent classification task, we are presented with a corpus that suffers from the opposite problem of the Twitter sentiment classification corpus. In the intent classification corpus, we have the complete sentences and intent labels but lack their corresponding incomplete sentences, and since our task revolves around text classification in incomplete or incorrect data, it is essential that we obtain this information. To remedy this issue, we apply a Text-to-Speech (TTS) module followed by a Speech-to-Text (STT) module to the complete sentences in order to obtain incomplete sentences with STT error. Due to TTS and STT modules available being imperfect, the resulting sentences have a reasonable level of noise in the form of missing or incorrectly transcribed words. Analysis on this dataset adds value to our work by enabling evaluation of our model's robustness to different rates of data incompleteness."
+      ],
+      "highlighted_evidence": [
+        "For this reason, we choose Kaggle's two-class Sentiment140 dataset BIBREF18, which consists of spoken text being used in writing and without strong consideration for grammar or sentence correctness. Thus, it has many mistakes, as specified in Table TABREF11.",
+        "In the intent classification corpus, we have the complete sentences and intent labels but lack their corresponding incomplete sentences, and since our task revolves around text classification in incomplete or incorrect data, it is essential that we obtain this information. To remedy this issue, we apply a Text-to-Speech (TTS) module followed by a Speech-to-Text (STT) module to the complete sentences in order to obtain incomplete sentences with STT error. Due to TTS and STT modules available being imperfect, the resulting sentences have a reasonable level of noise in the form of missing or incorrectly transcribed words."
+      ]
+    }
+  },
+  {
+    "paper_id": "2001.00137",
+    "question": "Should their approach be applied only when dealing with incomplete data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "Experimental results for the Twitter Sentiment Classification task on Kaggle's Sentiment140 Corpus dataset, displayed in Table TABREF37, show that our model has better F1-micros scores, outperforming the baseline models by 6$\\%$ to 8$\\%$. We evaluate our model and baseline models on three versions of the dataset. The first one (Inc) only considers the original data, containing naturally incorrect tweets, and achieves accuracy of 80$\\%$ against BERT's 72$\\%$. The second version (Corr) considers the corrected tweets, and shows higher accuracy given that it is less noisy. In that version, Stacked DeBERT achieves 82$\\%$ accuracy against BERT's 76$\\%$, an improvement of 6$\\%$. In the last case (Inc+Corr), we consider both incorrect and correct tweets as input to the models in hopes of improving performance. However, the accuracy was similar to the first aforementioned version, 80$\\%$ for our model and 74$\\%$ for the second highest performing model. Since the first and last corpus gave similar performances with our model, we conclude that the Twitter dataset does not require complete sentences to be given as training input, in addition to the original naturally incorrect tweets, in order to better model the noisy sentences."
+      ],
+      "highlighted_evidence": [
+        "We evaluate our model and baseline models on three versions of the dataset. The first one (Inc) only considers the original data, containing naturally incorrect tweets, and achieves accuracy of 80$\\%$ against BERT's 72$\\%$. The second version (Corr) considers the corrected tweets, and shows higher accuracy given that it is less noisy. "
+      ]
+    }
+  },
+  {
+    "paper_id": "2001.00137",
+    "question": "Should their approach be applied only when dealing with incomplete data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "We propose Stacked Denoising BERT (DeBERT) as a novel encoding scheming for the task of incomplete intent classification and sentiment classification from incorrect sentences, such as tweets and text with STT error. The proposed model, illustrated in Fig. FIGREF4, is structured as a stacking of embedding layers and vanilla transformer layers, similarly to the conventional BERT BIBREF10, followed by layers of novel denoising transformers. The main purpose of this model is to improve the robustness and efficiency of BERT when applied to incomplete data by reconstructing hidden embeddings from sentences with missing words. By reconstructing these hidden embeddings, we are able to improve the encoding scheme in BERT."
+      ],
+      "highlighted_evidence": [
+        "The main purpose of this model is to improve the robustness and efficiency of BERT when applied to incomplete data by reconstructing hidden embeddings from sentences with missing words. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1810.06743",
+    "question": "Do they look for inconsistencies between different languages' annotations in UniMorph?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Because our conversion rules are interpretable, we identify shortcomings in both resources, using each as validation for the other. We were able to find specific instances of incorrectly applied UniMorph annotation, as well as specific instances of cross-lingual inconsistency in both resources. These findings will harden both resources and better align them with their goal of universal, cross-lingual annotation."
+      ],
+      "highlighted_evidence": [
+        "Because our conversion rules are interpretable, we identify shortcomings in both resources, using each as validation for the other. We were able to find specific instances of incorrectly applied UniMorph annotation, as well as specific instances of cross-lingual inconsistency in both resources."
+      ]
+    }
+  },
+  {
+    "paper_id": "1810.06743",
+    "question": "Do they look for inconsistencies between different UD treebanks?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "The contributions of this work are:"
+      ],
+      "highlighted_evidence": [
+        "The contributions of this work are:"
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.13109",
+    "question": "Was each text augmentation technique experimented individually?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [],
+      "highlighted_evidence": []
+    }
+  },
+  {
+    "paper_id": "1912.13109",
+    "question": "Does the dataset contain content from various social media platforms?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "Hinglish is a linguistic blend of Hindi (very widely spoken language in India) and English (an associate language of urban areas) and is spoken by upwards of 350 million people in India. While the name is based on the Hindi language, it does not refer exclusively to Hindi, but is used in India, with English words blending with Punjabi, Gujarati, Marathi and Hindi. Sometimes, though rarely, Hinglish is used to refer to Hindi written in English script and mixing with English words or phrases. This makes analyzing the language very interesting. Its rampant usage in social media like Twitter, Facebook, Online blogs and reviews has also led to its usage in delivering hate and abuses in similar platforms. We aim to find such content in the social media focusing on the tweets. Hypothetically, if we can classify such tweets, we might be able to detect them and isolate them for further analysis before it reaches public. This will a great application of AI to the social cause and thus is motivating. An example of a simple, non offensive message written in Hinglish could be:"
+      ],
+      "highlighted_evidence": [
+        "We aim to find such content in the social media focusing on the tweets."
+      ]
+    }
+  },
+  {
+    "paper_id": "1908.10449",
+    "question": "Do they provide decision sequences as supervision while training models?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "The key idea behind our proposed interactive MRC (iMRC) is to restrict the document context that a model observes at one time. Concretely, we split a supporting document into its component sentences and withhold these sentences from the model. Given a question, the model must issue commands to observe sentences in the withheld set; we equip models with actions such as Ctrl+F (search for token) and stop for searching through partially observed documents. A model searches iteratively, conditioning each command on the input question and the sentences it has observed previously. Thus, our task requires models to `feed themselves' rather than spoon-feeding them with information. This casts MRC as a sequential decision-making problem amenable to reinforcement learning (RL)."
+      ],
+      "highlighted_evidence": [
+        "The key idea behind our proposed interactive MRC (iMRC) is to restrict the document context that a model observes at one time. Concretely, we split a supporting document into its component sentences and withhold these sentences from the model. Given a question, the model must issue commands to observe sentences in the withheld set; we equip models with actions such as Ctrl+F (search for token) and stop for searching through partially observed documents. A model searches iteratively, conditioning each command on the input question and the sentences it has observed previously. Thus, our task requires models to `feed themselves' rather than spoon-feeding them with information. This casts MRC as a sequential decision-making problem amenable to reinforcement learning (RL)."
+      ]
+    }
+  },
+  {
+    "paper_id": "2003.00576",
+    "question": "Is there any evidence that encoders with latent structures work well on other tasks?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Encoders with induced latent structures have been shown to benefit several tasks including document classification, natural language inference BIBREF12, BIBREF13, and machine translation BIBREF11. Building on this motivation, our latent structure attention module builds upon BIBREF12 to model the dependencies between sentences in a document. It uses a variant of Kirchhoff’s matrix-tree theorem BIBREF14 to model such dependencies as non-projective tree structures(§SECREF3). The explicit attention module is linguistically-motivated and aims to incorporate sentence-level structures from externally annotated document structures. We incorporate a coreference based sentence dependency graph, which is then combined with the output of the latent structure attention module to produce a hybrid structure-aware sentence representation (§SECREF5)."
+      ],
+      "highlighted_evidence": [
+        "Encoders with induced latent structures have been shown to benefit several tasks including document classification, natural language inference BIBREF12, BIBREF13, and machine translation BIBREF11. "
+      ]
+    }
+  },
+  {
+    "paper_id": "2001.05672",
+    "question": "Is there information about performance of these conversion methods?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [],
+      "highlighted_evidence": []
+    }
+  },
+  {
+    "paper_id": "2001.05672",
+    "question": "Are there some experiments performed in the paper?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [],
+      "highlighted_evidence": []
+    }
+  },
+  {
+    "paper_id": "1710.10609",
+    "question": "Do they study frequent user responses to help automate modelling of those?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "In order to identify frequent user intents, one can use existing clustering algorithms to group together all the utterances from the users. Here each cluster would correspond to a new intent and each utterance in the cluster would correspond to an example for the intent. Similarly the agents utterances can be clustered to identify system responses. However, we argue that rather than treating user utterances and agents responses in an isolated manner, there is merit in jointly clustering them. There is adjacency information of these utterances that can be utilized to identify better user intents and system responses. As an example, consider agent utterances A.2 in box A and A.2 in box C in Figure FIGREF5 (a). The utterances “Which operating system do you use?\" and “What OS is installed in your machine\" have no syntactic similarity and therefore may not be grouped together. However the fact that these utterances are adjacent to the similar user utterances “I am unable to start notes email client\" and “Unable to start my email client\" provides some evidence that the agent utterances might be similar. Similarly the user utterances “My system keeps getting rebooted\" and “Machine is booting time and again\" ( box B and D in Figure FIGREF5 (a))- that are syntactically not similar - could be grouped together since the adjacent agent utterances, “Is your machine heating up?\" and “Is the machine heating?\" are similar."
+      ],
+      "highlighted_evidence": [
+        "Similarly the agents utterances can be clustered to identify system responses. However, we argue that rather than treating user utterances and agents responses in an isolated manner, there is merit in jointly clustering them. There is adjacency information of these utterances that can be utilized to identify better user intents and system responses."
+      ]
+    }
+  },
+  {
+    "paper_id": "1710.10609",
+    "question": "Do they use the same distance metric for both the SimCluster and K-means algorithm?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "We used the gaussian index from which an utterance pair was generated as the ground truth label, which served to provide ground truth clusters for computation of the above evaluation metrics. Table TABREF15 shows a comparison of the results on SimCluster versus K-means algorithm. Here our SimCluster algorithm improves the F1-scores from 0.412 and 0.417 in the two domains to 0.442 and 0.441. The ARI scores also improve from 0.176 and 0.180 to 0.203 and 0.204."
+      ],
+      "highlighted_evidence": [
+        "Table TABREF15 shows a comparison of the results on SimCluster versus K-means algorithm. Here our SimCluster algorithm improves the F1-scores from 0.412 and 0.417 in the two domains to 0.442 and 0.441. The ARI scores also improve from 0.176 and 0.180 to 0.203 and 0.204."
+      ]
+    }
+  },
+  {
+    "paper_id": "1908.00153",
+    "question": "Do they analyze what type of content Arabic bots spread in comparison to English?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [],
+      "highlighted_evidence": []
+    }
+  },
+  {
+    "paper_id": "1908.00153",
+    "question": "Do they propose a new model to better detect Arabic bots specifically?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "In this work, we build a novel regression model, based on linguistic, content, behavioral and topic features to detect Arabic Twitter bots to understand the impact of bots in spreading religious hatred in Arabic Twitter space. In particular, we quantitatively code and analyze a representative sample of 450 accounts disseminating hate speech from the dataset constructed in our previous work BIBREF18 , BIBREF19 for bot-like behavior. We compare our assigned bot-likelihood scores to those of Botometer BIBREF14 , a well-known machine-learning-based bot detection tool, and we show that Botometer performs a little above average in detecting Arabic bots. Based on our analysis, we build a predictive regression model and train it on various sets of features and show that our regression model outperforms Botometer's by a significant margin (31 points in Spearman's rho). Finally, we provide a large-scale analysis of predictive features that distinguish bots from humans in terms of characteristics and behaviors within the context of social media."
+      ],
+      "highlighted_evidence": [
+        "In this work, we build a novel regression model, based on linguistic, content, behavioral and topic features to detect Arabic Twitter bots to understand the impact of bots in spreading religious hatred in Arabic Twitter space. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.04453",
+    "question": "Does the performance necessarily drop when more control is desired?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Performance INLINEFORM0 Trade-off: To see if the selector affects performance, we also ask human annotators to judge the text fluency. The fluency score is computed as the average number of text being judged as fluent. We include generations from the standard Enc-Dec model. Table TABREF32 shows the best fluency is achieved for Enc-Dec. Imposing a content selector always affects the fluency a bit. The main reason is that when the controllability is strong, the change of selection will directly affect the text realization so that a tiny error of content selection might lead to unrealistic text. If the selector is not perfectly trained, the fluency will inevitably be influenced. When the controllability is weaker, like in RS, the fluency is more stable because it will not be affected much by the selection mask. For SS and Bo.Up, the drop of fluency is significant because of the gap of soft approximation and the independent training procedure. In general, VRS does properly decouple content selection from the enc-dec architecture, with only tiny degrade on the fluency."
+      ],
+      "highlighted_evidence": [
+        "The main reason is that when the controllability is strong, the change of selection will directly affect the text realization so that a tiny error of content selection might lead to unrealistic text. If the selector is not perfectly trained, the fluency will inevitably be influenced. When the controllability is weaker, like in RS, the fluency is more stable because it will not be affected much by the selection mask."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.08772",
+    "question": "Do they beat current state-of-the-art on SICK?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "To show the effectiveness of our approach, we show results on the SICK dataset BIBREF1, a common benchmark for logic-based NLI, and find MonaLog to be competitive with more complicated logic-based approaches (many of which require full semantic parsing and more complex logical machinery). We also introduce a supplementary version of SICK that corrects several common annotation mistakes (e.g., asymmetrical inference annotations) based on previous work by kalouli2017entail,kalouli2018. Positive results on both these datasets show the ability of lightweight monotonicity models to handle many of the inferences found in current NLI datasets, hence putting a more reliable lower-bound on what results the simplest logical approach is capable of achieving on this benchmark."
+      ],
+      "highlighted_evidence": [
+        "To show the effectiveness of our approach, we show results on the SICK dataset BIBREF1, a common benchmark for logic-based NLI, and find MonaLog to be competitive with more complicated logic-based approaches (many of which require full semantic parsing and more complex logical machinery)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1906.01910",
+    "question": "did they compare with other evaluation metrics?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "FLOAT SELECTED: Figure 5: Comparison of nex-cv and Human-Rater Accuracy. The six datasets from pseudonymous chatbots tested had a different number of questions (examples) and categories (classes), as shown in the bottom row. The human-rater estimate of accuracy (top left, blue) is consistently more lenient than any of the automated measures (top right). The (0; 0.15) setting (top right, blue) is not consistently more or less optimistic than the other settings."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Figure 5: Comparison of nex-cv and Human-Rater Accuracy. The six datasets from pseudonymous chatbots tested had a different number of questions (examples) and categories (classes), as shown in the bottom row. The human-rater estimate of accuracy (top left, blue) is consistently more lenient than any of the automated measures (top right). The (0; 0.15) setting (top right, blue) is not consistently more or less optimistic than the other settings."
+      ]
+    }
+  },
+  {
+    "paper_id": "1602.07618",
+    "question": "Do they argue that all words can be derived from other (elementary) words?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "In order to understand what INLINEFORM0 is, we need to understand the mathematics of grammar. The study of the mathematical structure of grammar has indicated that the fundamental things making up sentences are not the words, but some atomic grammatical types, such as the noun-type and the sentence-type BIBREF23 , BIBREF24 , BIBREF25 . The transitive verb-type is not an atomic grammatical type, but a composite made up of two noun-types and one sentence-type. Hence, particularly interesting here is that atomic doesn't really mean smallest..."
+      ],
+      "highlighted_evidence": [
+        "The study of the mathematical structure of grammar has indicated that the fundamental things making up sentences are not the words, but some atomic grammatical types, such as the noun-type and the sentence-type BIBREF23 , BIBREF24 , BIBREF25 . The transitive verb-type is not an atomic grammatical type, but a composite made up of two noun-types and one sentence-type. Hence, particularly interesting here is that atomic doesn't really mean smallest..."
+      ]
+    }
+  },
+  {
+    "paper_id": "1602.07618",
+    "question": "Do they break down word meanings into elementary particles as in the standard model of quantum theory?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "In order to understand what INLINEFORM0 is, we need to understand the mathematics of grammar. The study of the mathematical structure of grammar has indicated that the fundamental things making up sentences are not the words, but some atomic grammatical types, such as the noun-type and the sentence-type BIBREF23 , BIBREF24 , BIBREF25 . The transitive verb-type is not an atomic grammatical type, but a composite made up of two noun-types and one sentence-type. Hence, particularly interesting here is that atomic doesn't really mean smallest...",
+        "On the other hand, just like in particle physics where we have particles and anti-particles, the atomic types include types as well as anti-types. But unlike in particle physics, there are two kinds of anti-types, namely left ones and right ones. This makes language even more non-commutative than quantum theory!"
+      ],
+      "highlighted_evidence": [
+        "The study of the mathematical structure of grammar has indicated that the fundamental things making up sentences are not the words, but some atomic grammatical types, such as the noun-type and the sentence-type BIBREF23 , BIBREF24 , BIBREF25 . The transitive verb-type is not an atomic grammatical type, but a composite made up of two noun-types and one sentence-type. Hence, particularly interesting here is that atomic doesn't really mean smallest...\n\nOn the other hand, just like in particle physics where we have particles and anti-particles, the atomic types include types as well as anti-types. But unlike in particle physics, there are two kinds of anti-types, namely left ones and right ones. This makes language even more non-commutative than quantum theory!"
+      ]
+    }
+  },
+  {
+    "paper_id": "1711.10124",
+    "question": "Are their corpus and software public?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Our system, including software and corpus, is available as an open source project for free research purpose and we believe that it is a good baseline for the development and comparison of future Vietnamese SRL systems. We plan to integrate this tool to Vitk, an open-source toolkit for processing Vietnamese text, which contains fundamental processing tools and are readily scalable for processing very large text data."
+      ],
+      "highlighted_evidence": [
+        "Our system, including software and corpus, is available as an open source project for free research purpose and we believe that it is a good baseline for the development and comparison of future Vietnamese SRL systems. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1808.03815",
+    "question": "Are there syntax-agnostic SRL models before?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Typically, SRL task can be put into two categories: constituent-based (i.e., phrase or span) SRL and dependency-based SRL. This paper will focus on the latter one popularized by CoNLL-2008 and 2009 shared tasks BIBREF5 , BIBREF6 . Most conventional SRL systems relied on sophisticated handcraft features or some declarative constraints BIBREF7 , BIBREF8 , which suffers from poor efficiency and generalization ability. A recently tendency for SRL is adopting neural networks methods attributed to their significant success in a wide range of applications BIBREF9 , BIBREF10 . However, most of those works still heavily resort to syntactic features. Since the syntactic parsing task is equally hard as SRL and comes with its own errors, it is better to get rid of such prerequisite as in other NLP tasks. Accordingly, marcheggiani2017 presented a neural model putting syntax aside for dependency-based SRL and obtain favorable results, which overturns the inherent belief that syntax is indispensable in SRL task BIBREF11 ."
+      ],
+      "highlighted_evidence": [
+        "Accordingly, marcheggiani2017 presented a neural model putting syntax aside for dependency-based SRL and obtain favorable results, which overturns the inherent belief that syntax is indispensable in SRL task BIBREF11 ."
+      ]
+    }
+  },
+  {
+    "paper_id": "1701.04653",
+    "question": "On Twitter, do the demographic attributes and answers show more correlations than on Yahoo! Answers?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "As the table shows, terms extracted from Yahoo! Answers tend to be more related, in terms of the number of correlated terms, to attributes related to religion or ethnicity compared to terms from Twitter. However, for two particular attributes (i.e., Price and Buddhist), the number of correlated terms from Twitter is higher than the ones from Yahoo! Answers . These results collectively suggest that there is a wealth of terms, both in Yahoo! Answers and Twitter, which can be used to predict the population demographics."
+      ],
+      "highlighted_evidence": [
+        "terms extracted from Yahoo! Answers tend to be more related, in terms of the number of correlated terms, to attributes related to religion or ethnicity compared to terms from Twitter. However, for two particular attributes (i.e., Price and Buddhist), the number of correlated terms from Twitter is higher than the ones from Yahoo! Answers . "
+      ]
+    }
+  },
+  {
+    "paper_id": "1810.07091",
+    "question": "Do they differentiate insights where they are dealing with learned or engineered representations?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "We extract 5 Surface and Lexical features, namely sequence length in number of tokens, average word length, type-token ratio, and lexical to tokens ratio (ratio of adjectives, verbs, nouns, and adverbs to tokens). Bag of INLINEFORM0 -grams features are extracted on the word and POS level. We use frequency cut-offs of INLINEFORM1 for INLINEFORM2 -grams from 1 to 5 respectively for the smaller datasets and ten times higher for the Yahoo! and Amazon datasets. For POS INLINEFORM3 -grams we use cut-offs 10 for unigrams and 20 for bigrams and higher. For the Yahoo! and Amazon datasets we use cut-offs of INLINEFORM4 . The INLINEFORM5 -grams features are then also extracted using the hashing trick with the same cut-offs to reduce the final feature vector size when combined with other features. scikit-learn's BIBREF14 FeatureHasher is used with output vectors sizes of INLINEFORM6 INLINEFORM7 INLINEFORM8 for ngrams from INLINEFORM9 respectively and INLINEFORM10 INLINEFORM11 INLINEFORM12 are used for POS ngrams. We extract lexical and POS level Language model features based on external language models, namely sentence log probabilities, perplexities, and surprisal in units of bits. Building the language model and extracting the features is done by providing the path to the compiled binaries for kenlm BIBREF15 . Finally we extract N-gram Frequency Quantile Distribution features with the same cut-offs as in the bag of ngrams features, with 4 quantiles and an OOV quantile. NLTK BIBREF16 is used for tokenization and POS tagging.",
+        "We extracted two features that use a learned representation: Firstly, we get a sentence embedding feature that is built by averaging the word embeddings of an input sentence. Secondly, we extract a fastText representation using the fastText library with the same parameters as reported in Joulin et al. joulin2016bag."
+      ],
+      "highlighted_evidence": [
+        "We extract 5 Surface and Lexical features, namely sequence length in number of tokens, average word length, type-token ratio, and lexical to tokens ratio (ratio of adjectives, verbs, nouns, and adverbs to tokens).",
+        "We extracted two features that use a learned representation: Firstly, we get a sentence embedding feature that is built by averaging the word embeddings of an input sentence. Secondly, we extract a fastText representation using the fastText library with the same parameters as reported in Joulin et al. joulin2016bag."
+      ]
+    }
+  },
+  {
+    "paper_id": "1810.07091",
+    "question": "Do they show an example of usage for INFODENS?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "The framework can be used as a standalone toolkit without any modifications given the implemented features and classifiers. For example, it can be used to extract features for usage with other machine learning tools, or to evaluate given features with the existing classifiers or regressors. Extending the framework with new feature extractors or classifiers is as simple as a drag and drop placement of the new code files into the feature_extractor and classifer directories respectively. The framework will then detect the new extensions dynamically at runtime. In this section we explore how each use case is handled.",
+        "Since a main use case for the framework is extracting engineered and learned features, it was designed such that developing a new feature extractor would require minimal effort. Figure FIGREF19 demonstrates a simple feature extractor that retrieves the sentence length. More complicated features and learned features are provided in the repository which can be used as a guide for developers. Documentation for adding classifiers and format writers is described in the Wiki of the repository but is left out of this paper due to the limited space."
+      ],
+      "highlighted_evidence": [
+        "For example, it can be used to extract features for usage with other machine learning tools, or to evaluate given features with the existing classifiers or regressors.",
+        "Figure FIGREF19 demonstrates a simple feature extractor that retrieves the sentence length."
+      ]
+    }
+  },
+  {
+    "paper_id": "2003.04967",
+    "question": "Do they evaluate only on English datasets?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Twitter data: We used the Twitter API to scrap tweets with hashtags. For instance, for Bitcoin, the #BTC and #Bitcoin tags were used. The Twitter API only allows a maximum of 450 requests per 15 minute and historical data up to 7 days. Throughout our project we collect data for almost 30 days. Bitcoin had about 25000 tweets per day amounting to a total of approximately 10 MB of data daily. For each tweet, the ID, text, username, number of followers, number of retweets, creation date and time was also stored. All non-English tweets were filtered out by the API. We further processed the full tweet text by removing links, images, videos and hashtags to feed in to the algorithm."
+      ],
+      "highlighted_evidence": [
+        "Twitter data: We used the Twitter API to scrap tweets with hashtags.",
+        "All non-English tweets were filtered out by the API."
+      ]
+    }
+  },
+  {
+    "paper_id": "1907.04380",
+    "question": "Is such bias caused by bad annotation?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "Natural Language Inference (NLI) is often used to gauge a model's ability to understand a relationship between two texts BIBREF0 , BIBREF1 . In NLI, a model is tasked with determining whether a hypothesis (a woman is sleeping) would likely be inferred from a premise (a woman is talking on the phone). The development of new large-scale datasets has led to a flurry of various neural network architectures for solving NLI. However, recent work has found that many NLI datasets contain biases, or annotation artifacts, i.e., features present in hypotheses that enable models to perform surprisingly well using only the hypothesis, without learning the relationship between two texts BIBREF2 , BIBREF3 , BIBREF4 . For instance, in some datasets, negation words like “not” and “nobody” are often associated with a relationship of contradiction. As a ramification of such biases, models may not generalize well to other datasets that contain different or no such biases."
+      ],
+      "highlighted_evidence": [
+        "However, recent work has found that many NLI datasets contain biases, or annotation artifacts, i.e., features present in hypotheses that enable models to perform surprisingly well using only the hypothesis, without learning the relationship between two texts BIBREF2 , BIBREF3 , BIBREF4 . For instance, in some datasets, negation words like “not” and “nobody” are often associated with a relationship of contradiction. As a ramification of such biases, models may not generalize well to other datasets that contain different or no such biases."
+      ]
+    }
+  },
+  {
+    "paper_id": "1812.10860",
+    "question": "Do some pretraining objectives perform better than others for sentence level understanding tasks?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": true,
+      "free_form_answer": "",
+      "evidence": [
+        "Looking to other target tasks, the grammar-related CoLA task benefits dramatically from ELMo pretraining: The best result without language model pretraining is less than half the result achieved with such pretraining. In contrast, the meaning-oriented textual similarity benchmark STS sees good results with several kinds of pretraining, but does not benefit substantially from the use of ELMo."
+      ],
+      "highlighted_evidence": [
+        "Looking to other target tasks, the grammar-related CoLA task benefits dramatically from ELMo pretraining: The best result without language model pretraining is less than half the result achieved with such pretraining. In contrast, the meaning-oriented textual similarity benchmark STS sees good results with several kinds of pretraining, but does not benefit substantially from the use of ELMo."
+      ]
+    }
+  },
+  {
+    "paper_id": "1712.02121",
+    "question": "Did the authors try stacking multiple convolutional layers?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": false,
+      "free_form_answer": "",
+      "evidence": [
+        "Recently, convolutional neural networks (CNNs), originally designed for computer vision BIBREF27 , have significantly received research attention in natural language processing BIBREF28 , BIBREF29 . CNN learns non-linear features to capture complex relationships with a remarkably less number of parameters compared to fully connected neural networks. Inspired from the success in computer vision, BIBREF30 proposed ConvE—the first model applying CNN for the KB completion task. In ConvE, only $v_h$ and $v_r$ are reshaped and then concatenated into an input matrix which is fed to the convolution layer. Different filters of the same $3\\times 3$ shape are operated over the input matrix to output feature map tensors. These feature map tensors are then vectorized and mapped into a vector via a linear transformation. Then this vector is computed with $v_t$ via a dot product to return a score for (h, r, t). See a formal definition of the ConvE score function in Table 1 . It is worth noting that ConvE focuses on the local relationships among different dimensional entries in each of $v_h$ or $v_r$ , i.e., ConvE does not observe the global relationships among same dimensional entries of an embedding triple ( $v_h$ , $v_r$ , $v_t$ ), so that ConvE ignores the transitional characteristic in transition-based models, which is one of the most useful intuitions for the task."
+      ],
+      "highlighted_evidence": [
+        "In ConvE, only $v_h$ and $v_r$ are reshaped and then concatenated into an input matrix which is fed to the convolution layer"
+      ]
+    }
+  }
+]

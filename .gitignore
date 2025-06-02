@@ -18,12 +18,12 @@ RAG_processed_data/
 chroma_db/
 share/
 .env
+/*.json
 
 # Logs / Caches
 *.log
 *.tmp
 .cache/
-*.json
 
 # Test scripts
 test*.py

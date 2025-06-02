@@ -1,0 +1,1460 @@
+[
+  {
+    "paper_id": "1910.03042",
+    "question": "What is the sample size of people used to measure user satisfaction?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "34,432 user conversations"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "From January 5, 2019 to March 5, 2019, we collected conversational data for Gunrock. During this time, no other code updates occurred. We analyzed conversations for Gunrock with at least 3 user turns to avoid conversations triggered by accident. Overall, this resulted in a total of 34,432 user conversations. Together, these users gave Gunrock an average rating of 3.65 (median: 4.0), which was elicited at the end of the conversation (“On a scale from 1 to 5 stars, how do you feel about talking to this socialbot again?\"). Users engaged with Gunrock for an average of 20.92 overall turns (median 13.0), with an average of 6.98 words per utterance, and had an average conversation time of 7.33 minutes (median: 2.87 min.). We conducted three principal analyses: users' response depth (wordcount), backstory queries (backstorypersona), and interleaving of personal and factual responses (pets)."
+      ],
+      "highlighted_evidence": [
+        " Overall, this resulted in a total of 34,432 user conversations. Together, these users gave Gunrock an average rating of 3.65 (median: 4.0), which was elicited at the end of the conversation (“On a scale from 1 to 5 stars, how do you feel about talking to this socialbot again?\")."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03042",
+    "question": "What is the sample size of people used to measure user satisfaction?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "34,432 "
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Amazon Alexa Prize BIBREF0 provides a platform to collect real human-machine conversation data and evaluate performance on speech-based social conversational systems. Our system, Gunrock BIBREF1 addresses several limitations of prior chatbots BIBREF2, BIBREF3, BIBREF4 including inconsistency and difficulty in complex sentence understanding (e.g., long utterances) and provides several contributions: First, Gunrock's multi-step language understanding modules enable the system to provide more useful information to the dialog manager, including a novel dialog act scheme. Additionally, the natural language understanding (NLU) module can handle more complex sentences, including those with coreference. Second, Gunrock interleaves actions to elicit users' opinions and provide responses to create an in-depth, engaging conversation; while a related strategy to interleave task- and non-task functions in chatbots has been proposed BIBREF5, no chatbots to our knowledge have employed a fact/opinion interleaving strategy. Finally, we use an extensive persona database to provide coherent profile information, a critical challenge in building social chatbots BIBREF3. Compared to previous systems BIBREF4, Gunrock generates more balanced conversations between human and machine by encouraging and understanding more human inputs (see Table TABREF2 for an example).",
+        "From January 5, 2019 to March 5, 2019, we collected conversational data for Gunrock. During this time, no other code updates occurred. We analyzed conversations for Gunrock with at least 3 user turns to avoid conversations triggered by accident. Overall, this resulted in a total of 34,432 user conversations. Together, these users gave Gunrock an average rating of 3.65 (median: 4.0), which was elicited at the end of the conversation (“On a scale from 1 to 5 stars, how do you feel about talking to this socialbot again?\"). Users engaged with Gunrock for an average of 20.92 overall turns (median 13.0), with an average of 6.98 words per utterance, and had an average conversation time of 7.33 minutes (median: 2.87 min.). We conducted three principal analyses: users' response depth (wordcount), backstory queries (backstorypersona), and interleaving of personal and factual responses (pets)."
+      ],
+      "highlighted_evidence": [
+        "Amazon Alexa Prize BIBREF0 provides a platform to collect real human-machine conversation data and evaluate performance on speech-based social conversational systems. Our system, Gunrock BIBREF1 addresses several limitations of prior chatbots BIBREF2, BIBREF3, BIBREF4 including inconsistency and difficulty in complex sentence understanding (e.g., long utterances) and provides several contributions: First, Gunrock's multi-step language understanding modules enable the system to provide more useful information to the dialog manager, including a novel dialog act scheme. ",
+        "From January 5, 2019 to March 5, 2019, we collected conversational data for Gunrock.",
+        "We analyzed conversations for Gunrock with at least 3 user turns to avoid conversations triggered by accident. Overall, this resulted in a total of 34,432 user conversations."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03042",
+    "question": "What are all the metrics to measure user engagement?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "overall rating",
+        "mean number of turns"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We assessed the degree of conversational depth by measuring users' mean word count. Prior work has found that an increase in word count has been linked to improved user engagement (e.g., in a social dialog system BIBREF13). For each user conversation, we extracted the overall rating, the number of turns of the interaction, and the user's per-utterance word count (averaged across all utterances). We modeled the relationship between word count and the two metrics of user engagement (overall rating, mean number of turns) in separate linear regressions."
+      ],
+      "highlighted_evidence": [
+        " We modeled the relationship between word count and the two metrics of user engagement (overall rating, mean number of turns) in separate linear regressions."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03042",
+    "question": "What are all the metrics to measure user engagement?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "overall rating",
+        "mean number of turns"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We assessed the degree of conversational depth by measuring users' mean word count. Prior work has found that an increase in word count has been linked to improved user engagement (e.g., in a social dialog system BIBREF13). For each user conversation, we extracted the overall rating, the number of turns of the interaction, and the user's per-utterance word count (averaged across all utterances). We modeled the relationship between word count and the two metrics of user engagement (overall rating, mean number of turns) in separate linear regressions."
+      ],
+      "highlighted_evidence": [
+        "We assessed the degree of conversational depth by measuring users' mean word count. Prior work has found that an increase in word count has been linked to improved user engagement (e.g., in a social dialog system BIBREF13). For each user conversation, we extracted the overall rating, the number of turns of the interaction, and the user's per-utterance word count (averaged across all utterances). We modeled the relationship between word count and the two metrics of user engagement (overall rating, mean number of turns) in separate linear regressions."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03042",
+    "question": "What the system designs introduced?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Amazon Conversational Bot Toolkit",
+        "natural language understanding (NLU) (nlu) module",
+        "dialog manager",
+        "knowledge bases",
+        "natural language generation (NLG) (nlg) module",
+        "text to speech (TTS) (tts)"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Figure FIGREF3 provides an overview of Gunrock's architecture. We extend the Amazon Conversational Bot Toolkit (CoBot) BIBREF6 which is a flexible event-driven framework. CoBot provides ASR results and natural language processing pipelines through the Alexa Skills Kit (ASK) BIBREF7. Gunrock corrects ASR according to the context (asr) and creates a natural language understanding (NLU) (nlu) module where multiple components analyze the user utterances. A dialog manager (DM) (dm) uses features from NLU to select topic dialog modules and defines an individual dialog flow. Each dialog module leverages several knowledge bases (knowledge). Then a natural language generation (NLG) (nlg) module generates a corresponding response. Finally, we markup the synthesized responses and return to the users through text to speech (TTS) (tts). While we provide an overview of the system in the following sections, for detailed system implementation details, please see the technical report BIBREF1."
+      ],
+      "highlighted_evidence": [
+        "We extend the Amazon Conversational Bot Toolkit (CoBot) BIBREF6 which is a flexible event-driven framework. CoBot provides ASR results and natural language processing pipelines through the Alexa Skills Kit (ASK) BIBREF7. Gunrock corrects ASR according to the context (asr) and creates a natural language understanding (NLU) (nlu) module where multiple components analyze the user utterances. A dialog manager (DM) (dm) uses features from NLU to select topic dialog modules and defines an individual dialog flow. Each dialog module leverages several knowledge bases (knowledge). Then a natural language generation (NLG) (nlg) module generates a corresponding response. Finally, we markup the synthesized responses and return to the users through text to speech (TTS) (tts)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03042",
+    "question": "How do they correlate user backstory queries to user satisfaction?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "modeled the relationship between word count and the two metrics of user engagement (overall rating, mean number of turns) in separate linear regressions"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We assessed the degree of conversational depth by measuring users' mean word count. Prior work has found that an increase in word count has been linked to improved user engagement (e.g., in a social dialog system BIBREF13). For each user conversation, we extracted the overall rating, the number of turns of the interaction, and the user's per-utterance word count (averaged across all utterances). We modeled the relationship between word count and the two metrics of user engagement (overall rating, mean number of turns) in separate linear regressions.",
+        "Results showed that users who, on average, produced utterances with more words gave significantly higher ratings ($\\beta $=0.01, SE=0.002, t=4.79, p$<$0.001)(see Figure 2) and engaged with Gunrock for significantly greater number of turns ($\\beta $=1.85, SE=0.05, t=35.58, p$<$0.001) (see Figure 2). These results can be interpreted as evidence for Gunrock's ability to handle complex sentences, where users are not constrained to simple responses to be understood and feel engaged in the conversation – and evidence that individuals are more satisfied with the conversation when they take a more active role, rather than the system dominating the dialog. On the other hand, another interpretation is that users who are more talkative may enjoy talking to the bot in general, and thus give higher ratings in tandem with higher average word counts."
+      ],
+      "highlighted_evidence": [
+        "We modeled the relationship between word count and the two metrics of user engagement (overall rating, mean number of turns) in separate linear regressions.\n\nResults showed that users who, on average, produced utterances with more words gave significantly higher ratings ($\\beta $=0.01, SE=0.002, t=4.79, p$<$0.001)(see Figure 2) and engaged with Gunrock for significantly greater number of turns ($\\beta $=1.85, SE=0.05, t=35.58, p$<$0.001) (see Figure 2). These results can be interpreted as evidence for Gunrock's ability to handle complex sentences, where users are not constrained to simple responses to be understood and feel engaged in the conversation – and evidence that individuals are more satisfied with the conversation when they take a more active role, rather than the system dominating the dialog. On the other hand, another interpretation is that users who are more talkative may enjoy talking to the bot in general, and thus give higher ratings in tandem with higher average word counts."
+      ]
+    }
+  },
+  {
+    "paper_id": "1707.00995",
+    "question": "What misbehavior is identified?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "if the attention loose track of the objects in the picture and \"gets lost\", the model still takes it into account and somehow overrides the information brought by the text-based annotations"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "It is also worth to mention that we use a ResNet trained on 1.28 million images for a classification tasks. The features used by the attention mechanism are strongly object-oriented and the machine could miss important information for a multimodal translation task. We believe that the robust architecture of both encoders INLINEFORM0 combined with a GRU layer and word-embeddings took care of the right translation for relationships between objects and time-dependencies. Yet, we noticed a common misbehavior for all our multimodal models: if the attention loose track of the objects in the picture and \"gets lost\", the model still takes it into account and somehow overrides the information brought by the text-based annotations. The translation is then totally mislead. We illustrate with an example:"
+      ],
+      "highlighted_evidence": [
+        "Yet, we noticed a common misbehavior for all our multimodal models: if the attention loose track of the objects in the picture and \"gets lost\", the model still takes it into account and somehow overrides the information brought by the text-based annotations. The translation is then totally mislead. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1707.00995",
+    "question": "What misbehavior is identified?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "if the attention loose track of the objects in the picture and \"gets lost\", the model still takes it into account and somehow overrides the information brought by the text-based annotations"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "It is also worth to mention that we use a ResNet trained on 1.28 million images for a classification tasks. The features used by the attention mechanism are strongly object-oriented and the machine could miss important information for a multimodal translation task. We believe that the robust architecture of both encoders INLINEFORM0 combined with a GRU layer and word-embeddings took care of the right translation for relationships between objects and time-dependencies. Yet, we noticed a common misbehavior for all our multimodal models: if the attention loose track of the objects in the picture and \"gets lost\", the model still takes it into account and somehow overrides the information brought by the text-based annotations. The translation is then totally mislead. We illustrate with an example:"
+      ],
+      "highlighted_evidence": [
+        "Yet, we noticed a common misbehavior for all our multimodal models: if the attention loose track of the objects in the picture and \"gets lost\", the model still takes it into account and somehow overrides the information brought by the text-based annotations."
+      ]
+    }
+  },
+  {
+    "paper_id": "1707.00995",
+    "question": "Which attention mechanisms do they compare?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Soft attention",
+        "Hard Stochastic attention",
+        "Local Attention"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We evaluate three models of the image attention mechanism INLINEFORM0 of equation EQREF11 . They have in common the fact that at each time step INLINEFORM1 of the decoding phase, all approaches first take as input the annotation sequence INLINEFORM2 to derive a time-dependent context vector that contain relevant information in the image to help predict the current target word INLINEFORM3 . Even though these models differ in how the time-dependent context vector is derived, they share the same subsequent steps. For each mechanism, we propose two hand-picked illustrations showing where the attention is placed in an image.",
+        "Soft attention",
+        "Hard Stochastic attention",
+        "Local Attention"
+      ],
+      "highlighted_evidence": [
+        "We evaluate three models of the image attention mechanism INLINEFORM0 of equation EQREF11 .",
+        "Soft attention",
+        "Hard Stochastic attention",
+        "Local Attention"
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.04960",
+    "question": "Which paired corpora did they use in the other experiment?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "dataset that contains article-comment parallel contents INLINEFORM0 , and an unpaired dataset that contains the documents (articles or comments) INLINEFORM1"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In addition to the unsupervised training, we explore a semi-supervised training framework to combine the proposed unsupervised model and the supervised model. In this scenario we have a paired dataset that contains article-comment parallel contents INLINEFORM0 , and an unpaired dataset that contains the documents (articles or comments) INLINEFORM1 . The supervised model is trained on INLINEFORM2 so that we can learn the matching or mapping between articles and comments. By sharing the encoder of the supervised model and the unsupervised model, we can jointly train both the models with a joint objective function: DISPLAYFORM0"
+      ],
+      "highlighted_evidence": [
+        " In this scenario we have a paired dataset that contains article-comment parallel contents INLINEFORM0 , and an unpaired dataset that contains the documents (articles or comments) INLINEFORM1 . The supervised model is trained on INLINEFORM2 so that we can learn the matching or mapping between articles and comments. By sharing the encoder of the supervised model and the unsupervised model, we can jointly train both the models with a joint objective function: DISPLAYFORM0"
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.04960",
+    "question": "Which paired corpora did they use in the other experiment?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Chinese dataset BIBREF0"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We select a large-scale Chinese dataset BIBREF0 with millions of real comments and a human-annotated test set to evaluate our model. The dataset is collected from Tencent News, which is one of the most popular Chinese websites for news and opinion articles. The dataset consists of 198,112 news articles. Each piece of news contains a title, the content of the article, and a list of the users' comments. Following the previous work BIBREF0 , we tokenize all text with the popular python package Jieba, and filter out short articles with less than 30 words in content and those with less than 20 comments. The dataset is split into training/validation/test sets, and they contain 191,502/5,000/1,610 pieces of news, respectively. The whole dataset has a vocabulary size of 1,858,452. The average lengths of the article titles and content are 15 and 554 Chinese words. The average comment length is 17 words.",
+        "We analyze the performance of the proposed method under the semi-supervised setting. We train the supervised IR model with different numbers of paired data. Figure FIGREF39 shows the curve (blue) of the recall1 score. As expected, the performance grows as the paired dataset becomes larger. We further combine the supervised IR with our unsupervised model, which is trained with full unpaired data (4.8M) and different number of paired data (from 50K to 4.8M). It shows that IR+Proposed can outperform the supervised IR model given the same paired dataset. It concludes that the proposed model can exploit the unpaired data to further improve the performance of the supervised model."
+      ],
+      "highlighted_evidence": [
+        "We select a large-scale Chinese dataset BIBREF0 with millions of real comments and a human-annotated test set to evaluate our model.",
+        "We further combine the supervised IR with our unsupervised model, which is trained with full unpaired data (4.8M) and different number of paired data (from 50K to 4.8M)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.04960",
+    "question": "Which lexicon-based models did they compare with?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "TF-IDF",
+        "NVDM"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "TF-IDF (Lexical, Non-Neural) is an important unsupervised baseline. We use the concatenation of the title and the body as the query to retrieve the candidate comment set by means of the similarity of the tf-idf value. The model is trained on unpaired articles and comments, which is the same as our proposed model.",
+        "NVDM (Lexical, Neural) is a VAE-based approach for document modeling BIBREF10 . We compare our model with this baseline to demonstrate the effect of modeling topic."
+      ],
+      "highlighted_evidence": [
+        "TF-IDF (Lexical, Non-Neural) is an important unsupervised baseline.",
+        "NVDM (Lexical, Neural) is a VAE-based approach for document modeling BIBREF10 ."
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.04960",
+    "question": "How many comments were used?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "from 50K to 4.8M"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We analyze the performance of the proposed method under the semi-supervised setting. We train the supervised IR model with different numbers of paired data. Figure FIGREF39 shows the curve (blue) of the recall1 score. As expected, the performance grows as the paired dataset becomes larger. We further combine the supervised IR with our unsupervised model, which is trained with full unpaired data (4.8M) and different number of paired data (from 50K to 4.8M). It shows that IR+Proposed can outperform the supervised IR model given the same paired dataset. It concludes that the proposed model can exploit the unpaired data to further improve the performance of the supervised model."
+      ],
+      "highlighted_evidence": [
+        "We further combine the supervised IR with our unsupervised model, which is trained with full unpaired data (4.8M) and different number of paired data (from 50K to 4.8M)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.04960",
+    "question": "How many articles did they have?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "198,112"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We select a large-scale Chinese dataset BIBREF0 with millions of real comments and a human-annotated test set to evaluate our model. The dataset is collected from Tencent News, which is one of the most popular Chinese websites for news and opinion articles. The dataset consists of 198,112 news articles. Each piece of news contains a title, the content of the article, and a list of the users' comments. Following the previous work BIBREF0 , we tokenize all text with the popular python package Jieba, and filter out short articles with less than 30 words in content and those with less than 20 comments. The dataset is split into training/validation/test sets, and they contain 191,502/5,000/1,610 pieces of news, respectively. The whole dataset has a vocabulary size of 1,858,452. The average lengths of the article titles and content are 15 and 554 Chinese words. The average comment length is 17 words."
+      ],
+      "highlighted_evidence": [
+        "The dataset consists of 198,112 news articles."
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.04960",
+    "question": "What news comment dataset was used?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Chinese dataset BIBREF0"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We select a large-scale Chinese dataset BIBREF0 with millions of real comments and a human-annotated test set to evaluate our model. The dataset is collected from Tencent News, which is one of the most popular Chinese websites for news and opinion articles. The dataset consists of 198,112 news articles. Each piece of news contains a title, the content of the article, and a list of the users' comments. Following the previous work BIBREF0 , we tokenize all text with the popular python package Jieba, and filter out short articles with less than 30 words in content and those with less than 20 comments. The dataset is split into training/validation/test sets, and they contain 191,502/5,000/1,610 pieces of news, respectively. The whole dataset has a vocabulary size of 1,858,452. The average lengths of the article titles and content are 15 and 554 Chinese words. The average comment length is 17 words."
+      ],
+      "highlighted_evidence": [
+        "We select a large-scale Chinese dataset BIBREF0 with millions of real comments and a human-annotated test set to evaluate our model. The dataset is collected from Tencent News, which is one of the most popular Chinese websites for news and opinion articles. The dataset consists of 198,112 news articles. Each piece of news contains a title, the content of the article, and a list of the users' comments."
+      ]
+    }
+  },
+  {
+    "paper_id": "1911.09886",
+    "question": "Which one of two proposed approaches performed better in experiments?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "WordDecoding (WDec) model"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Among the baselines, HRL achieves significantly higher F1 scores on the two datasets. We run their model and our models five times and report the median results in Table TABREF15. Scores of other baselines in Table TABREF15 are taken from previous published papers BIBREF6, BIBREF11, BIBREF14. Our WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. Similarly, our PtrNetDecoding (PNDec) model achieves F1 scores that are $3.0\\%$ and $1.3\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. We perform a statistical significance test (t-test) under a bootstrap pairing between HRL and our models and see that the higher F1 scores achieved by our models are statistically significant ($p < 0.001$). Next, we combine the outputs of five runs of our models and five runs of HRL to build ensemble models. For a test instance, we include those tuples which are extracted in the majority ($\\ge 3$) of the five runs. This ensemble mechanism increases the precision significantly on both datasets with a small improvement in recall as well. In the ensemble scenario, compared to HRL, WDec achieves $4.2\\%$ and $3.5\\%$ higher F1 scores and PNDec achieves $4.2\\%$ and $2.9\\%$ higher F1 scores on the NYT29 and NYT24 datasets respectively."
+      ],
+      "highlighted_evidence": [
+        "Our WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. Similarly, our PtrNetDecoding (PNDec) model achieves F1 scores that are $3.0\\%$ and $1.3\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively."
+      ]
+    }
+  },
+  {
+    "paper_id": "1911.09886",
+    "question": "What is previous work authors reffer to?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "SPTree",
+        "Tagging",
+        "CopyR",
+        "HRL",
+        "GraphR",
+        "N-gram Attention"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We compare our model with the following state-of-the-art joint entity and relation extraction models:",
+        "(1) SPTree BIBREF4: This is an end-to-end neural entity and relation extraction model using sequence LSTM and Tree LSTM. Sequence LSTM is used to identify all the entities first and then Tree LSTM is used to find the relation between all pairs of entities.",
+        "(2) Tagging BIBREF5: This is a neural sequence tagging model which jointly extracts the entities and relations using an LSTM encoder and an LSTM decoder. They used a Cartesian product of entity tags and relation tags to encode the entity and relation information together. This model does not work when tuples have overlapping entities.",
+        "(3) CopyR BIBREF6: This model uses an encoder-decoder approach for joint extraction of entities and relations. It copies only the last token of an entity from the source sentence. Their best performing multi-decoder model is trained with a fixed number of decoders where each decoder extracts one tuple.",
+        "(4) HRL BIBREF11: This model uses a reinforcement learning (RL) algorithm with two levels of hierarchy for tuple extraction. A high-level RL finds the relation and a low-level RL identifies the two entities using a sequence tagging approach. This sequence tagging approach cannot always ensure extraction of exactly two entities.",
+        "(5) GraphR BIBREF14: This model considers each token in a sentence as a node in a graph, and edges connecting the nodes as relations between them. They use graph convolution network (GCN) to predict the relations of every edge and then filter out some of the relations.",
+        "(6) N-gram Attention BIBREF9: This model uses an encoder-decoder approach with N-gram attention mechanism for knowledge-base completion using distantly supervised data. The encoder uses the source tokens as its vocabulary and the decoder uses the entire Wikidata BIBREF15 entity IDs and relation IDs as its vocabulary. The encoder takes the source sentence as input and the decoder outputs the two entity IDs and relation ID for every tuple. During training, it uses the mapping of entity names and their Wikidata IDs of the entire Wikidata for proper alignment. Our task of extracting relation tuples with the raw entity names from a sentence is more challenging since entity names are not of fixed length. Our more generic approach is also helpful for extracting new entities which are not present in the existing knowledge bases such as Wikidata. We use their N-gram attention mechanism in our model to compare its performance with other attention models (Table TABREF17)."
+      ],
+      "highlighted_evidence": [
+        "We compare our model with the following state-of-the-art joint entity and relation extraction models:\n\n(1) SPTree BIBREF4: This is an end-to-end neural entity and relation extraction model using sequence LSTM and Tree LSTM.",
+        "(2) Tagging BIBREF5: This is a neural sequence tagging model which jointly extracts the entities and relations using an LSTM encoder and an LSTM decoder.",
+        "(3) CopyR BIBREF6: This model uses an encoder-decoder approach for joint extraction of entities and relations.",
+        "(4) HRL BIBREF11: This model uses a reinforcement learning (RL) algorithm with two levels of hierarchy for tuple extraction.",
+        "(5) GraphR BIBREF14: This model considers each token in a sentence as a node in a graph, and edges connecting the nodes as relations between them.",
+        "(6) N-gram Attention BIBREF9: This model uses an encoder-decoder approach with N-gram attention mechanism for knowledge-base completion using distantly supervised data."
+      ]
+    }
+  },
+  {
+    "paper_id": "1911.09886",
+    "question": "How higher are F1 scores compared to previous work?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively",
+        "PtrNetDecoding (PNDec) model achieves F1 scores that are $3.0\\%$ and $1.3\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Among the baselines, HRL achieves significantly higher F1 scores on the two datasets. We run their model and our models five times and report the median results in Table TABREF15. Scores of other baselines in Table TABREF15 are taken from previous published papers BIBREF6, BIBREF11, BIBREF14. Our WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. Similarly, our PtrNetDecoding (PNDec) model achieves F1 scores that are $3.0\\%$ and $1.3\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. We perform a statistical significance test (t-test) under a bootstrap pairing between HRL and our models and see that the higher F1 scores achieved by our models are statistically significant ($p < 0.001$). Next, we combine the outputs of five runs of our models and five runs of HRL to build ensemble models. For a test instance, we include those tuples which are extracted in the majority ($\\ge 3$) of the five runs. This ensemble mechanism increases the precision significantly on both datasets with a small improvement in recall as well. In the ensemble scenario, compared to HRL, WDec achieves $4.2\\%$ and $3.5\\%$ higher F1 scores and PNDec achieves $4.2\\%$ and $2.9\\%$ higher F1 scores on the NYT29 and NYT24 datasets respectively."
+      ],
+      "highlighted_evidence": [
+        "Our WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. Similarly, our PtrNetDecoding (PNDec) model achieves F1 scores that are $3.0\\%$ and $1.3\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively."
+      ]
+    }
+  },
+  {
+    "paper_id": "1911.09886",
+    "question": "How higher are F1 scores compared to previous work?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Our WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively",
+        "In the ensemble scenario, compared to HRL, WDec achieves $4.2\\%$ and $3.5\\%$ higher F1 scores"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Among the baselines, HRL achieves significantly higher F1 scores on the two datasets. We run their model and our models five times and report the median results in Table TABREF15. Scores of other baselines in Table TABREF15 are taken from previous published papers BIBREF6, BIBREF11, BIBREF14. Our WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. Similarly, our PtrNetDecoding (PNDec) model achieves F1 scores that are $3.0\\%$ and $1.3\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively. We perform a statistical significance test (t-test) under a bootstrap pairing between HRL and our models and see that the higher F1 scores achieved by our models are statistically significant ($p < 0.001$). Next, we combine the outputs of five runs of our models and five runs of HRL to build ensemble models. For a test instance, we include those tuples which are extracted in the majority ($\\ge 3$) of the five runs. This ensemble mechanism increases the precision significantly on both datasets with a small improvement in recall as well. In the ensemble scenario, compared to HRL, WDec achieves $4.2\\%$ and $3.5\\%$ higher F1 scores and PNDec achieves $4.2\\%$ and $2.9\\%$ higher F1 scores on the NYT29 and NYT24 datasets respectively."
+      ],
+      "highlighted_evidence": [
+        "Among the baselines, HRL achieves significantly higher F1 scores on the two datasets.",
+        "Our WordDecoding (WDec) model achieves F1 scores that are $3.9\\%$ and $4.1\\%$ higher than HRL on the NYT29 and NYT24 datasets respectively.",
+        "In the ensemble scenario, compared to HRL, WDec achieves $4.2\\%$ and $3.5\\%$ higher F1 scores and PNDec achieves $4.2\\%$ and $2.9\\%$ higher F1 scores on the NYT29 and NYT24 datasets respectively."
+      ]
+    }
+  },
+  {
+    "paper_id": "1807.03367",
+    "question": "How was the dataset collected?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "crowd-sourced the collection of the dataset on Amazon Mechanical Turk (MTurk)"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We crowd-sourced the collection of the dataset on Amazon Mechanical Turk (MTurk). We use the MTurk interface of ParlAI BIBREF6 to render 360 images via WebGL and dynamically display neighborhood maps with an HTML5 canvas. Detailed task instructions, which were also given to our workers before they started their task, are shown in Appendix SECREF15 . We paired Turkers at random and let them alternate between the tourist and guide role across different HITs."
+      ],
+      "highlighted_evidence": [
+        "We crowd-sourced the collection of the dataset on Amazon Mechanical Turk (MTurk)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1807.03367",
+    "question": "What evaluation metrics did the authors look at?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "localization accuracy"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In this section, we describe the findings of various experiments. First, we analyze how much information needs to be communicated for accurate localization in the Talk The Walk environment, and find that a short random path (including actions) is necessary. Next, for emergent language, we show that the MASC architecture can achieve very high localization accuracy, significantly outperforming the baseline that does not include this mechanism. We then turn our attention to the natural language experiments, and find that localization from human utterances is much harder, reaching an accuracy level that is below communicating a single landmark observation. We show that generated utterances from a conditional language model leads to significantly better localization performance, by successfully grounding the utterance on a single landmark observation (but not yet on multiple observations and actions). Finally, we show performance of the localization baseline on the full task, which can be used for future comparisons to this work."
+      ],
+      "highlighted_evidence": [
+        "Next, for emergent language, we show that the MASC architecture can achieve very high localization accuracy, significantly outperforming the baseline that does not include this mechanism."
+      ]
+    }
+  },
+  {
+    "paper_id": "1807.03367",
+    "question": "What data did they use?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        " dataset on Mechanical Turk involving human perception, action and communication"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Talk The Walk is the first task to bring all three aspects together: perception for the tourist observing the world, action for the tourist to navigate through the environment, and interactive dialogue for the tourist and guide to work towards their common goal. To collect grounded dialogues, we constructed a virtual 2D grid environment by manually capturing 360-views of several neighborhoods in New York City (NYC). As the main focus of our task is on interactive dialogue, we limit the difficulty of the control problem by having the tourist navigating a 2D grid via discrete actions (turning left, turning right and moving forward). Our street view environment was integrated into ParlAI BIBREF6 and used to collect a large-scale dataset on Mechanical Turk involving human perception, action and communication."
+      ],
+      "highlighted_evidence": [
+        " Our street view environment was integrated into ParlAI BIBREF6 and used to collect a large-scale dataset on Mechanical Turk involving human perception, action and communication."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03891",
+    "question": "What further analysis is done?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "we use t-SNE tool BIBREF27 to visualize the learned embedding"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Figure FIGREF30 shows the test accuracy with increasing epoch on DBP24K and Game30K. We can see that test accuracy first rapidly increased in the first ten iterations, but reaches a stable stages when epoch is larger than 40. Figure FIGREF31 shows test accuracy with different embedding size and training data proportions. We can note that too small embedding size or training data proportions can not generate sufficient global information. In order to further analysis the embeddings learned by our method, we use t-SNE tool BIBREF27 to visualize the learned embedding. Figure FIGREF32 shows the visualization of 256 dimensional entity's embedding on Game30K learned by KANE, R-GCN, PransE and TransE. We observe that our method can learn more discriminative entity's embedding than other other methods."
+      ],
+      "highlighted_evidence": [
+        "In order to further analysis the embeddings learned by our method, we use t-SNE tool BIBREF27 to visualize the learned embedding."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03891",
+    "question": "What seven state-of-the-art methods are used for comparison?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "TransE, TransR and TransH",
+        "PTransE, and ALL-PATHS",
+        "R-GCN BIBREF24 and KR-EAR BIBREF26"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "1) Typical Methods. Three typical knowledge graph embedding methods includes TransE, TransR and TransH are selected as baselines. For TransE, the dissimilarity measure is implemented with L1-norm, and relation as well as entity are replaced during negative sampling. For TransR, we directly use the source codes released in BIBREF9. In order for better performance, the replacement of relation in negative sampling is utilized according to the suggestion of author.",
+        "2) Path-based Methods. We compare our method with two typical path-based model include PTransE, and ALL-PATHS BIBREF18. PTransE is the first method to model relation path in KG embedding task, and ALL-PATHS improve the PTransE through a dynamic programming algorithm which can incorporate all relation paths of bounded length.",
+        "3) Attribute-incorporated Methods. Several state-of-art attribute-incorporated methods including R-GCN BIBREF24 and KR-EAR BIBREF26 are used to compare with our methods on three real datasets."
+      ],
+      "highlighted_evidence": [
+        "1) Typical Methods. Three typical knowledge graph embedding methods includes TransE, TransR and TransH are selected as baselines.",
+        "2) Path-based Methods. We compare our method with two typical path-based model include PTransE, and ALL-PATHS BIBREF18.",
+        "3) Attribute-incorporated Methods. Several state-of-art attribute-incorporated methods including R-GCN BIBREF24 and KR-EAR BIBREF26 are used to compare with our methods on three real datasets."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03891",
+    "question": "What three datasets are used to measure performance?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "FB24K",
+        "DBP24K",
+        "Game30K"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In this study, we evaluate our model on three real KG including two typical large-scale knowledge graph: Freebase BIBREF0, DBpedia BIBREF1 and a self-construction game knowledge graph. First, we adapt a dataset extracted from Freebase, i.e., FB24K, which used by BIBREF26. Then, we collect extra entities and relations that from DBpedia which that they should have at least 100 mentions BIBREF7 and they could link to the entities in the FB24K by the sameAs triples. Finally, we build a datasets named as DBP24K. In addition, we build a game datasets from our game knowledge graph, named as Game30K. The statistics of datasets are listed in Table TABREF24."
+      ],
+      "highlighted_evidence": [
+        "First, we adapt a dataset extracted from Freebase, i.e., FB24K, which used by BIBREF26. Then, we collect extra entities and relations that from DBpedia which that they should have at least 100 mentions BIBREF7 and they could link to the entities in the FB24K by the sameAs triples. Finally, we build a datasets named as DBP24K. In addition, we build a game datasets from our game knowledge graph, named as Game30K."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03891",
+    "question": "What three datasets are used to measure performance?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Freebase BIBREF0, DBpedia BIBREF1 and a self-construction game knowledge graph"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In this study, we evaluate our model on three real KG including two typical large-scale knowledge graph: Freebase BIBREF0, DBpedia BIBREF1 and a self-construction game knowledge graph. First, we adapt a dataset extracted from Freebase, i.e., FB24K, which used by BIBREF26. Then, we collect extra entities and relations that from DBpedia which that they should have at least 100 mentions BIBREF7 and they could link to the entities in the FB24K by the sameAs triples. Finally, we build a datasets named as DBP24K. In addition, we build a game datasets from our game knowledge graph, named as Game30K. The statistics of datasets are listed in Table TABREF24."
+      ],
+      "highlighted_evidence": [
+        "In this study, we evaluate our model on three real KG including two typical large-scale knowledge graph: Freebase BIBREF0, DBpedia BIBREF1 and a self-construction game knowledge graph. First, we adapt a dataset extracted from Freebase, i.e., FB24K, which used by BIBREF26. Then, we collect extra entities and relations that from DBpedia which that they should have at least 100 mentions BIBREF7 and they could link to the entities in the FB24K by the sameAs triples. Finally, we build a datasets named as DBP24K. In addition, we build a game datasets from our game knowledge graph, named as Game30K. The statistics of datasets are listed in Table TABREF24."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03891",
+    "question": "How does KANE capture both high-order structural and attribute information of KGs in an efficient, explicit and unified manner?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "To capture both high-order structural information of KGs, we used an attention-based embedding propagation method."
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The process of KANE is illustrated in Figure FIGREF2. We introduce the architecture of KANE from left to right. As shown in Figure FIGREF2, the whole triples of knowledge graph as input. The task of attribute embedding lays is embedding every value in attribute triples into a continuous vector space while preserving the semantic information. To capture both high-order structural information of KGs, we used an attention-based embedding propagation method. This method can recursively propagate the embeddings of entities from an entity's neighbors, and aggregate the neighbors with different weights. The final embedding of entities, relations and values are feed into two different deep neural network for two different tasks including link predication and entity classification."
+      ],
+      "highlighted_evidence": [
+        "The task of attribute embedding lays is embedding every value in attribute triples into a continuous vector space while preserving the semantic information. To capture both high-order structural information of KGs, we used an attention-based embedding propagation method.",
+        "The final embedding of entities, relations and values are feed into two different deep neural network for two different tasks including link predication and entity classification."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.03891",
+    "question": "What are recent works on knowedge graph embeddings authors mention?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "entity types or concepts BIBREF13",
+        "relations paths BIBREF17",
+        " textual descriptions BIBREF11, BIBREF12",
+        "logical rules BIBREF23",
+        "deep neural network models BIBREF24"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In order to address this issue, TransH BIBREF8 models a relation as a relation-specific hyperplane together with a translation on it, allowing entities to have distinct representation in different relations. TransR BIBREF9 models entities and relations in separate spaces, i.e., entity space and relation spaces, and performs translation from entity spaces to relation spaces. TransD BIBREF22 captures the diversity of relations and entities simultaneously by defining dynamic mapping matrix. Recent attempts can be divided into two categories: (i) those which tries to incorporate additional information to further improve the performance of knowledge graph embedding, e.g., entity types or concepts BIBREF13, relations paths BIBREF17, textual descriptions BIBREF11, BIBREF12 and logical rules BIBREF23; (ii) those which tries to design more complicated strategies, e.g., deep neural network models BIBREF24."
+      ],
+      "highlighted_evidence": [
+        "Recent attempts can be divided into two categories: (i) those which tries to incorporate additional information to further improve the performance of knowledge graph embedding, e.g., entity types or concepts BIBREF13, relations paths BIBREF17, textual descriptions BIBREF11, BIBREF12 and logical rules BIBREF23; (ii) those which tries to design more complicated strategies, e.g., deep neural network models BIBREF24."
+      ]
+    }
+  },
+  {
+    "paper_id": "1903.03467",
+    "question": "What conclusions are drawn from the syntactic analysis?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        " our method enables to control the morphological realization of first and second-person pronouns, together with verbs and adjectives related to them"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We highlight the problem of translating between languages with different morphological systems, in which the target translation must contain gender and number information that is not available in the source. We propose a method for injecting such information into a pre-trained NMT model in a black-box setting. We demonstrate the effectiveness of this method by showing an improvement of 2.3 BLEU in an English-to-Hebrew translation setting where the speaker and audience gender can be inferred. We also perform a fine-grained syntactic analysis that shows how our method enables to control the morphological realization of first and second-person pronouns, together with verbs and adjectives related to them. In future work we would like to explore automatic generation of the injected context, or the use of cross-sentence context to infer the injected information."
+      ],
+      "highlighted_evidence": [
+        "We also perform a fine-grained syntactic analysis that shows how our method enables to control the morphological realization of first and second-person pronouns, together with verbs and adjectives related to them."
+      ]
+    }
+  },
+  {
+    "paper_id": "1903.03467",
+    "question": "What type of syntactic analysis is performed?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Speaker's Gender Effects",
+        "Interlocutors' Gender and Number Effects"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The BLEU score is an indication of how close the automated translation is to the reference translation, but does not tell us what exactly changed concerning the gender and number properties we attempt to control. We perform a finer-grained analysis focusing on the relation between the injected speaker and audience information, and the morphological realizations of the corresponding elements. We parse the translations and the references using a Hebrew dependency parser. In addition to the parse structure, the parser also performs morphological analysis and tagging of the individual tokens. We then perform the following analysis.",
+        "Speaker's Gender Effects: We search for first-person singular pronouns with subject case (ani, unmarked for gender, corresponding to the English I), and consider the gender of its governing verb (or adjectives in copular constructions such as `I am nice'). The possible genders are `masculine', `feminine' and `both', where the latter indicates a case where the none-diacriticized written form admits both a masculine and a feminine reading. We expect the gender to match the ones requested in the prefix.",
+        "Interlocutors' Gender and Number Effects: We search for second-person pronouns and consider their gender and number. For pronouns in subject position, we also consider the gender and number of their governing verbs (or adjectives in copular constructions). For a singular audience, we expect the gender and number to match the requested ones. For a plural audience, we expect the masculine-plural forms."
+      ],
+      "highlighted_evidence": [
+        "We then perform the following analysis.\n\nSpeaker's Gender Effects: We search for first-person singular pronouns with subject case (ani, unmarked for gender, corresponding to the English I), and consider the gender of its governing verb (or adjectives in copular constructions such as `I am nice'). The possible genders are `masculine', `feminine' and `both', where the latter indicates a case where the none-diacriticized written form admits both a masculine and a feminine reading. We expect the gender to match the ones requested in the prefix.\n\nInterlocutors' Gender and Number Effects: We search for second-person pronouns and consider their gender and number. For pronouns in subject position, we also consider the gender and number of their governing verbs (or adjectives in copular constructions). For a singular audience, we expect the gender and number to match the requested ones. For a plural audience, we expect the masculine-plural forms."
+      ]
+    }
+  },
+  {
+    "paper_id": "1903.03467",
+    "question": "How is it demonstrated that the correct gender and number information is injected using this system?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        " correct information substantially improves it - we see an increase of up to 2.3 BLEU over the baseline",
+        "Finally, the “She said” prefixes substantially increase the number of feminine-marked verbs, bringing the proportion much closer to that of the reference"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We compare the different conditions by comparing BLEU BIBREF5 with respect to the reference Hebrew translations. We use the multi-bleu.perl script from the Moses toolkit BIBREF6 . Table shows BLEU scores for the different prefixes. The numbers match our expectations: Generally, providing an incorrect speaker and/or audience information decreases the BLEU scores, while providing the correct information substantially improves it - we see an increase of up to 2.3 BLEU over the baseline. We note the BLEU score improves in all cases, even when given the wrong gender of either the speaker or the audience. We hypothesise this improvement stems from the addition of the word “said” which hints the model to generate a more “spoken” language which matches the tested scenario. Providing correct information for both speaker and audience usually helps more than providing correct information to either one of them individually. The one outlier is providing “She” for the speaker and “her” for the audience. While this is not the correct scenario, we hypothesise it gives an improvement in BLEU as it further reinforces the female gender in the sentence.",
+        "Results: Speaker. Figure FIGREF3 shows the result for controlling the morphological properties of the speaker ({he, she, I} said). It shows the proportion of gender-inflected verbs for the various conditions and the reference. We see that the baseline system severely under-predicts the feminine form of verbs as compared to the reference. The “He said” conditions further decreases the number of feminine verbs, while the “I said” conditions bring it back to the baseline level. Finally, the “She said” prefixes substantially increase the number of feminine-marked verbs, bringing the proportion much closer to that of the reference (though still under-predicting some of the feminine cases)."
+      ],
+      "highlighted_evidence": [
+        " Generally, providing an incorrect speaker and/or audience information decreases the BLEU scores, while providing the correct information substantially improves it - we see an increase of up to 2.3 BLEU over the baseline.",
+        "We see that the baseline system severely under-predicts the feminine form of verbs as compared to the reference. The “He said” conditions further decreases the number of feminine verbs, while the “I said” conditions bring it back to the baseline level. Finally, the “She said” prefixes substantially increase the number of feminine-marked verbs, bringing the proportion much closer to that of the reference (though still under-predicting some of the feminine cases)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1903.03467",
+    "question": "Which neural machine translation system is used?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Google's machine translation system (GMT)"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "To demonstrate our method in a black-box setting, we focus our experiments on Google's machine translation system (GMT), accessed through its Cloud API. To test the method on real-world sentences, we consider a monologue from the stand-up comedy show “Sarah Silverman: A Speck of Dust”. The monologue consists of 1,244 English sentences, all by a female speaker conveyed to a plural, gender-neutral audience. Our parallel corpora consists of the 1,244 English sentences from the transcript, and their corresponding Hebrew translations based on the Hebrew subtitles. We translate the monologue one sentence at a time through the Google Cloud API. Eyeballing the results suggest that most of the translations use the incorrect, but default, masculine and singular forms for the speaker and the audience, respectively. We expect that by adding the relevant condition of “female speaking to an audience” we will get better translations, affecting both the gender of the speaker and the number of the audience."
+      ],
+      "highlighted_evidence": [
+        "To demonstrate our method in a black-box setting, we focus our experiments on Google's machine translation system (GMT), accessed through its Cloud API."
+      ]
+    }
+  },
+  {
+    "paper_id": "1903.03467",
+    "question": "What are the components of the black-box context injection system?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "supply an NMT system with knowledge regarding the speaker and interlocutor of first-person sentences"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Our goal is to supply an NMT system with knowledge regarding the speaker and interlocutor of first-person sentences, in order to produce the desired target-side morphology when the information is not available in the source sentence. The approach we take in the current work is that of black-box injection, in which we attempt to inject knowledge to the input in order to influence the output of a trained NMT system, without having access to its internals or its training procedure as proposed by vanmassenhove-hardmeier-way:2018:EMNLP.",
+        "To verify this, we experiment with translating the sentences with the following variations: No Prefix—The baseline translation as returned by the GMT system. “He said:”—Signaling a male speaker. We expect to further skew the system towards masculine forms. “She said:”—Signaling a female speaker and unknown audience. As this matches the actual speaker's gender, we expect an improvement in translation of first-person pronouns and verbs with first-person pronouns as subjects. “I said to them:”—Signaling an unknown speaker and plural audience. “He said to them:”—Masculine speaker and plural audience. “She said to them:”—Female speaker and plural audience—the complete, correct condition. We expect the best translation accuracy on this setup. “He/she said to him/her”—Here we set an (incorrect) singular gender-marked audience, to investigate our ability to control the audience morphology."
+      ],
+      "highlighted_evidence": [
+        "Our goal is to supply an NMT system with knowledge regarding the speaker and interlocutor of first-person sentences, in order to produce the desired target-side morphology when the information is not available in the source sentence. The approach we take in the current work is that of black-box injection, in which we attempt to inject knowledge to the input in order to influence the output of a trained NMT system, without having access to its internals or its training procedure as proposed by vanmassenhove-hardmeier-way:2018:EMNLP.",
+        "To verify this, we experiment with translating the sentences with the following variations: No Prefix—The baseline translation as returned by the GMT system. “He said:”—Signaling a male speaker. We expect to further skew the system towards masculine forms. “She said:”—Signaling a female speaker and unknown audience. As this matches the actual speaker's gender, we expect an improvement in translation of first-person pronouns and verbs with first-person pronouns as subjects. “I said to them:”—Signaling an unknown speaker and plural audience. “He said to them:”—Masculine speaker and plural audience. “She said to them:”—Female speaker and plural audience—the complete, correct condition. We expect the best translation accuracy on this setup. “He/she said to him/her”—Here we set an (incorrect) singular gender-marked audience, to investigate our ability to control the audience morphology."
+      ]
+    }
+  },
+  {
+    "paper_id": "1603.01417",
+    "question": "Why is supporting fact supervision necessary for DMN?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "First, the GRU only allows sentences to have context from sentences before them, but not after them. This prevents information propagation from future sentences. Second, the supporting sentences may be too far away from each other on a word level to allow for these distant sentences to interact through the word level GRU."
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We speculate that there are two main reasons for this performance disparity, all exacerbated by the removal of supporting facts. First, the GRU only allows sentences to have context from sentences before them, but not after them. This prevents information propagation from future sentences. Second, the supporting sentences may be too far away from each other on a word level to allow for these distant sentences to interact through the word level GRU."
+      ],
+      "highlighted_evidence": [
+        "First, the GRU only allows sentences to have context from sentences before them, but not after them. This prevents information propagation from future sentences. Second, the supporting sentences may be too far away from each other on a word level to allow for these distant sentences to interact through the word level GRU."
+      ]
+    }
+  },
+  {
+    "paper_id": "1603.01417",
+    "question": "What does supporting fact supervision mean?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        " the facts that are relevant for answering a particular question) are labeled during training."
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We analyze the DMN components, specifically the input module and memory module, to improve question answering. We propose a new input module which uses a two level encoder with a sentence reader and input fusion layer to allow for information flow between sentences. For the memory, we propose a modification to gated recurrent units (GRU) BIBREF7 . The new GRU formulation incorporates attention gates that are computed using global knowledge over the facts. Unlike before, the new DMN+ model does not require that supporting facts (i.e. the facts that are relevant for answering a particular question) are labeled during training. The model learns to select the important facts from a larger set."
+      ],
+      "highlighted_evidence": [
+        "the facts that are relevant for answering a particular question) are labeled during training."
+      ]
+    }
+  },
+  {
+    "paper_id": "1603.01417",
+    "question": "What changes they did on input module?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "For the DMN+, we propose replacing this single GRU with two different components. The first component is a sentence reader",
+        "The second component is the input fusion layer"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "For the DMN+, we propose replacing this single GRU with two different components. The first component is a sentence reader, responsible only for encoding the words into a sentence embedding. The second component is the input fusion layer, allowing for interactions between sentences. This resembles the hierarchical neural auto-encoder architecture of BIBREF9 and allows content interaction between sentences. We adopt the bi-directional GRU for this input fusion layer because it allows information from both past and future sentences to be used. As gradients do not need to propagate through the words between sentences, the fusion layer also allows for distant supporting sentences to have a more direct interaction."
+      ],
+      "highlighted_evidence": [
+        "replacing this single GRU with two different components",
+        "first component is a sentence reader",
+        "second component is the input fusion layer"
+      ]
+    }
+  },
+  {
+    "paper_id": "1603.01417",
+    "question": "What improvements they did for DMN?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "the new DMN+ model does not require that supporting facts (i.e. the facts that are relevant for answering a particular question) are labeled during training.",
+        "In addition, we introduce a new input module to represent images."
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We analyze the DMN components, specifically the input module and memory module, to improve question answering. We propose a new input module which uses a two level encoder with a sentence reader and input fusion layer to allow for information flow between sentences. For the memory, we propose a modification to gated recurrent units (GRU) BIBREF7 . The new GRU formulation incorporates attention gates that are computed using global knowledge over the facts. Unlike before, the new DMN+ model does not require that supporting facts (i.e. the facts that are relevant for answering a particular question) are labeled during training. The model learns to select the important facts from a larger set.",
+        "In addition, we introduce a new input module to represent images. This module is compatible with the rest of the DMN architecture and its output is fed into the memory module. We show that the changes in the memory module that improved textual question answering also improve visual question answering. Both tasks are illustrated in Fig. 1 ."
+      ],
+      "highlighted_evidence": [
+        "the new DMN+ model does not require that supporting facts",
+        "In addition, we introduce a new input module to represent images."
+      ]
+    }
+  },
+  {
+    "paper_id": "1603.01417",
+    "question": "How does the model circumvent the lack of supporting facts during training?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "the input fusion layer to allow interactions between input facts and a novel attention based GRU that allows for logical reasoning over ordered inputs. "
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We have proposed new modules for the DMN framework to achieve strong results without supervision of supporting facts. These improvements include the input fusion layer to allow interactions between input facts and a novel attention based GRU that allows for logical reasoning over ordered inputs. Our resulting model obtains state of the art results on both the VQA dataset and the bAbI-10k text question-answering dataset, proving the framework can be generalized across input domains."
+      ],
+      "highlighted_evidence": [
+        " the input fusion layer to allow interactions between input facts and a novel attention based GRU that allows for logical reasoning over ordered inputs."
+      ]
+    }
+  },
+  {
+    "paper_id": "1804.06506",
+    "question": "How are the auxiliary signals from the morphology table incorporated in the decoder?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "an additional morphology table including target-side affixes.",
+        "We inject the decoder with morphological properties of the target language."
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In order to address the aforementioned problems we redesign the neural decoder in three different scenarios. In the first scenario we equip the decoder with an additional morphology table including target-side affixes. We place an attention module on top of the table which is controlled by the decoder. At each step, as the decoder samples a character, it searches the table to find the most relevant information which can enrich its state. Signals sent from the table can be interpreted as additional constraints. In the second scenario we share the decoder between two output channels. The first one samples the target character and the other one predicts the morphological annotation of the character. This multi-tasking approach forces the decoder to send morphology-aware information to the final layer which results in better predictions. In the third scenario we combine these two models. Section \"Proposed Architecture\" provides more details on our models."
+      ],
+      "highlighted_evidence": [
+        "In the first scenario we equip the decoder with an additional morphology table including target-side affixes. We place an attention module on top of the table which is controlled by the decoder. At each step, as the decoder samples a character, it searches the table to find the most relevant information which can enrich its state. Signals sent from the table can be interpreted as additional constraints. In the second scenario we share the decoder between two output channels. The first one samples the target character and the other one predicts the morphological annotation of the character. This multi-tasking approach forces the decoder to send morphology-aware information to the final layer which results in better predictions. In the third scenario we combine these two models. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1804.06506",
+    "question": "What type of morphological information is contained in the \"morphology table\"?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "target-side affixes"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In order to address the aforementioned problems we redesign the neural decoder in three different scenarios. In the first scenario we equip the decoder with an additional morphology table including target-side affixes. We place an attention module on top of the table which is controlled by the decoder. At each step, as the decoder samples a character, it searches the table to find the most relevant information which can enrich its state. Signals sent from the table can be interpreted as additional constraints. In the second scenario we share the decoder between two output channels. The first one samples the target character and the other one predicts the morphological annotation of the character. This multi-tasking approach forces the decoder to send morphology-aware information to the final layer which results in better predictions. In the third scenario we combine these two models. Section \"Proposed Architecture\" provides more details on our models."
+      ],
+      "highlighted_evidence": [
+        "In the first scenario we equip the decoder with an additional morphology table including target-side affixes."
+      ]
+    }
+  },
+  {
+    "paper_id": "1908.06725",
+    "question": "How do they select answer candidates for their QA task?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "AMS method."
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Each training sample is generated by three steps: align, mask and select, which we call as AMS method. Each sample in the dataset consists of a question and several candidate answers, which has the same form as the CommonsenseQA dataset. An example of constructing one training sample by masking concept $_2$ is shown in Table 2 ."
+      ],
+      "highlighted_evidence": [
+        "Each training sample is generated by three steps: align, mask and select, which we call as AMS method. Each sample in the dataset consists of a question and several candidate answers, which has the same form as the CommonsenseQA dataset."
+      ]
+    }
+  },
+  {
+    "paper_id": "2004.02929",
+    "question": "What is the performance of the CRF model on the task described?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "the results obtained on development and test set (F1 = 89.60, F1 = 87.82) and the results on the supplemental test set (F1 = 71.49)"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Results on all sets show an important difference between precision and recall, precision being significantly higher than recall. There is also a significant difference between the results obtained on development and test set (F1 = 89.60, F1 = 87.82) and the results on the supplemental test set (F1 = 71.49). The time difference between the supplemental test set and the development and test set (the headlines from the the supplemental test set being from a different time period to the training set) can probably explain these differences."
+      ],
+      "highlighted_evidence": [
+        "Results on all sets show an important difference between precision and recall, precision being significantly higher than recall. There is also a significant difference between the results obtained on development and test set (F1 = 89.60, F1 = 87.82) and the results on the supplemental test set (F1 = 71.49). The time difference between the supplemental test set and the development and test set (the headlines from the the supplemental test set being from a different time period to the training set) can probably explain these differences."
+      ]
+    }
+  },
+  {
+    "paper_id": "2004.02929",
+    "question": "Does the paper motivate the use of CRF as the baseline model?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "the task of detecting anglicisms can be approached as a sequence labeling problem where only certain spans of texts will be labeled as anglicism (in a similar way to an NER task). The chosen model was conditional random field model (CRF), which was also the most popular model in both Shared Tasks on Language Identification for Code-Switched Data"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "A baseline model for automatic extraction of anglicisms was created using the annotated corpus we just presented as training material. As mentioned in Section 3, the task of detecting anglicisms can be approached as a sequence labeling problem where only certain spans of texts will be labeled as anglicism (in a similar way to an NER task). The chosen model was conditional random field model (CRF), which was also the most popular model in both Shared Tasks on Language Identification for Code-Switched Data BIBREF23, BIBREF24."
+      ],
+      "highlighted_evidence": [
+        "A baseline model for automatic extraction of anglicisms was created using the annotated corpus we just presented as training material. As mentioned in Section 3, the task of detecting anglicisms can be approached as a sequence labeling problem where only certain spans of texts will be labeled as anglicism (in a similar way to an NER task). The chosen model was conditional random field model (CRF), which was also the most popular model in both Shared Tasks on Language Identification for Code-Switched Data BIBREF23, BIBREF24."
+      ]
+    }
+  },
+  {
+    "paper_id": "2004.02929",
+    "question": "What are the handcrafted features used?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Bias feature",
+        "Token feature",
+        "Uppercase feature (y/n)",
+        "Titlecase feature (y/n)",
+        "Character trigram feature",
+        "Quotation feature (y/n)",
+        "Word suffix feature (last three characters)",
+        "POS tag (provided by spaCy utilities)",
+        "Word shape (provided by spaCy utilities)",
+        "Word embedding (see Table TABREF26)"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The following handcrafted features were used for the model:",
+        "Bias feature",
+        "Token feature",
+        "Uppercase feature (y/n)",
+        "Titlecase feature (y/n)",
+        "Character trigram feature",
+        "Quotation feature (y/n)",
+        "Word suffix feature (last three characters)",
+        "POS tag (provided by spaCy utilities)",
+        "Word shape (provided by spaCy utilities)",
+        "Word embedding (see Table TABREF26)"
+      ],
+      "highlighted_evidence": [
+        "The following handcrafted features were used for the model:\n\nBias feature\n\nToken feature\n\nUppercase feature (y/n)\n\nTitlecase feature (y/n)\n\nCharacter trigram feature\n\nQuotation feature (y/n)\n\nWord suffix feature (last three characters)\n\nPOS tag (provided by spaCy utilities)\n\nWord shape (provided by spaCy utilities)\n\nWord embedding (see Table TABREF26)"
+      ]
+    }
+  },
+  {
+    "paper_id": "1710.07395",
+    "question": "How do they combine the models?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "maximum of two scores assigned by the two separate models",
+        "average score"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Table TABREF24 shows performance of ensemble models by combining prediction results of the best context-aware logistic regression model and the best context-aware neural network model. We used two strategies in combining prediction results of two types of models. Specifically, the Max Score Ensemble model made the final decisions based on the maximum of two scores assigned by the two separate models; instead, the Average Score Ensemble model used the average score to make final decisions."
+      ],
+      "highlighted_evidence": [
+        "We used two strategies in combining prediction results of two types of models. Specifically, the Max Score Ensemble model made the final decisions based on the maximum of two scores assigned by the two separate models; instead, the Average Score Ensemble model used the average score to make final decisions."
+      ]
+    }
+  },
+  {
+    "paper_id": "1710.07395",
+    "question": "What is their baseline?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Logistic regression model with character-level n-gram features"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "For logistic regression model implementation, we use l2 loss. We adopt the balanced class weight as described in Scikit learn. Logistic regression model with character-level n-gram features is presented as a strong baseline for comparison since it was shown very effective. BIBREF0 , BIBREF9"
+      ],
+      "highlighted_evidence": [
+        " Logistic regression model with character-level n-gram features is presented as a strong baseline for comparison since it was shown very effective."
+      ]
+    }
+  },
+  {
+    "paper_id": "1710.07395",
+    "question": "What context do they use?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "title of the news article",
+        "screen name of the user"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In logistic regression models, we extract four types of features, word-level and character-level n-gram features as well as two types of lexicon derived features. We extract these four types of features from the target comment first. Then we extract these features from two sources of context texts, specifically the title of the news article that the comment was posted for and the screen name of the user who posted the comment."
+      ],
+      "highlighted_evidence": [
+        "Then we extract these features from two sources of context texts, specifically the title of the news article that the comment was posted for and the screen name of the user who posted the comment."
+      ]
+    }
+  },
+  {
+    "paper_id": "1710.07395",
+    "question": "What is their definition of hate speech?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "language which explicitly or implicitly threatens or demeans a person or a group based upon a facet of their identity such as gender, ethnicity, or sexual orientation"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Our annotation guidelines are similar to the guidelines used by BIBREF9 . We define hateful speech to be the language which explicitly or implicitly threatens or demeans a person or a group based upon a facet of their identity such as gender, ethnicity, or sexual orientation. The labeling of hateful speech in our corpus is binary. A comment will be labeled as hateful or non-hateful."
+      ],
+      "highlighted_evidence": [
+        "We define hateful speech to be the language which explicitly or implicitly threatens or demeans a person or a group based upon a facet of their identity such as gender, ethnicity, or sexual orientation."
+      ]
+    }
+  },
+  {
+    "paper_id": "1710.07395",
+    "question": "What architecture has the neural network?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "three parallel LSTM BIBREF21 layers"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Our neural network model mainly consists of three parallel LSTM BIBREF21 layers. It has three different inputs, including the target comment, its news title and its username. Comment and news title are encoded into a sequence of word embeddings. We use pre-trained word embeddings in word2vec. Username is encoded into a sequence of characters. We use one-hot encoding of characters."
+      ],
+      "highlighted_evidence": [
+        "Our neural network model mainly consists of three parallel LSTM BIBREF21 layers."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.02754",
+    "question": "What is result of their attention distribution analysis?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "visual attention is very sparse",
+        " visual component of the attention hasn't learnt any variation over the source encodings"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In this section, we analyze the visual and text based attention mechanisms. We find that the visual attention is very sparse, in that just one source encoding is attended to (the maximum visual attention over source encodings, across the test set, has mean 0.99 and standard deviation 0.015), thereby limiting the use of modulation. Thus, in practice, we find that a small weight ($\\gamma =0.1$) is necessary to prevent degradation due to this sparse visual attention component. Figure FIGREF18 & FIGREF19 shows the comparison of visual and text based attention for two sentences, one long source sentence of length 21 and one short source sentence of length 7. In both cases, we find that the visual component of the attention hasn't learnt any variation over the source encodings, again suggesting that the visual embeddings do not lend themselves to enhancing token-level discriminativess during prediction. We find this to be consistent across sentences of different lengths."
+      ],
+      "highlighted_evidence": [
+        "We find that the visual attention is very sparse, in that just one source encoding is attended to (the maximum visual attention over source encodings, across the test set, has mean 0.99 and standard deviation 0.015), thereby limiting the use of modulation.",
+        "In both cases, we find that the visual component of the attention hasn't learnt any variation over the source encodings, again suggesting that the visual embeddings do not lend themselves to enhancing token-level discriminativess during prediction. We find this to be consistent across sentences of different lengths."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.02754",
+    "question": "What is result of their Principal Component Analysis?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "existing visual features aren't sufficient enough to expect benefits from the visual modality in NMT"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Figure FIGREF14 (Top) shows the variance explained by the Top 100 principal components, obtained by applying PCA on the How2 and Multi30k training set visual features. The original feature dimensions are 2048 in both the cases. It is clear from the Figure FIGREF14 that most of the energy of the visual feature space resides in a low-dimensional subspace BIBREF14. In other words, there exist a few directions in the embedding space which disproportionately explain the variance. These \"common\" directions affect all of the embeddings in the same way, rendering them less discriminative. Figure FIGREF14 also shows the cumulative variance explained by Top 10, 20, 50 and 100 principal components respectively. It is clear that the visual features in the case of How2 dataset are much more dominated by the \"common\" dimensions, when compared to the Multi30k dataset. Further, this analysis is still at the sentence level, i.e. the visual features are much less discriminative among individual sentences, further aggravating the problem at the token level. This suggests that the existing visual features aren't sufficient enough to expect benefits from the visual modality in NMT, since they won't provide discriminativeness among the vocabulary elements at the token level during prediction. Further, this also indicates that under subword vocabulary such as BPE BIBREF15 or Sentence-Piece BIBREF16, the utility of such visual embeddings will only aggravate."
+      ],
+      "highlighted_evidence": [
+        "In other words, there exist a few directions in the embedding space which disproportionately explain the variance.",
+        "It is clear that the visual features in the case of How2 dataset are much more dominated by the \"common\" dimensions, when compared to the Multi30k dataset. Further, this analysis is still at the sentence level, i.e. the visual features are much less discriminative among individual sentences, further aggravating the problem at the token level. This suggests that the existing visual features aren't sufficient enough to expect benefits from the visual modality in NMT, since they won't provide discriminativeness among the vocabulary elements at the token level during prediction."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.02754",
+    "question": "What are 3 novel fusion techniques that are proposed?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Step-Wise Decoder Fusion",
+        "Multimodal Attention Modulation",
+        "Visual-Semantic (VS) Regularizer"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Proposed Fusion Techniques ::: Step-Wise Decoder Fusion",
+        "Our first proposed technique is the step-wise decoder fusion of visual features during every prediction step i.e. we concatenate the visual encoding as context at each step of the decoding process. This differs from the usual practice of passing the visual feature only at the beginning of the decoding process BIBREF5.",
+        "Proposed Fusion Techniques ::: Multimodal Attention Modulation",
+        "Similar to general attention BIBREF8, wherein a variable-length alignment vector $a_{th}(s)$, whose size equals the number of time steps on the source side, is derived by comparing the current target hidden state $h_{t}$ with each source hidden state $\\overline{h_{s}}$; we consider a variant wherein the visual encoding $v_{t}$ is used to calculate an attention distribution $a_{tv}(s)$ over the source encodings as well. Then, the true attention distribution $a_{t}(s)$ is computed as an interpolation between the visual and text based attention scores. The score function is a content based scoring mechanism as usual.",
+        "Proposed Fusion Techniques ::: Visual-Semantic (VS) Regularizer",
+        "In terms of leveraging the visual modality for supervision, BIBREF1 use multi-task learning to learn grounded representations through image representation prediction. However, to our knowledge, visual-semantic supervision hasn't been much explored for multimodal translation in terms of loss functions."
+      ],
+      "highlighted_evidence": [
+        "Proposed Fusion Techniques ::: Step-Wise Decoder Fusion\nOur first proposed technique is the step-wise decoder fusion of visual features during every prediction step i.e. we concatenate the visual encoding as context at each step of the decoding process.",
+        "Proposed Fusion Techniques ::: Multimodal Attention Modulation\nSimilar to general attention BIBREF8, wherein a variable-length alignment vector $a_{th}(s)$, whose size equals the number of time steps on the source side, is derived by comparing the current target hidden state $h_{t}$ with each source hidden state $\\overline{h_{s}}$; we consider a variant wherein the visual encoding $v_{t}$ is used to calculate an attention distribution $a_{tv}(s)$ over the source encodings as well.",
+        "Proposed Fusion Techniques ::: Visual-Semantic (VS) Regularizer\nIn terms of leveraging the visual modality for supervision, BIBREF1 use multi-task learning to learn grounded representations through image representation prediction."
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.03786",
+    "question": "what classifiers were used in this paper?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Support Vector Machines (SVM) classifier"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We feed the above-described hand-crafted features together with the task-specific embeddings learned by the deep neural neural network (a total of 1,892 attributes combined) into a Support Vector Machines (SVM) classifier BIBREF37 . SVMs have proven to perform well in different classification settings, including in the case of small and noisy datasets."
+      ],
+      "highlighted_evidence": [
+        "We feed the above-described hand-crafted features together with the task-specific embeddings learned by the deep neural neural network (a total of 1,892 attributes combined) into a Support Vector Machines (SVM) classifier BIBREF37 ."
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.03786",
+    "question": "what are their evaluation metrics?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "F1",
+        "accuracy"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Evaluating the final model, we set as a baseline the prediction of the majority class, i.e., the fake news class. This baseline has an F1 of 41.59% and accuracy of 71.22%. The performance of the built models can be seen in Table TABREF19 . Another stable baseline, apart from just taking the majority class, is the TF.IDF bag-of-words approach, which sets a high bar for the general model score. We then observe how much the attention mechanism embeddings improve the score (AttNN). Finally, we add the hand-crafted features (Feats), which further improve the performance. From the results, we can conclude that both the attention-based task-specific embeddings and the manual features are important for the task of finding fake news."
+      ],
+      "highlighted_evidence": [
+        " This baseline has an F1 of 41.59% and accuracy of 71.22%."
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.03786",
+    "question": "what types of features were used?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "stylometric, lexical, grammatical, and semantic"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We have presented the first attempt to solve the fake news problem for Bulgarian. Our method is purely text-based, and ignores the publication date and the source of the article. It combines task-specific embeddings, produced by a two-level attention-based deep neural network model, with manually crafted features (stylometric, lexical, grammatical, and semantic), into a kernel-based SVM classifier. We further produced and shared a number of relevant language resources for Bulgarian, which we created for solving the task."
+      ],
+      "highlighted_evidence": [
+        "Our method is purely text-based, and ignores the publication date and the source of the article. It combines task-specific embeddings, produced by a two-level attention-based deep neural network model, with manually crafted features (stylometric, lexical, grammatical, and semantic), into a kernel-based SVM classifier."
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.03786",
+    "question": "what lexical features did they experiment with?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "TF.IDF-based features"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "General lexical features are often used in natural language processing as they are somewhat task-independent and reasonably effective in terms of classification accuracy. In our experiments, we used TF.IDF-based features over the title and over the content of the article we wanted to classify. We had these features twice – once for the title and once for the the content of the article, as we wanted to have two different representations of the same article. Thus, we used a total of 1,100 TF.IDF-weighted features (800 content + 300 title), limiting the vocabulary to the top 800 and 300 words, respectively (which occurred in more than five articles). We should note that TF.IDF features should be used with caution as they may not remain relevant over time or in different contexts without retraining."
+      ],
+      "highlighted_evidence": [
+        "In our experiments, we used TF.IDF-based features over the title and over the content of the article we wanted to classify. We had these features twice – once for the title and once for the the content of the article, as we wanted to have two different representations of the same article. Thus, we used a total of 1,100 TF.IDF-weighted features (800 content + 300 title), limiting the vocabulary to the top 800 and 300 words, respectively (which occurred in more than five articles)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.03786",
+    "question": "what is the size of the dataset?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "The number of fake news that have a duplicate in the training dataset are 1018 whereas, the number of articles with genuine content that have a duplicate article in the training set is 322."
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "In particular, the training dataset contains 434 unique articles with duplicates. These articles have three reposts each on average, with the most reposted article appearing 45 times. If we take into account the labels of the reposted articles, we can see that if an article is reposted, it is more likely to be fake news. The number of fake news that have a duplicate in the training dataset are 1018 whereas, the number of articles with genuine content that have a duplicate article in the training set is 322. We detect the duplicates based on their titles as far as they are distinctive enough and the content is sometimes slightly modified when reposted."
+      ],
+      "highlighted_evidence": [
+        "The number of fake news that have a duplicate in the training dataset are 1018 whereas, the number of articles with genuine content that have a duplicate article in the training set is 322."
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.03786",
+    "question": "what datasets were used?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        " training dataset contains 2,815 examples",
+        "761 testing examples"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The training dataset contains 2,815 examples, where 1,940 (i.e., 69%) are fake news and 1,968 (i.e., 70%) are click-baits; we further have 761 testing examples. However, there is 98% correlation between fake news and click-baits, i.e., a model trained on fake news would do well on click-baits and vice versa. Thus, below we focus on fake news detection only."
+      ],
+      "highlighted_evidence": [
+        "The training dataset contains 2,815 examples, where 1,940 (i.e., 69%) are fake news and 1,968 (i.e., 70%) are click-baits; we further have 761 testing examples."
+      ]
+    }
+  },
+  {
+    "paper_id": "1808.02113",
+    "question": "How do they gather human reviews?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "human representative to review the IVA chat history and resume the failed task"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Our application is the escalation of Internet chats. To maintain quality of service, users are transferred to human representatives when their conversations with an intelligent virtual assistant (IVA) fail to progress. These transfers are known as escalations. We apply Han to such conversations in a sequential manner by feeding each user turn to Han as they occur, to determine if the conversation should escalate. If so, the user will be transferred to a live chat representative to continue the conversation. To help the human representative quickly determine the cause of the escalation, we generate a visualization of the user's turns using the attention weights to highlight the turns influential in the escalation decision. This helps the representative quickly scan the conversation history and determine the best course of action based on problematic turns.",
+        "Our application requires that the visualizations be generated in real-time at the point of escalation. The user must wait for the human representative to review the IVA chat history and resume the failed task. Therefore, we seek visualization methods that do not add significant latency to the escalation transfer. Using the attention weights for turn influence is fast as they were already computed at the time of classification. However, these weights will not generate useful visualizations for the representatives when their values are similar across all turns (see Han Weight in Table TABREF1 ). To overcome this problem, we develop a visualization method to be applied in the instances where the attention weights are uniform. Our method produces informative visuals for determining influential samples in a sequence by observing the changes in sample importance over the cumulative sequence (see Our Weight in Table TABREF1 ). Note that we present a technique that only serves to resolve situations when the existing attention weights are ambiguous; we are not developing a new attention mechanism, and, as our method is external, it does not require any changes to the existing model to apply."
+      ],
+      "highlighted_evidence": [
+        "We apply Han to such conversations in a sequential manner by feeding each user turn to Han as they occur, to determine if the conversation should escalate. If so, the user will be transferred to a live chat representative to continue the conversation.",
+        "The user must wait for the human representative to review the IVA chat history and resume the failed task."
+      ]
+    }
+  },
+  {
+    "paper_id": "1808.02113",
+    "question": "Can their method of creating more informative visuals be applied to tasks other than turn taking in conversations?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "computationally inexpensive means to understand what happened at the stopping point"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Although attention in deep neural networks was not initially introduced to inform observers, but to help a model make predictions, it can also be used to inform. In the instances where a model thinks all historical samples should be considered equally important in a sequential analysis task, we must look elsewhere for a computationally inexpensive means to understand what happened at the stopping point. In this paper, we have introduced such a means by monitoring attention changes over the sequential analysis to inform observers. This method introduces negligible overhead, an important consideration in real-time systems, and is not tied to the implementation details or task of the model, other than the prerequisite of an attention layer."
+      ],
+      "highlighted_evidence": [
+        "In the instances where a model thinks all historical samples should be considered equally important in a sequential analysis task, we must look elsewhere for a computationally inexpensive means to understand what happened at the stopping point."
+      ]
+    }
+  },
+  {
+    "paper_id": "2003.08370",
+    "question": "How much labeled data is available for these two languages?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "10k training and 1k test",
+        "1,101 sentences (26k tokens)"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The Hausa data used in this paper is part of the LORELEI language pack. It consists of Broad Operational Language Translation (BOLT) data gathered from news sites, forums, weblogs, Wikipedia articles and twitter messages. We use a split of 10k training and 1k test instances. Due to the Hausa data not being publicly available at the time of writing, we could only perform a limited set of experiments on it.",
+        "The Yorùbá NER data used in this work is the annotated corpus of Global Voices news articles recently released by BIBREF22. The dataset consists of 1,101 sentences (26k tokens) divided into 709 training sentences, 113 validation sentences and 279 test sentences based on 65%/10%/25% split ratio. The named entities in the dataset are personal names (PER), organization (ORG), location (LOC) and date & time (DATE). All other tokens are assigned a tag of \"O\"."
+      ],
+      "highlighted_evidence": [
+        "The Hausa data used in this paper is part of the LORELEI language pack. It consists of Broad Operational Language Translation (BOLT) data gathered from news sites, forums, weblogs, Wikipedia articles and twitter messages. We use a split of 10k training and 1k test instances.",
+        "The Yorùbá NER data used in this work is the annotated corpus of Global Voices news articles recently released by BIBREF22. The dataset consists of 1,101 sentences (26k tokens) divided into 709 training sentences, 113 validation sentences and 279 test sentences based on 65%/10%/25% split ratio."
+      ]
+    }
+  },
+  {
+    "paper_id": "2003.08370",
+    "question": "What classifiers were used in experiments?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Bi-LSTM",
+        "BERT"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The Bi-LSTM model consists of a Bi-LSTM layer followed by a linear layer to extract input features. The Bi-LSTM layer has a 300-dimensional hidden state for each direction. For the final classification, an additional linear layer is added to output predicted class distributions. For noise handling, we experiment with the Confusion Matrix model by BIBREF38 and the Cleaning model by BIBREF39. We repeat all the Bi-LSTM experiments 20 times and report the average F1-score (following the approach by BIBREF41) and the standard error.",
+        "The BERT model is obtained by fine-tuning the pre-trained BERT embeddings on NER data with an additional untrained CRF classifier. We fine-tuned all the parameters of BERT including that of the CRF end-to-end. This has been shown to give better performance than using word features extracted from BERT to train a classifier BIBREF19. The evaluation result is obtained as an average of 5 runs, we report the F1-score and the standard error in the result section."
+      ],
+      "highlighted_evidence": [
+        "The Bi-LSTM model consists of a Bi-LSTM layer followed by a linear layer to extract input features. The Bi-LSTM layer has a 300-dimensional hidden state for each direction. For the final classification, an additional linear layer is added to output predicted class distributions.",
+        "The BERT model is obtained by fine-tuning the pre-trained BERT embeddings on NER data with an additional untrained CRF classifier. We fine-tuned all the parameters of BERT including that of the CRF end-to-end."
+      ]
+    }
+  },
+  {
+    "paper_id": "2003.08370",
+    "question": "In which countries are Hausa and Yor\\`ub\\'a spoken?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Nigeria",
+        "Benin, Ghana, Cameroon, Togo, Côte d'Ivoire, Chad, Burkina Faso, and Sudan",
+        "Republic of Togo, Ghana, Côte d'Ivoire, Sierra Leone, Cuba and Brazil"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Hausa language is the second most spoken indigenous language in Africa with over 40 million native speakers BIBREF20, and one of the three major languages in Nigeria, along with Igbo and Yorùbá. The language is native to the Northern part of Nigeria and the southern part of Niger, and it is widely spoken in West and Central Africa as a trade language in eight other countries: Benin, Ghana, Cameroon, Togo, Côte d'Ivoire, Chad, Burkina Faso, and Sudan. Hausa has several dialects but the one regarded as standard Hausa is the Kananci spoken in the ancient city of Kano in Nigeria. Kananci is the dialect popularly used in many local (e.g VON news) and international news media such as BBC, VOA, DW and Radio France Internationale. Hausa is a tone language but the tones are often ignored in writings, the language is written in a modified Latin alphabet. Despite the popularity of Hausa as an important regional language in Africa and it's popularity in news media, it has very little or no labelled data for common NLP tasks such as text classification, named entity recognition and question answering.",
+        "Yorùbá language is the third most spoken indigenous language in Africa after Swahilli and Hausa with over 35 million native speakers BIBREF20. The language is native to the South-western part of Nigeria and the Southern part of Benin, and it is also spoken in other countries like Republic of Togo, Ghana, Côte d'Ivoire, Sierra Leone, Cuba and Brazil. Yorùbá has several dialects but the written language has been standardized by the 1974 Joint Consultative Committee on Education BIBREF21, it has 25 letters without the Latin characters (c, q, v, x and z) and with additional characters (ẹ, gb, ṣ , ọ). Yorùbá is a tone language and the tones are represented as diacritics in written text, there are three tones in Yorùbá namely low ( \\), mid (“$-$”) and high ($/$). The mid tone is usually ignored in writings. Often time articles written online including news articles like BBC and VON ignore diacritics. Ignoring diacritics makes it difficult to identify or pronounce words except they are in a context. For example, owó (money), ọw (broom), òwò (business), w (honour), ọw (hand), and w (group) will be mapped to owo without diacritics. Similar to the Hausa language, there are few or no labelled datasets for NLP tasks."
+      ],
+      "highlighted_evidence": [
+        "Hausa language is the second most spoken indigenous language in Africa with over 40 million native speakers BIBREF20, and one of the three major languages in Nigeria, along with Igbo and Yorùbá. The language is native to the Northern part of Nigeria and the southern part of Niger, and it is widely spoken in West and Central Africa as a trade language in eight other countries: Benin, Ghana, Cameroon, Togo, Côte d'Ivoire, Chad, Burkina Faso, and Sudan.",
+        "Yorùbá language is the third most spoken indigenous language in Africa after Swahilli and Hausa with over 35 million native speakers BIBREF20. The language is native to the South-western part of Nigeria and the Southern part of Benin, and it is also spoken in other countries like Republic of Togo, Ghana, Côte d'Ivoire, Sierra Leone, Cuba and Brazil."
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.11602",
+    "question": "What were the baselines?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "$\\textsc {Lead-X}$",
+        "$\\textsc {PTGen}$",
+        "$\\textsc {DRM}$",
+        "$\\textsc {TConvS2S}$",
+        " $\\textsc {BottomUp}$",
+        "ABS",
+        "DRGD",
+        "SEQ$^3$",
+        "BottleSum",
+        "GPT-2"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "To compare with our model, we select a number of strong summarization models as baseline systems. $\\textsc {Lead-X}$ uses the top $X$ sentences as a summary BIBREF19. The value of $X$ is 3 for NYT and CNN/DailyMail and 1 for XSum to accommodate the nature of summary length. $\\textsc {PTGen}$ BIBREF4 is the pointer-generator network. $\\textsc {DRM}$ BIBREF10 leverages deep reinforcement learning for summarization. $\\textsc {TConvS2S}$ BIBREF2 is based on convolutional neural networks. $\\textsc {BottomUp}$ BIBREF11 uses a bottom-up approach to generate summarization. ABS BIBREF26 uses neural attention for summary generation. DRGD BIBREF27 is based on a deep recurrent generative decoder. To compare with our pretrain-only model, we include several unsupervised abstractive baselines: SEQ$^3$ BIBREF28 employs the reconstruction loss and topic loss for summarization. BottleSum BIBREF23 leverages unsupervised extractive and self-supervised abstractive methods. GPT-2 BIBREF7 is a large-scaled pretrained language model which can be directly used to generate summaries."
+      ],
+      "highlighted_evidence": [
+        "To compare with our model, we select a number of strong summarization models as baseline systems. $\\textsc {Lead-X}$ uses the top $X$ sentences as a summary BIBREF19.",
+        "$\\textsc {DRM}$ BIBREF10 leverages deep reinforcement learning for summarization. $\\textsc {TConvS2S}$ BIBREF2 is based on convolutional neural networks. $\\textsc {BottomUp}$ BIBREF11 uses a bottom-up approach to generate summarization. ABS BIBREF26 uses neural attention for summary generation. DRGD BIBREF27 is based on a deep recurrent generative decoder. To compare with our pretrain-only model, we include several unsupervised abstractive baselines: SEQ$^3$ BIBREF28 employs the reconstruction loss and topic loss for summarization. BottleSum BIBREF23 leverages unsupervised extractive and self-supervised abstractive methods. GPT-2 BIBREF7 is a large-scaled pretrained language model which can be directly used to generate summaries."
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.11602",
+    "question": "What metric was used in the evaluation step?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "ROUGE-1, ROUGE-2 and ROUGE-L",
+        "F-measure ROUGE on XSUM and CNN/DailyMail, and use limited-length recall-measure ROUGE on NYT and DUC"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "We employ the standard ROUGE-1, ROUGE-2 and ROUGE-L metrics BIBREF29 to evaluate all summarization models. These three metrics respectively evaluate the accuracy on unigrams, bigrams and longest common subsequence. ROUGE metrics have been shown to highly correlate with the human judgment BIBREF29. Following BIBREF22, BIBREF23, we use F-measure ROUGE on XSUM and CNN/DailyMail, and use limited-length recall-measure ROUGE on NYT and DUC. In NYT, the prediction is truncated to the length of the ground-truth summaries; in DUC, the prediction is truncated to 75 characters."
+      ],
+      "highlighted_evidence": [
+        "We employ the standard ROUGE-1, ROUGE-2 and ROUGE-L metrics BIBREF29 to evaluate all summarization models.",
+        "Following BIBREF22, BIBREF23, we use F-measure ROUGE on XSUM and CNN/DailyMail, and use limited-length recall-measure ROUGE on NYT and DUC."
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.11602",
+    "question": "What did they pretrain the model on?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "hree years of online news articles from June 2016 to June 2019"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Pretraining. We collect three years of online news articles from June 2016 to June 2019. We filter out articles overlapping with the evaluation data on media domain and time range. We then conduct several data cleaning strategies."
+      ],
+      "highlighted_evidence": [
+        "Pretraining. We collect three years of online news articles from June 2016 to June 2019. We filter out articles overlapping with the evaluation data on media domain and time range. We then conduct several data cleaning strategies."
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.11602",
+    "question": "What does the data cleaning and filtering process consist of?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "many news articles begin with reporter names, media agencies, dates or other contents irrelevant to the content",
+        "to ensure that the summary is concise and the article contains enough salient information, we only keep articles with 10-150 words in the top three sentences and 150-1200 words in the rest, and that contain at least 6 sentences in total",
+        "we try to remove articles whose top three sentences may not form a relevant summary"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "First, many news articles begin with reporter names, media agencies, dates or other contents irrelevant to the content, e.g. “New York (CNN) –”, “Jones Smith, May 10th, 2018:”. We therefore apply simple regular expressions to remove these prefixes.",
+        "Second, to ensure that the summary is concise and the article contains enough salient information, we only keep articles with 10-150 words in the top three sentences and 150-1200 words in the rest, and that contain at least 6 sentences in total. In this way, we filter out i) articles with excessively long content to reduce memory consumption; ii) very short leading sentences with little information which are unlikely to be a good summary. To encourage the model to generate abstrative summaries, we also remove articles where any of the top three sentences is exactly repeated in the rest of the article.",
+        "Third, we try to remove articles whose top three sentences may not form a relevant summary. For this purpose, we utilize a simple metric: overlapping words. We compute the portion of non-stopping words in the top three sentences that are also in the rest of an article. A higher portion implies that the summary is representative and has a higher chance of being inferred by the model using the rest of the article. To verify, we compute the overlapping ratio of non-stopping words between human-edited summary and the article in CNN/DailyMail dataset, which has a median value of 0.87. Therefore, in pretraining, we keep articles with an overlapping word ratio higher than 0.65."
+      ],
+      "highlighted_evidence": [
+        "First, many news articles begin with reporter names, media agencies, dates or other contents irrelevant to the content, e.g. “New York (CNN) –”, “Jones Smith, May 10th, 2018:”. We therefore apply simple regular expressions to remove these prefixes.\n\nSecond, to ensure that the summary is concise and the article contains enough salient information, we only keep articles with 10-150 words in the top three sentences and 150-1200 words in the rest, and that contain at least 6 sentences in total. In this way, we filter out i) articles with excessively long content to reduce memory consumption; ii) very short leading sentences with little information which are unlikely to be a good summary. To encourage the model to generate abstrative summaries, we also remove articles where any of the top three sentences is exactly repeated in the rest of the article.\n\nThird, we try to remove articles whose top three sentences may not form a relevant summary."
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.11602",
+    "question": "What unlabeled corpus did they use?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "three years of online news articles from June 2016 to June 2019"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Pretraining. We collect three years of online news articles from June 2016 to June 2019. We filter out articles overlapping with the evaluation data on media domain and time range. We then conduct several data cleaning strategies."
+      ],
+      "highlighted_evidence": [
+        "We collect three years of online news articles from June 2016 to June 2019."
+      ]
+    }
+  },
+  {
+    "paper_id": "1906.10551",
+    "question": "Which is the best performing method?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "Caravel, COAV and NNCD"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The top performing approaches Caravel, COAV and NNCD deserve closer attention. All three are based on character-level language models that capture low-level features similar to character INLINEFORM0 -grams, which have been shown in numerous AA and AV studies (for instance, BIBREF39 , BIBREF26 ) to be highly effective and robust. In BIBREF19 , BIBREF28 , it has been shown that Caravel and COAV were also the two top-performing approaches, where in BIBREF19 they were evaluated on the PAN-2015 AV corpus BIBREF12 , while in BIBREF28 they were applied on texts obtained from Project Gutenberg. Although both approaches perform similarly, they differ in the way how the decision criterion INLINEFORM1 is determined. While COAV requires a training corpus to learn INLINEFORM2 , Caravel assumes that the given test corpus (which provides the impostors) is balanced. Given this assumption, Caravel first computes similarity scores for all verification problems in the corpus and then sets INLINEFORM3 to the median of all similarities (cf. Figure FIGREF49 ). Thus, from a machine learning perspective, there is some undue training on the test set. Moreover, the applicability of Caravel in realistic scenarios is questionable, as a forensic case is not part of a corpus where the Y/N-distribution is known beforehand."
+      ],
+      "highlighted_evidence": [
+        "The top performing approaches Caravel, COAV and NNCD deserve closer attention."
+      ]
+    }
+  },
+  {
+    "paper_id": "1906.10551",
+    "question": "What size are the corpora?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "80 excerpts from scientific works",
+        "collection of 1,645 chat conversations",
+        "collection of 200 aggregated postings"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "As a first corpus, we compiled INLINEFORM0 that represents a collection of 80 excerpts from scientific works including papers, dissertations, book chapters and technical reports, which we have chosen from the well-known Digital Bibliography & Library Project (DBLP) platform. Overall, the documents were written by 40 researchers, where for each author INLINEFORM1 , there are exactly two documents. Given the 80 documents, we constructed for each author INLINEFORM2 two verification problems INLINEFORM3 (a Y-case) and INLINEFORM4 (an N-case). For INLINEFORM5 we set INLINEFORM6 's first document as INLINEFORM7 and the second document as INLINEFORM8 . For INLINEFORM9 we reuse INLINEFORM10 from INLINEFORM11 as the known document and selected a text from another (random) author as the unknown document. The result of this procedure is a set of 80 verification problems, which we split into a training and test set based on a 40/60% ratio. Where possible, we tried to restrict the content of each text to the abstract and conclusion of the original work. However, since in many cases these sections were too short, we also considered other parts of the original works such as introduction or discussion sections. To ensure that the extracted text portions are appropriate for the AV task, each original work was preprocessed manually. More precisely, we removed tables, formulas, citations, quotes and sentences that include non-language content such as mathematical constructs or specific names of researchers, systems or algorithms. The average time span between both documents of an author is 15.6 years. The minimum and maximum time span are 6 and 40 years, respectively. Besides the temporal aspect of INLINEFORM12 , another challenge of this corpus is the formal (scientific) language, where the usage of stylistic devices is more restricted, in contrast to other genres such as novels or poems.",
+        "As a second corpus, we compiled INLINEFORM0 , which represents a collection of 1,645 chat conversations of 550 sex offenders crawled from the Perverted-Justice portal. The chat conversations stem from a variety of sources including emails and instant messengers (e. g., MSN, AOL or Yahoo), where for each conversation, we ensured that only chat lines from the offender were extracted. We applied the same problem construction procedure as for the corpus INLINEFORM1 , which resulted in 1,100 verification problems that again were split into a training and test set given a 40/60% ratio. In contrast to the corpus INLINEFORM2 , we only performed slight preprocessing. Essentially, we removed user names, time-stamps, URLs, multiple blanks as well as annotations that were not part of the original conversations from all chat lines. Moreover, we did not normalize words (for example, shorten words such as “nooooo” to “no”) as we believe that these represent important style markers. Furthermore, we did not remove newlines between the chat lines, as the positions of specific words might play an important role regarding the individual's writing style.",
+        "As a third corpus, we compiled INLINEFORM0 , which is a collection of 200 aggregated postings crawled from the Reddit platform. Overall, the postings were written by 100 Reddit users and stem from a variety of subreddits. In order to construct the Y-cases, we selected exactly two postings from disjoint subreddits for each user such that both the known and unknown document INLINEFORM1 and INLINEFORM2 differ in their topic. Regarding the N-cases, we applied the opposite strategy such that INLINEFORM3 and INLINEFORM4 belong to the same topic. The rationale behind this is to figure out to which extent AV methods can be fooled in cases, where the topic matches but not the authorship and vice versa. Since for this specific corpus we have to control the topics of the documents, we did not perform the same procedure applied for INLINEFORM5 and INLINEFORM6 to construct the training and test sets. Instead, we used for the resulting 100 verification problems a 40/60% hold-out split, where both training and test set are entirely disjoint."
+      ],
+      "highlighted_evidence": [
+        "As a first corpus, we compiled INLINEFORM0 that represents a collection of 80 excerpts from scientific works including papers, dissertations, book chapters and technical reports, which we have chosen from the well-known Digital Bibliography & Library Project (DBLP) platform.",
+        "As a second corpus, we compiled INLINEFORM0 , which represents a collection of 1,645 chat conversations of 550 sex offenders crawled from the Perverted-Justice portal.",
+        "As a third corpus, we compiled INLINEFORM0 , which is a collection of 200 aggregated postings crawled from the Reddit platform."
+      ]
+    }
+  },
+  {
+    "paper_id": "1906.10551",
+    "question": "What is a self-compiled corpus?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        " restrict the content of each text to the abstract and conclusion of the original work",
+        "considered other parts of the original works such as introduction or discussion sections",
+        "extracted text portions are appropriate for the AV task, each original work was preprocessed manually",
+        "removed tables, formulas, citations, quotes and sentences that include non-language content such as mathematical constructs or specific names of researchers, systems or algorithms"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "As a first corpus, we compiled INLINEFORM0 that represents a collection of 80 excerpts from scientific works including papers, dissertations, book chapters and technical reports, which we have chosen from the well-known Digital Bibliography & Library Project (DBLP) platform. Overall, the documents were written by 40 researchers, where for each author INLINEFORM1 , there are exactly two documents. Given the 80 documents, we constructed for each author INLINEFORM2 two verification problems INLINEFORM3 (a Y-case) and INLINEFORM4 (an N-case). For INLINEFORM5 we set INLINEFORM6 's first document as INLINEFORM7 and the second document as INLINEFORM8 . For INLINEFORM9 we reuse INLINEFORM10 from INLINEFORM11 as the known document and selected a text from another (random) author as the unknown document. The result of this procedure is a set of 80 verification problems, which we split into a training and test set based on a 40/60% ratio. Where possible, we tried to restrict the content of each text to the abstract and conclusion of the original work. However, since in many cases these sections were too short, we also considered other parts of the original works such as introduction or discussion sections. To ensure that the extracted text portions are appropriate for the AV task, each original work was preprocessed manually. More precisely, we removed tables, formulas, citations, quotes and sentences that include non-language content such as mathematical constructs or specific names of researchers, systems or algorithms. The average time span between both documents of an author is 15.6 years. The minimum and maximum time span are 6 and 40 years, respectively. Besides the temporal aspect of INLINEFORM12 , another challenge of this corpus is the formal (scientific) language, where the usage of stylistic devices is more restricted, in contrast to other genres such as novels or poems."
+      ],
+      "highlighted_evidence": [
+        "Where possible, we tried to restrict the content of each text to the abstract and conclusion of the original work. However, since in many cases these sections were too short, we also considered other parts of the original works such as introduction or discussion sections. To ensure that the extracted text portions are appropriate for the AV task, each original work was preprocessed manually. More precisely, we removed tables, formulas, citations, quotes and sentences that include non-language content such as mathematical constructs or specific names of researchers, systems or algorithms."
+      ]
+    }
+  },
+  {
+    "paper_id": "1905.10702",
+    "question": "What datasets are used to evaluate the model?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "WN18 and FB15k"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "Datasets: We experimented on four standard datasets: WN18 and FB15k are extracted by BIBREF5 from Wordnet BIBREF32 Freebase BIBREF33 . We used the same train/valid/test sets as in BIBREF5 . WN18 contains 40,943 entities, 18 relations and 141,442 train triples. FB15k contains 14,951 entities, 1,345 relations and 483,142 train triples. In order to test the expressiveness ability rather than relational pattern learning power of models, FB15k-237 BIBREF34 and WN18RR BIBREF35 exclude the triples with inverse relations from FB15k and WN18 which reduced the size of their training data to 56% and 61% respectively. Baselines: We compare MDE with several state-of-the-art relational learning approaches. Our baselines include, TransE, TransH, TransD, TransR, STransE, DistMult, NTN, RESCAL, ER-MLP, and ComplEx and SimplE. We report the results of TransE, DistMult, and ComplEx from BIBREF13 and the results of TransR and NTN from BIBREF36 , and ER-MLP from BIBREF15 . The results on the inverse relation excluded datasets are from BIBREF11 , Table 13 for TransE and RotatE and the rest are from BIBREF35 ."
+      ],
+      "highlighted_evidence": [
+        "Datasets: We experimented on four standard datasets: WN18 and FB15k are extracted by BIBREF5 from Wordnet BIBREF32 Freebase BIBREF33 ."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.01247",
+    "question": "How did they determine the distinct classes?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [
+        "inspired by the OntoNotes5 corpus BIBREF7 as well as the ACE (Automatic Content Extraction) English Annotation Guidelines for Entities Version 6.6 2008.06.13 BIBREF8"
+      ],
+      "yes_no": null,
+      "free_form_answer": "",
+      "evidence": [
+        "The 16 classes are inspired by the OntoNotes5 corpus BIBREF7 as well as the ACE (Automatic Content Extraction) English Annotation Guidelines for Entities Version 6.6 2008.06.13 BIBREF8. Each class will be presented in detail, with examples, in the section SECREF3 A summary of available classes with word counts for each is available in table TABREF18."
+      ],
+      "highlighted_evidence": [
+        "The 16 classes are inspired by the OntoNotes5 corpus BIBREF7 as well as the ACE (Automatic Content Extraction) English Annotation Guidelines for Entities Version 6.6 2008.06.13 BIBREF8."
+      ]
+    }
+  }
+]

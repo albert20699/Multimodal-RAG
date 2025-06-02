@@ -1,8 +1,10 @@
+👉 [English Version](README.md)
+
 # Qasper-RAG：基於 Qasper 問答資料集的檢索增強生成
 
 本專案應用 **檢索增強生成（RAG）** 技術於 [Qasper](https://allenai.org/data/qasper) 資料集，支援三種問題類型：
 
-- 抽取式（Extractive）
+- 抽取式（Extractive）：在於
 - 自由形式（Free-form）
 - 是／否（Yes/No）
 
@@ -10,7 +12,6 @@
 1. `with_algo`：含圖像處理與多模態嵌入的強化型 RAG（實驗性）。
 2. `baseline`：僅使用文字的傳統 RAG（基準比較）。
 
-👉 [English Version](README.md)
 
 ---
 

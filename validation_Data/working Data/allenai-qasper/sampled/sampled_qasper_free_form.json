@@ -1,0 +1,841 @@
+[
+  {
+    "paper_id": "1909.00694",
+    "question": "What is the seed lexicon?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "a vocabulary of positive and negative predicates that helps determine the polarity score of an event",
+      "evidence": [
+        "The seed lexicon consists of positive and negative predicates. If the predicate of an extracted event is in the seed lexicon and does not involve complex phenomena like negation, we assign the corresponding polarity score ($+1$ for positive events and $-1$ for negative events) to the event. We expect the model to automatically learn complex phenomena through label propagation. Based on the availability of scores and the types of discourse relations, we classify the extracted event pairs into the following three types."
+      ],
+      "highlighted_evidence": [
+        "The seed lexicon consists of positive and negative predicates. If the predicate of an extracted event is in the seed lexicon and does not involve complex phenomena like negation, we assign the corresponding polarity score ($+1$ for positive events and $-1$ for negative events) to the event.",
+        "It is a "
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "What are the results?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Using all data to train: AL -- BiGRU achieved 0.843 accuracy, AL -- BERT achieved 0.863 accuracy, AL+CA+CO -- BiGRU achieved 0.866 accuracy, AL+CA+CO -- BERT achieved 0.835, accuracy, ACP -- BiGRU achieved 0.919 accuracy, ACP -- BERT achived 0.933, accuracy, ACP+AL+CA+CO -- BiGRU achieved 0.917 accuracy, ACP+AL+CA+CO -- BERT achieved 0.913 accuracy. \nUsing a subset to train: BERT achieved 0.876 accuracy using ACP (6K), BERT achieved 0.886 accuracy using ACP (6K) + AL, BiGRU achieved 0.830 accuracy using ACP (6K), BiGRU achieved 0.879 accuracy using ACP (6K) + AL + CA + CO.",
+      "evidence": [
+        "FLOAT SELECTED: Table 3: Performance of various models on the ACP test set.",
+        "FLOAT SELECTED: Table 4: Results for small labeled training data. Given the performance with the full dataset, we show BERT trained only with the AL data.",
+        "As for ${\\rm Encoder}$, we compared two types of neural networks: BiGRU and BERT. GRU BIBREF16 is a recurrent neural network sequence encoder. BiGRU reads an input sequence forward and backward and the output is the concatenation of the final forward and backward hidden states.",
+        "We trained the model with the following four combinations of the datasets: AL, AL+CA+CO (two proposed models), ACP (supervised), and ACP+AL+CA+CO (semi-supervised). The corresponding objective functions were: $\\mathcal {L}_{\\rm AL}$, $\\mathcal {L}_{\\rm AL} + \\mathcal {L}_{\\rm CA} + \\mathcal {L}_{\\rm CO}$, $\\mathcal {L}_{\\rm ACP}$, and $\\mathcal {L}_{\\rm ACP} + \\mathcal {L}_{\\rm AL} + \\mathcal {L}_{\\rm CA} + \\mathcal {L}_{\\rm CO}$."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Table 3: Performance of various models on the ACP test set.",
+        "FLOAT SELECTED: Table 4: Results for small labeled training data. Given the performance with the full dataset, we show BERT trained only with the AL data.",
+        "As for ${\\rm Encoder}$, we compared two types of neural networks: BiGRU and BERT. ",
+        "We trained the model with the following four combinations of the datasets: AL, AL+CA+CO (two proposed models), ACP (supervised), and ACP+AL+CA+CO (semi-supervised). The corresponding objective functions were: $\\mathcal {L}_{\\rm AL}$, $\\mathcal {L}_{\\rm AL} + \\mathcal {L}_{\\rm CA} + \\mathcal {L}_{\\rm CO}$, $\\mathcal {L}_{\\rm ACP}$, and $\\mathcal {L}_{\\rm ACP} + \\mathcal {L}_{\\rm AL} + \\mathcal {L}_{\\rm CA} + \\mathcal {L}_{\\rm CO}$."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "How are relations used to propagate polarity?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "based on the relation between events, the suggested polarity of one event can determine the possible polarity of the other event ",
+      "evidence": [
+        "In this paper, we propose a simple and effective method for learning affective events that only requires a very small seed lexicon and a large raw corpus. As illustrated in Figure FIGREF1, our key idea is that we can exploit discourse relations BIBREF4 to efficiently propagate polarity from seed predicates that directly report one's emotions (e.g., “to be glad” is positive). Suppose that events $x_1$ are $x_2$ are in the discourse relation of Cause (i.e., $x_1$ causes $x_2$). If the seed lexicon suggests $x_2$ is positive, $x_1$ is also likely to be positive because it triggers the positive emotion. The fact that $x_2$ is known to be negative indicates the negative polarity of $x_1$. Similarly, if $x_1$ and $x_2$ are in the discourse relation of Concession (i.e., $x_2$ in spite of $x_1$), the reverse of $x_2$'s polarity can be propagated to $x_1$. Even if $x_2$'s polarity is not known in advance, we can exploit the tendency of $x_1$ and $x_2$ to be of the same polarity (for Cause) or of the reverse polarity (for Concession) although the heuristic is not exempt from counterexamples. We transform this idea into objective functions and train neural network models that predict the polarity of a given event."
+      ],
+      "highlighted_evidence": [
+        "As illustrated in Figure FIGREF1, our key idea is that we can exploit discourse relations BIBREF4 to efficiently propagate polarity from seed predicates that directly report one's emotions (e.g., “to be glad” is positive). Suppose that events $x_1$ are $x_2$ are in the discourse relation of Cause (i.e., $x_1$ causes $x_2$). If the seed lexicon suggests $x_2$ is positive, $x_1$ is also likely to be positive because it triggers the positive emotion. The fact that $x_2$ is known to be negative indicates the negative polarity of $x_1$. Similarly, if $x_1$ and $x_2$ are in the discourse relation of Concession (i.e., $x_2$ in spite of $x_1$), the reverse of $x_2$'s polarity can be propagated to $x_1$. Even if $x_2$'s polarity is not known in advance, we can exploit the tendency of $x_1$ and $x_2$ to be of the same polarity (for Cause) or of the reverse polarity (for Concession) although the heuristic is not exempt from counterexamples. We transform this idea into objective functions and train neural network models that predict the polarity of a given event."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "How are relations used to propagate polarity?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "cause relation: both events in the relation should have the same polarity; concession relation: events should have opposite polarity",
+      "evidence": [
+        "In this paper, we propose a simple and effective method for learning affective events that only requires a very small seed lexicon and a large raw corpus. As illustrated in Figure FIGREF1, our key idea is that we can exploit discourse relations BIBREF4 to efficiently propagate polarity from seed predicates that directly report one's emotions (e.g., “to be glad” is positive). Suppose that events $x_1$ are $x_2$ are in the discourse relation of Cause (i.e., $x_1$ causes $x_2$). If the seed lexicon suggests $x_2$ is positive, $x_1$ is also likely to be positive because it triggers the positive emotion. The fact that $x_2$ is known to be negative indicates the negative polarity of $x_1$. Similarly, if $x_1$ and $x_2$ are in the discourse relation of Concession (i.e., $x_2$ in spite of $x_1$), the reverse of $x_2$'s polarity can be propagated to $x_1$. Even if $x_2$'s polarity is not known in advance, we can exploit the tendency of $x_1$ and $x_2$ to be of the same polarity (for Cause) or of the reverse polarity (for Concession) although the heuristic is not exempt from counterexamples. We transform this idea into objective functions and train neural network models that predict the polarity of a given event.",
+        "The seed lexicon consists of positive and negative predicates. If the predicate of an extracted event is in the seed lexicon and does not involve complex phenomena like negation, we assign the corresponding polarity score ($+1$ for positive events and $-1$ for negative events) to the event. We expect the model to automatically learn complex phenomena through label propagation. Based on the availability of scores and the types of discourse relations, we classify the extracted event pairs into the following three types."
+      ],
+      "highlighted_evidence": [
+        "As illustrated in Figure FIGREF1, our key idea is that we can exploit discourse relations BIBREF4 to efficiently propagate polarity from seed predicates that directly report one's emotions (e.g., “to be glad” is positive). Suppose that events $x_1$ are $x_2$ are in the discourse relation of Cause (i.e., $x_1$ causes $x_2$). If the seed lexicon suggests $x_2$ is positive, $x_1$ is also likely to be positive because it triggers the positive emotion. The fact that $x_2$ is known to be negative indicates the negative polarity of $x_1$. Similarly, if $x_1$ and $x_2$ are in the discourse relation of Concession (i.e., $x_2$ in spite of $x_1$), the reverse of $x_2$'s polarity can be propagated to $x_1$. Even if $x_2$'s polarity is not known in advance, we can exploit the tendency of $x_1$ and $x_2$ to be of the same polarity (for Cause) or of the reverse polarity (for Concession) although the heuristic is not exempt from counterexamples. We transform this idea into objective functions and train neural network models that predict the polarity of a given event.",
+        "The seed lexicon consists of positive and negative predicates. If the predicate of an extracted event is in the seed lexicon and does not involve complex phenomena like negation, we assign the corresponding polarity score ($+1$ for positive events and $-1$ for negative events) to the event. We expect the model to automatically learn complex phenomena through label propagation."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "How big is the Japanese data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "7000000 pairs of events were extracted from the Japanese Web corpus, 529850 pairs of events were extracted from the ACP corpus",
+      "evidence": [
+        "As a raw corpus, we used a Japanese web corpus that was compiled through the procedures proposed by BIBREF13. To extract event pairs tagged with discourse relations, we used the Japanese dependency parser KNP and in-house postprocessing scripts BIBREF14. KNP used hand-written rules to segment each sentence into what we conventionally called clauses (mostly consecutive text chunks), each of which contained one main predicate. KNP also identified the discourse relations of event pairs if explicit discourse connectives BIBREF4 such as “ので” (because) and “のに” (in spite of) were present. We treated Cause/Reason (原因・理由) and Condition (条件) in the original tagset BIBREF15 as Cause and Concession (逆接) as Concession, respectively. Here is an example of event pair extraction.",
+        "We constructed our seed lexicon consisting of 15 positive words and 15 negative words, as shown in Section SECREF27. From the corpus of about 100 million sentences, we obtained 1.4 millions event pairs for AL, 41 millions for CA, and 6 millions for CO. We randomly selected subsets of AL event pairs such that positive and negative latter events were equal in size. We also sampled event pairs for each of CA and CO such that it was five times larger than AL. The results are shown in Table TABREF16.",
+        "FLOAT SELECTED: Table 1: Statistics of the AL, CA, and CO datasets.",
+        "We used the latest version of the ACP Corpus BIBREF12 for evaluation. It was used for (semi-)supervised training as well. Extracted from Japanese websites using HTML layouts and linguistic patterns, the dataset covered various genres. For example, the following two sentences were labeled positive and negative, respectively:",
+        "Although the ACP corpus was originally constructed in the context of sentiment analysis, we found that it could roughly be regarded as a collection of affective events. We parsed each sentence and extracted the last clause in it. The train/dev/test split of the data is shown in Table TABREF19.",
+        "FLOAT SELECTED: Table 2: Details of the ACP dataset."
+      ],
+      "highlighted_evidence": [
+        "As a raw corpus, we used a Japanese web corpus that was compiled through the procedures proposed by BIBREF13. ",
+        "From the corpus of about 100 million sentences, we obtained 1.4 millions event pairs for AL, 41 millions for CA, and 6 millions for CO. We randomly selected subsets of AL event pairs such that positive and negative latter events were equal in size. We also sampled event pairs for each of CA and CO such that it was five times larger than AL. The results are shown in Table TABREF16.",
+        "FLOAT SELECTED: Table 1: Statistics of the AL, CA, and CO datasets.",
+        "We used the latest version of the ACP Corpus BIBREF12 for evaluation. It was used for (semi-)supervised training as well.",
+        "Although the ACP corpus was originally constructed in the context of sentiment analysis, we found that it could roughly be regarded as a collection of affective events. We parsed each sentence and extracted the last clause in it. The train/dev/test split of the data is shown in Table TABREF19.",
+        "FLOAT SELECTED: Table 2: Details of the ACP dataset."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "How big is the Japanese data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "The ACP corpus has around 700k events split into positive and negative polarity ",
+      "evidence": [
+        "FLOAT SELECTED: Table 2: Details of the ACP dataset."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Table 2: Details of the ACP dataset."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "How big are improvements of supervszed learning results trained on smalled labeled data enhanced with proposed approach copared to basic approach?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "3%",
+      "evidence": [
+        "FLOAT SELECTED: Table 4: Results for small labeled training data. Given the performance with the full dataset, we show BERT trained only with the AL data."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Table 4: Results for small labeled training data. Given the performance with the full dataset, we show BERT trained only with the AL data."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "How does their model learn using mostly raw data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "by exploiting discourse relations to propagate polarity from seed predicates to final sentiment polarity",
+      "evidence": [
+        "In this paper, we propose a simple and effective method for learning affective events that only requires a very small seed lexicon and a large raw corpus. As illustrated in Figure FIGREF1, our key idea is that we can exploit discourse relations BIBREF4 to efficiently propagate polarity from seed predicates that directly report one's emotions (e.g., “to be glad” is positive). Suppose that events $x_1$ are $x_2$ are in the discourse relation of Cause (i.e., $x_1$ causes $x_2$). If the seed lexicon suggests $x_2$ is positive, $x_1$ is also likely to be positive because it triggers the positive emotion. The fact that $x_2$ is known to be negative indicates the negative polarity of $x_1$. Similarly, if $x_1$ and $x_2$ are in the discourse relation of Concession (i.e., $x_2$ in spite of $x_1$), the reverse of $x_2$'s polarity can be propagated to $x_1$. Even if $x_2$'s polarity is not known in advance, we can exploit the tendency of $x_1$ and $x_2$ to be of the same polarity (for Cause) or of the reverse polarity (for Concession) although the heuristic is not exempt from counterexamples. We transform this idea into objective functions and train neural network models that predict the polarity of a given event."
+      ],
+      "highlighted_evidence": [
+        "In this paper, we propose a simple and effective method for learning affective events that only requires a very small seed lexicon and a large raw corpus. As illustrated in Figure FIGREF1, our key idea is that we can exploit discourse relations BIBREF4 to efficiently propagate polarity from seed predicates that directly report one's emotions (e.g., “to be glad” is positive)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.00694",
+    "question": "How big is seed lexicon used for training?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "30 words",
+      "evidence": [
+        "We constructed our seed lexicon consisting of 15 positive words and 15 negative words, as shown in Section SECREF27. From the corpus of about 100 million sentences, we obtained 1.4 millions event pairs for AL, 41 millions for CA, and 6 millions for CO. We randomly selected subsets of AL event pairs such that positive and negative latter events were equal in size. We also sampled event pairs for each of CA and CO such that it was five times larger than AL. The results are shown in Table TABREF16."
+      ],
+      "highlighted_evidence": [
+        "We constructed our seed lexicon consisting of 15 positive words and 15 negative words, as shown in Section SECREF27. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1902.06843",
+    "question": "How do this framework facilitate demographic inference from social media?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Demographic information is predicted using weighted lexicon of terms.",
+      "evidence": [
+        "We employ BIBREF73 's weighted lexicon of terms that uses the dataset of 75,394 Facebook users who shared their status, age and gender. The predictive power of this lexica was evaluated on Twitter, blog, and Facebook, showing promising results BIBREF73 . Utilizing these two weighted lexicon of terms, we are predicting the demographic information (age or gender) of INLINEFORM0 (denoted by INLINEFORM1 ) using following equation: INLINEFORM2",
+        "where INLINEFORM0 is the lexicon weight of the term, and INLINEFORM1 represents the frequency of the term in the user generated INLINEFORM2 , and INLINEFORM3 measures total word count in INLINEFORM4 . As our data is biased toward young people, we report age prediction performance for each age group separately (Table TABREF42 ). Moreover, to measure the average accuracy of this model, we build a balanced dataset (keeping all the users above 23 -416 users), and then randomly sampling the same number of users from the age ranges (11,19] and (19,23]. The average accuracy of this model is 0.63 for depressed users and 0.64 for control class. Table TABREF44 illustrates the performance of gender prediction for each class. The average accuracy is 0.82 on INLINEFORM5 ground-truth dataset."
+      ],
+      "highlighted_evidence": [
+        "We employ BIBREF73 's weighted lexicon of terms that uses the dataset of 75,394 Facebook users who shared their status, age and gender.",
+        "Utilizing these two weighted lexicon of terms, we are predicting the demographic information (age or gender) of INLINEFORM0 (denoted by INLINEFORM1 ) using following equation: INLINEFORM2\n\nwhere INLINEFORM0 is the lexicon weight of the term, and INLINEFORM1 represents the frequency of the term in the user generated INLINEFORM2 , and INLINEFORM3 measures total word count in INLINEFORM4 ."
+      ]
+    }
+  },
+  {
+    "paper_id": "1902.06843",
+    "question": "How is the data annotated?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "The data are self-reported by Twitter users and then verified by two human experts.",
+      "evidence": [
+        "Self-disclosure clues have been extensively utilized for creating ground-truth data for numerous social media analytic studies e.g., for predicting demographics BIBREF36 , BIBREF41 , and user's depressive behavior BIBREF46 , BIBREF47 , BIBREF48 . For instance, vulnerable individuals may employ depressive-indicative terms in their Twitter profile descriptions. Others may share their age and gender, e.g., \"16 years old suicidal girl\"(see Figure FIGREF15 ). We employ a huge dataset of 45,000 self-reported depressed users introduced in BIBREF46 where a lexicon of depression symptoms consisting of 1500 depression-indicative terms was created with the help of psychologist clinician and employed for collecting self-declared depressed individual's profiles. A subset of 8,770 users (24 million time-stamped tweets) containing 3981 depressed and 4789 control users (that do not show any depressive behavior) were verified by two human judges BIBREF46 . This dataset INLINEFORM0 contains the metadata values of each user such as profile descriptions, followers_count, created_at, and profile_image_url."
+      ],
+      "highlighted_evidence": [
+        "We employ a huge dataset of 45,000 self-reported depressed users introduced in BIBREF46 where a lexicon of depression symptoms consisting of 1500 depression-indicative terms was created with the help of psychologist clinician and employed for collecting self-declared depressed individual's profiles. A subset of 8,770 users (24 million time-stamped tweets) containing 3981 depressed and 4789 control users (that do not show any depressive behavior) were verified by two human judges BIBREF46 ."
+      ]
+    }
+  },
+  {
+    "paper_id": "1902.06843",
+    "question": "Where does the information on individual-level demographics come from?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "From Twitter profile descriptions of the users.",
+      "evidence": [
+        "Age Enabled Ground-truth Dataset: We extract user's age by applying regular expression patterns to profile descriptions (such as \"17 years old, self-harm, anxiety, depression\") BIBREF41 . We compile \"age prefixes\" and \"age suffixes\", and use three age-extraction rules: 1. I am X years old 2. Born in X 3. X years old, where X is a \"date\" or age (e.g., 1994). We selected a subset of 1061 users among INLINEFORM0 as gold standard dataset INLINEFORM1 who disclose their age. From these 1061 users, 822 belong to depressed class and 239 belong to control class. From 3981 depressed users, 20.6% disclose their age in contrast with only 4% (239/4789) among control group. So self-disclosure of age is more prevalent among vulnerable users. Figure FIGREF18 depicts the age distribution in INLINEFORM2 . The general trend, consistent with the results in BIBREF42 , BIBREF49 , is biased toward young people. Indeed, according to Pew, 47% of Twitter users are younger than 30 years old BIBREF50 . Similar data collection procedure with comparable distribution have been used in many prior efforts BIBREF51 , BIBREF49 , BIBREF42 . We discuss our approach to mitigate the impact of the bias in Section 4.1. The median age is 17 for depressed class versus 19 for control class suggesting either likely depressed-user population is younger, or depressed youngsters are more likely to disclose their age for connecting to their peers (social homophily.) BIBREF51",
+        "Gender Enabled Ground-truth Dataset: We selected a subset of 1464 users INLINEFORM0 from INLINEFORM1 who disclose their gender in their profile description. From 1464 users 64% belonged to the depressed group, and the rest (36%) to the control group. 23% of the likely depressed users disclose their gender which is considerably higher (12%) than that for the control class. Once again, gender disclosure varies among the two gender groups. For statistical significance, we performed chi-square test (null hypothesis: gender and depression are two independent variables). Figure FIGREF19 illustrates gender association with each of the two classes. Blue circles (positive residuals, see Figure FIGREF19 -A,D) show positive association among corresponding row and column variables while red circles (negative residuals, see Figure FIGREF19 -B,C) imply a repulsion. Our findings are consistent with the medical literature BIBREF10 as according to BIBREF52 more women than men were given a diagnosis of depression. In particular, the female-to-male ratio is 2.1 and 1.9 for Major Depressive Disorder and Dysthymic Disorder respectively. Our findings from Twitter data indicate there is a strong association (Chi-square: 32.75, p-value:1.04e-08) between being female and showing depressive behavior on Twitter."
+      ],
+      "highlighted_evidence": [
+        "We extract user's age by applying regular expression patterns to profile descriptions (such as \"17 years old, self-harm, anxiety, depression\") BIBREF41 . We compile \"age prefixes\" and \"age suffixes\", and use three age-extraction rules: 1. I am X years old 2. Born in X 3. X years old, where X is a \"date\" or age (e.g., 1994).",
+        "We selected a subset of 1464 users INLINEFORM0 from INLINEFORM1 who disclose their gender in their profile description."
+      ]
+    }
+  },
+  {
+    "paper_id": "1902.06843",
+    "question": "What is the source of the user interaction data? ",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Sociability from ego-network on Twitter",
+      "evidence": [
+        "The recent advancements in deep neural networks, specifically for image analysis task, can lead to determining demographic features such as age and gender BIBREF13 . We show that by determining and integrating heterogeneous set of features from different modalities – aesthetic features from posted images (colorfulness, hue variance, sharpness, brightness, blurriness, naturalness), choice of profile picture (for gender, age, and facial expression), the screen name, the language features from both textual content and profile's description (n-gram, emotion, sentiment), and finally sociability from ego-network, and user engagement – we can reliably detect likely depressed individuals in a data set of 8,770 human-annotated Twitter users."
+      ],
+      "highlighted_evidence": [
+        "We show that by determining and integrating heterogeneous set of features from different modalities – aesthetic features from posted images (colorfulness, hue variance, sharpness, brightness, blurriness, naturalness), choice of profile picture (for gender, age, and facial expression), the screen name, the language features from both textual content and profile's description (n-gram, emotion, sentiment), and finally sociability from ego-network, and user engagement – we can reliably detect likely depressed individuals in a data set of 8,770 human-annotated Twitter users."
+      ]
+    }
+  },
+  {
+    "paper_id": "1902.06843",
+    "question": "What is the source of the textual data? ",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Users' tweets",
+      "evidence": [
+        "The recent advancements in deep neural networks, specifically for image analysis task, can lead to determining demographic features such as age and gender BIBREF13 . We show that by determining and integrating heterogeneous set of features from different modalities – aesthetic features from posted images (colorfulness, hue variance, sharpness, brightness, blurriness, naturalness), choice of profile picture (for gender, age, and facial expression), the screen name, the language features from both textual content and profile's description (n-gram, emotion, sentiment), and finally sociability from ego-network, and user engagement – we can reliably detect likely depressed individuals in a data set of 8,770 human-annotated Twitter users."
+      ],
+      "highlighted_evidence": [
+        "We show that by determining and integrating heterogeneous set of features from different modalities – aesthetic features from posted images (colorfulness, hue variance, sharpness, brightness, blurriness, naturalness), choice of profile picture (for gender, age, and facial expression), the screen name, the language features from both textual content and profile's description (n-gram, emotion, sentiment), and finally sociability from ego-network, and user engagement – we can reliably detect likely depressed individuals in a data set of 8,770 human-annotated Twitter users."
+      ]
+    }
+  },
+  {
+    "paper_id": "1902.06843",
+    "question": "What is the source of the visual data? ",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Profile pictures from the Twitter users' profiles.",
+      "evidence": [
+        "The recent advancements in deep neural networks, specifically for image analysis task, can lead to determining demographic features such as age and gender BIBREF13 . We show that by determining and integrating heterogeneous set of features from different modalities – aesthetic features from posted images (colorfulness, hue variance, sharpness, brightness, blurriness, naturalness), choice of profile picture (for gender, age, and facial expression), the screen name, the language features from both textual content and profile's description (n-gram, emotion, sentiment), and finally sociability from ego-network, and user engagement – we can reliably detect likely depressed individuals in a data set of 8,770 human-annotated Twitter users."
+      ],
+      "highlighted_evidence": [
+        "We show that by determining and integrating heterogeneous set of features from different modalities – aesthetic features from posted images (colorfulness, hue variance, sharpness, brightness, blurriness, naturalness), choice of profile picture (for gender, age, and facial expression), the screen name, the language features from both textual content and profile's description (n-gram, emotion, sentiment), and finally sociability from ego-network, and user engagement – we can reliably detect likely depressed individuals in a data set of 8,770 human-annotated Twitter users."
+      ]
+    }
+  },
+  {
+    "paper_id": "1812.07023",
+    "question": "Do they train a different training method except from scheduled sampling?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Answer with content missing: (list missing) \nScheduled sampling: In our experiments, we found that models trained with scheduled sampling performed better (about 0.004 BLEU-4 on validation set) than the ones trained using teacher-forcing for the AVSD dataset. Hence, we use scheduled sampling for all the results we report in this paper.\n\nYes.",
+      "evidence": [
+        "Since the official test set has not been released publicly, results reported on the official test set have been provided by the challenge organizers. For the prototype test set and for the ablation study presented in Table TABREF24 , we use the same code for evaluation metrics as used by BIBREF11 for fairness and comparability. We attribute the significant performance gain of our model over the baseline to a combination of several factors as described below:"
+      ],
+      "highlighted_evidence": [
+        "We attribute the significant performance gain of our model over the baseline to a combination of several factors as described below:"
+      ]
+    }
+  },
+  {
+    "paper_id": "1904.05862",
+    "question": "Which unlabeled data do they pretrain with?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "1000 hours of WSJ audio data",
+      "evidence": [
+        "We consider pre-training on the audio data (without labels) of WSJ, part of clean Librispeech (about 80h) and full Librispeech as well as a combination of all datasets (§ SECREF7 ). For the pre-training experiments we feed the output of the context network to the acoustic model, instead of log-mel filterbank features.",
+        "Our experimental results on the WSJ benchmark demonstrate that pre-trained representations estimated on about 1,000 hours of unlabeled speech can substantially improve a character-based ASR system and outperform the best character-based result in the literature, Deep Speech 2. On the TIMIT task, pre-training enables us to match the best reported result in the literature. In a simulated low-resource setup with only eight hours of transcriped audio data, reduces WER by up to 32% compared to a baseline model that relies on labeled data only (§ SECREF3 & § SECREF4 )."
+      ],
+      "highlighted_evidence": [
+        "We consider pre-training on the audio data (without labels) of WSJ, part of clean Librispeech (about 80h) and full Librispeech as well as a combination of all datasets (§ SECREF7 ). ",
+        "Our experimental results on the WSJ benchmark demonstrate that pre-trained representations estimated on about 1,000 hours of unlabeled speech can substantially improve a character-based ASR system and outperform the best character-based result in the literature, Deep Speech 2. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1904.05862",
+    "question": "How many convolutional layers does their model have?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "wav2vec has 12 convolutional layers",
+      "evidence": [
+        "Given raw audio samples INLINEFORM0 , we apply the encoder network INLINEFORM1 which we parameterize as a five-layer convolutional network similar to BIBREF15 . Alternatively, one could use other architectures such as the trainable frontend of BIBREF24 amongst others. The encoder layers have kernel sizes INLINEFORM2 and strides INLINEFORM3 . The output of the encoder is a low frequency feature representation INLINEFORM4 which encodes about 30ms of 16KHz of audio and the striding results in representation INLINEFORM5 every 10ms.",
+        "Next, we apply the context network INLINEFORM0 to the output of the encoder network to mix multiple latent representations INLINEFORM1 into a single contextualized tensor INLINEFORM2 for a receptive field size INLINEFORM3 . The context network has seven layers and each layer has kernel size three and stride one. The total receptive field of the context network is about 180ms."
+      ],
+      "highlighted_evidence": [
+        "Given raw audio samples INLINEFORM0 , we apply the encoder network INLINEFORM1 which we parameterize as a five-layer convolutional network similar to BIBREF15 .",
+        "Next, we apply the context network INLINEFORM0 to the output of the encoder network to mix multiple latent representations INLINEFORM1 into a single contextualized tensor INLINEFORM2 for a receptive field size INLINEFORM3 . The context network has seven layers and each layer has kernel size three and stride one. "
+      ]
+    }
+  },
+  {
+    "paper_id": "2001.09332",
+    "question": "What is the dataset used as input to the Word2Vec algorithm?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Italian Wikipedia and Google News extraction producing final vocabulary of 618224 words",
+      "evidence": [
+        "The dataset needed to train the W2V was obtained using the information extracted from a dump of the Italian Wikipedia (dated 2019.04.01), from the main categories of Italian Google News (WORLD, NATION, BUSINESS, TECHNOLOGY, ENTERTAINMENT, SPORTS, SCIENCE, HEALTH) and from some anonymized chats between users and a customer care chatbot (Laila). The dataset (composed of 2.6 GB of raw text) includes $421\\,829\\,960$ words divided into $17\\,305\\,401$ sentences.",
+        "The text was previously preprocessed by removing the words whose absolute frequency was less than 5 and eliminating all special characters. Since it is impossible to represent every imaginable numerical value, but not wanting to eliminate the concept of “numerical representation\" linked to certain words, it was also decided to replace every number present in the text with the particular $\\langle NUM \\rangle $ token; which probably also assumes a better representation in the embedding space (not separating into the various possible values). All the words were then transformed to lowercase (to avoid a double presence) finally producing a vocabulary of $618\\,224$ words."
+      ],
+      "highlighted_evidence": [
+        "The dataset needed to train the W2V was obtained using the information extracted from a dump of the Italian Wikipedia (dated 2019.04.01), from the main categories of Italian Google News (WORLD, NATION, BUSINESS, TECHNOLOGY, ENTERTAINMENT, SPORTS, SCIENCE, HEALTH) and from some anonymized chats between users and a customer care chatbot (Laila). The dataset (composed of 2.6 GB of raw text) includes $421\\,829\\,960$ words divided into $17\\,305\\,401$ sentences.",
+        "All the words were then transformed to lowercase (to avoid a double presence) finally producing a vocabulary of $618\\,224$ words."
+      ]
+    }
+  },
+  {
+    "paper_id": "1604.05781",
+    "question": "How do they extract causality from text?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "They identify documents that contain the unigrams 'caused', 'causing', or 'causes'",
+      "evidence": [
+        "Causal documents were chosen to contain one occurrence only of the exact unigrams: `caused', `causing', or `causes'. The word `cause' was not included due to its use as a popular contraction for `because'. One `cause-word' per document restricted the analysis to single relationships between two relata. Documents that contain bidirectional words (`associate', `relate', `connect', `correlate', and any of their stems) were also not selected for analysis. This is because our focus is on causality, an inherently one-sided relationship between two objects. We also did not consider additional synonyms of these cause words, although that could be pursued for future work. Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present. The end result of this procedure identified 965,560 causal and 965,560 control documents. Each of the three “cause-words”, `caused', `causes', and `causing' appeared in 38.2%, 35.0%, and 26.8% of causal documents, respectively."
+      ],
+      "highlighted_evidence": [
+        "Causal documents were chosen to contain one occurrence only of the exact unigrams: `caused', `causing', or `causes'."
+      ]
+    }
+  },
+  {
+    "paper_id": "1604.05781",
+    "question": "What is the source of the \"control\" corpus?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Randomly selected from a Twitter dump, temporally matched to causal documents",
+      "evidence": [
+        "Data was collected from a 10% uniform sample of Twitter posts made during 2013, specifically the Gardenhose API. Twitter activity consists of short posts called tweets which are limited to 140 characters. Retweets, where users repost a tweet to spread its content, were not considered. (The spread of causal statements will be considered in future work.) We considered only English-language tweets for this study. To avoid cross-language effects, we kept only tweets with a user-reported language of `English' and, as a second constraint, individual tweets needed to match more English stopwords than any other language's set of stopwords. Stopwords considered for each language were determined using NLTK's database BIBREF29 . A tweet will be referred to as a `document' for the rest of this work.",
+        "Causal documents were chosen to contain one occurrence only of the exact unigrams: `caused', `causing', or `causes'. The word `cause' was not included due to its use as a popular contraction for `because'. One `cause-word' per document restricted the analysis to single relationships between two relata. Documents that contain bidirectional words (`associate', `relate', `connect', `correlate', and any of their stems) were also not selected for analysis. This is because our focus is on causality, an inherently one-sided relationship between two objects. We also did not consider additional synonyms of these cause words, although that could be pursued for future work. Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present. The end result of this procedure identified 965,560 causal and 965,560 control documents. Each of the three “cause-words”, `caused', `causes', and `causing' appeared in 38.2%, 35.0%, and 26.8% of causal documents, respectively."
+      ],
+      "highlighted_evidence": [
+        "Data was collected from a 10% uniform sample of Twitter posts made during 2013, specifically the Gardenhose API.",
+        "Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present."
+      ]
+    }
+  },
+  {
+    "paper_id": "1604.05781",
+    "question": "What are the selection criteria for \"causal statements\"?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Presence of only the exact unigrams 'caused', 'causing', or 'causes'",
+      "evidence": [
+        "Causal documents were chosen to contain one occurrence only of the exact unigrams: `caused', `causing', or `causes'. The word `cause' was not included due to its use as a popular contraction for `because'. One `cause-word' per document restricted the analysis to single relationships between two relata. Documents that contain bidirectional words (`associate', `relate', `connect', `correlate', and any of their stems) were also not selected for analysis. This is because our focus is on causality, an inherently one-sided relationship between two objects. We also did not consider additional synonyms of these cause words, although that could be pursued for future work. Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present. The end result of this procedure identified 965,560 causal and 965,560 control documents. Each of the three “cause-words”, `caused', `causes', and `causing' appeared in 38.2%, 35.0%, and 26.8% of causal documents, respectively."
+      ],
+      "highlighted_evidence": [
+        "Causal documents were chosen to contain one occurrence only of the exact unigrams: `caused', `causing', or `causes'."
+      ]
+    }
+  },
+  {
+    "paper_id": "1604.05781",
+    "question": "Do they use expert annotations, crowdsourcing, or only automatic methods to analyze the corpora?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Only automatic methods",
+      "evidence": [
+        "The rest of this paper is organized as follows: In Sec. \"Materials and Methods\" we discuss our materials and methods, including the dataset we studied, how we preprocessed that data and extracted a `causal' corpus and a corresponding `control' corpus, and the details of the statistical and language analysis tools we studied these corpora with. In Sec. \"Results\" we present results using these tools to compare the causal statements to control statements. We conclude with a discussion in Sec. \"Discussion\" ."
+      ],
+      "highlighted_evidence": [
+        "In Sec. \"Materials and Methods\" we discuss our materials and methods, including the dataset we studied, how we preprocessed that data and extracted a `causal' corpus and a corresponding `control' corpus, and the details of the statistical and language analysis tools we studied these corpora with."
+      ]
+    }
+  },
+  {
+    "paper_id": "1604.05781",
+    "question": "how do they collect the comparable corpus?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Randomly from a Twitter dump",
+      "evidence": [
+        "Data was collected from a 10% uniform sample of Twitter posts made during 2013, specifically the Gardenhose API. Twitter activity consists of short posts called tweets which are limited to 140 characters. Retweets, where users repost a tweet to spread its content, were not considered. (The spread of causal statements will be considered in future work.) We considered only English-language tweets for this study. To avoid cross-language effects, we kept only tweets with a user-reported language of `English' and, as a second constraint, individual tweets needed to match more English stopwords than any other language's set of stopwords. Stopwords considered for each language were determined using NLTK's database BIBREF29 . A tweet will be referred to as a `document' for the rest of this work.",
+        "Causal documents were chosen to contain one occurrence only of the exact unigrams: `caused', `causing', or `causes'. The word `cause' was not included due to its use as a popular contraction for `because'. One `cause-word' per document restricted the analysis to single relationships between two relata. Documents that contain bidirectional words (`associate', `relate', `connect', `correlate', and any of their stems) were also not selected for analysis. This is because our focus is on causality, an inherently one-sided relationship between two objects. We also did not consider additional synonyms of these cause words, although that could be pursued for future work. Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present. The end result of this procedure identified 965,560 causal and 965,560 control documents. Each of the three “cause-words”, `caused', `causes', and `causing' appeared in 38.2%, 35.0%, and 26.8% of causal documents, respectively."
+      ],
+      "highlighted_evidence": [
+        "Data was collected from a 10% uniform sample of Twitter posts made during 2013, specifically the Gardenhose API.",
+        "Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present."
+      ]
+    }
+  },
+  {
+    "paper_id": "1604.05781",
+    "question": "How do they collect the control corpus?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Randomly from Twitter",
+      "evidence": [
+        "Data was collected from a 10% uniform sample of Twitter posts made during 2013, specifically the Gardenhose API. Twitter activity consists of short posts called tweets which are limited to 140 characters. Retweets, where users repost a tweet to spread its content, were not considered. (The spread of causal statements will be considered in future work.) We considered only English-language tweets for this study. To avoid cross-language effects, we kept only tweets with a user-reported language of `English' and, as a second constraint, individual tweets needed to match more English stopwords than any other language's set of stopwords. Stopwords considered for each language were determined using NLTK's database BIBREF29 . A tweet will be referred to as a `document' for the rest of this work.",
+        "Causal documents were chosen to contain one occurrence only of the exact unigrams: `caused', `causing', or `causes'. The word `cause' was not included due to its use as a popular contraction for `because'. One `cause-word' per document restricted the analysis to single relationships between two relata. Documents that contain bidirectional words (`associate', `relate', `connect', `correlate', and any of their stems) were also not selected for analysis. This is because our focus is on causality, an inherently one-sided relationship between two objects. We also did not consider additional synonyms of these cause words, although that could be pursued for future work. Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present. The end result of this procedure identified 965,560 causal and 965,560 control documents. Each of the three “cause-words”, `caused', `causes', and `causing' appeared in 38.2%, 35.0%, and 26.8% of causal documents, respectively."
+      ],
+      "highlighted_evidence": [
+        "Data was collected from a 10% uniform sample of Twitter posts made during 2013, specifically the Gardenhose API.",
+        "Control documents were also selected. These documents did not contain any of `caused', `causing', or `causes', nor any bidirectional words, and are further matched temporally to obtain the same number of control documents as causal documents in each fifteen-minute period during 2013. Control documents were otherwise selected randomly; causal synonyms may be present. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1701.03214",
+    "question": "How much improvement does their method get over the fine tuning baseline?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "0.08 points on the 2011 test set, 0.44 points on the 2012 test set, 0.42 points on the 2013 test set for IWSLT-CE.",
+      "evidence": [
+        "FLOAT SELECTED: Table 1: Domain adaptation results (BLEU-4 scores) for IWSLT-CE using NTCIR-CE."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Table 1: Domain adaptation results (BLEU-4 scores) for IWSLT-CE using NTCIR-CE."
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.07025",
+    "question": "What accuracy does CNN model achieve?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Combined per-pixel accuracy for character line segments is 74.79",
+      "evidence": [
+        "FLOAT SELECTED: TABLE IV: Class-wise average IoUs and per-pixel accuracies on the test set. Refer to Table I for full names of abbreviated region types listed at top of the table.",
+        "FLOAT SELECTED: TABLE I: Counts for various annotated region types in INDISCAPES dataset. The abbreviations used for region types are given below each region type."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: TABLE IV: Class-wise average IoUs and per-pixel accuracies on the test set. Refer to Table I for full names of abbreviated region types listed at top of the table.",
+        "FLOAT SELECTED: TABLE I: Counts for various annotated region types in INDISCAPES dataset. The abbreviations used for region types are given below each region type."
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.07025",
+    "question": "How many documents are in the Indiscapes dataset?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "508",
+      "evidence": [
+        "FLOAT SELECTED: TABLE III: Scripts in the INDISCAPES dataset."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: TABLE III: Scripts in the INDISCAPES dataset."
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.09795",
+    "question": "What type of model are the ELMo representations used in?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "A bi-LSTM with max-pooling on top of it",
+      "evidence": [
+        "The usage of a purely character-based input would allow us to directly recover and model these features. Consequently, our architecture is based on Embeddings from Language Model or ELMo BIBREF10 . The ELMo layer allows to recover a rich 1,024-dimensional dense vector for each word. Using CNNs, each vector is built upon the characters that compose the underlying words. As ELMo also contains a deep bi-directional LSTM on top of this character-derived vectors, each word-level embedding contains contextual information from their surroundings. Concretely, we use a pre-trained ELMo model, obtained using the 1 Billion Word Benchmark which contains about 800M tokens of news crawl data from WMT 2011 BIBREF24 .",
+        "Subsequently, the contextualized embeddings are passed on to a BiLSTM with 2,048 hidden units. We aggregate the LSTM hidden states using max-pooling, which in our preliminary experiments offered us better results, and feed the resulting vector to a 2-layer feed-forward network, where each layer has 512 units. The output of this is then fed to the final layer of the model, which performs the binary classification."
+      ],
+      "highlighted_evidence": [
+        "Consequently, our architecture is based on Embeddings from Language Model or ELMo BIBREF10",
+        "Concretely, we use a pre-trained ELMo model, obtained using the 1 Billion Word Benchmark which contains about 800M tokens of news crawl data from WMT 2011 BIBREF24 .",
+        "Subsequently, the contextualized embeddings are passed on to a BiLSTM with 2,048 hidden units. We aggregate the LSTM hidden states using max-pooling, which in our preliminary experiments offered us better results, and feed the resulting vector to a 2-layer feed-forward network, where each layer has 512 units. The output of this is then fed to the final layer of the model, which performs the binary classification."
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.11833",
+    "question": "How do they prevent the model complexity increasing with the increased number of slots?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "They exclude slot-specific parameters and incorporate better feature representation of user utterance and dialogue states using syntactic information and convolutional neural networks (CNN).",
+      "evidence": [
+        "To solve this problem, we need a state tracking model independent of dialogue slots. In other words, the network should depend on the semantic similarity between slots and utterance instead of slot-specific modules. To this end, we propose the Slot-Independent Model (SIM). Our model complexity does not increase when the number of slots in dialogue tasks go up. Thus, SIM has many fewer parameters than existing dialogue state tracking models. To compensate for the exclusion of slot-specific parameters, we incorporate better feature representation of user utterance and dialogue states using syntactic information and convolutional neural networks (CNN). The refined representation, in addition to cross and self-attention mechanisms, make our model achieve even better performance than slot-specific models. For instance, on Wizard-of-Oz (WOZ) 2.0 dataset BIBREF8, the SIM model obtains a joint-accuracy score of 89.5%, 1.4% higher than the previously best model GLAD, with only 22% of the number of parameters. On DSTC2 dataset, SIM achieves comparable performance with previous best models with only 19% of the model size."
+      ],
+      "highlighted_evidence": [
+        "Thus, SIM has many fewer parameters than existing dialogue state tracking models. To compensate for the exclusion of slot-specific parameters, we incorporate better feature representation of user utterance and dialogue states using syntactic information and convolutional neural networks (CNN). "
+      ]
+    }
+  },
+  {
+    "paper_id": "1909.11833",
+    "question": "How do they measure model size?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "By the number of parameters.",
+      "evidence": [
+        "Furthermore, as SIM has no slot-specific neural network structures, its model size is much smaller than previous models. Table TABREF20 shows that, on WoZ and DSTC2 datasets, SIM model has the same number of parameters, which is only 23% and 19% of that in GLAD model."
+      ],
+      "highlighted_evidence": [
+        "Table TABREF20 shows that, on WoZ and DSTC2 datasets, SIM model has the same number of parameters, which is only 23% and 19% of that in GLAD model."
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.01060",
+    "question": "What document context was added?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Preceding and following sentence of each metaphor and paraphrase are added as document context",
+      "evidence": [
+        "We extracted 200 sentence pairs from BIBREF3 's dataset and provided each pair with a document context consisting of a preceding and a following sentence, as in the following example."
+      ],
+      "highlighted_evidence": [
+        "We extracted 200 sentence pairs from BIBREF3 's dataset and provided each pair with a document context consisting of a preceding and a following sentence, as in the following example."
+      ]
+    }
+  },
+  {
+    "paper_id": "1809.01060",
+    "question": "What were the results of the first experiment?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Best performance achieved is 0.72 F1 score",
+      "evidence": [
+        "We also observe that the best combination seems to consist in training our model on the original out-of-context dataset and testing it on the in-context pairs. In this configuration we reach an F-score (0.72) only slightly lower than the one reported in BIBREF3 (0.74), and we record the highest Pearson correlation, 0.3 (which is still not strong, compared to BIBREF3 's best run, 0.75). This result may partly be an artifact of the the larger amount of training data provided by the out-of-context pairs."
+      ],
+      "highlighted_evidence": [
+        "We also observe that the best combination seems to consist in training our model on the original out-of-context dataset and testing it on the in-context pairs. In this configuration we reach an F-score (0.72) only slightly lower than the one reported in BIBREF3 (0.74), and we record the highest Pearson correlation, 0.3 (which is still not strong, compared to BIBREF3 's best run, 0.75). "
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.07771",
+    "question": "How long are the datasets?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Travel dataset contains 4100 raw samples, 11291 clauses, Hotel dataset contains 3825 raw samples, 11264 clauses, and the Mobile dataset contains 3483 raw samples and 8118 clauses",
+      "evidence": [
+        "We compile three Chinese text corpora from online data for three domains, namely, “hotel\", “mobile phone (mobile)\", and “travel\". All texts are about user reviews. Each text sample collected is first partitioned into clauses according to Chinese tokens. Three clause sets are subsequently obtained from the three text corpora.",
+        "In the second stage, five users are invited to label each text sample in the three raw data sets. The average score of the five users on each sample is calculated. Samples with average scores located in [0.6, 1] are labeled as “positive\". Samples with average scores located in [0, 0.4] are labeled as “negative\". Others are labeled as “neutral\". The details of the labeling results are shown in Table 1.",
+        "FLOAT SELECTED: TABLE 1 Details of the three data corpora. Each corpus consists of raw samples (sentences or paragraphs) and partitioned clauses (sub-sentences)."
+      ],
+      "highlighted_evidence": [
+        "We compile three Chinese text corpora from online data for three domains, namely, “hotel\", “mobile phone (mobile)\", and “travel\". ",
+        "The details of the labeling results are shown in Table 1.",
+        "FLOAT SELECTED: TABLE 1 Details of the three data corpora. Each corpus consists of raw samples (sentences or paragraphs) and partitioned clauses (sub-sentences)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.07771",
+    "question": "What are the sources of the data?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "User reviews written in Chinese collected online for hotel, mobile phone, and travel domains",
+      "evidence": [
+        "We compile three Chinese text corpora from online data for three domains, namely, “hotel\", “mobile phone (mobile)\", and “travel\". All texts are about user reviews. Each text sample collected is first partitioned into clauses according to Chinese tokens. Three clause sets are subsequently obtained from the three text corpora."
+      ],
+      "highlighted_evidence": [
+        "We compile three Chinese text corpora from online data for three domains, namely, “hotel\", “mobile phone (mobile)\", and “travel\". All texts are about user reviews. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1803.07771",
+    "question": "What is the new labeling strategy?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "They use a two-stage labeling strategy where in the first stage single annotators label a large number of short texts with relatively pure sentiment orientations and in the second stage multiple annotators label few text samples with mixed sentiment orientations",
+      "evidence": [
+        "We address the above issues with a new methodology. First, we introduce a two-stage labeling strategy for sentiment texts. In the first stage, annotators are invited to label a large number of short texts with relatively pure sentiment orientations. Each sample is labeled by only one annotator. In the second stage, a relatively small number of text samples with mixed sentiment orientations are annotated, and each sample is labeled by multiple annotators. Second, we propose a two-level long short-term memory (LSTM) BIBREF4 network to achieve two-level feature representation and classify the sentiment orientations of a text sample to utilize two labeled data sets. Lastly, in the proposed two-level LSTM network, lexicon embedding is leveraged to incorporate linguistic features used in lexicon-based methods."
+      ],
+      "highlighted_evidence": [
+        "First, we introduce a two-stage labeling strategy for sentiment texts. In the first stage, annotators are invited to label a large number of short texts with relatively pure sentiment orientations. Each sample is labeled by only one annotator. In the second stage, a relatively small number of text samples with mixed sentiment orientations are annotated, and each sample is labeled by multiple annotators. "
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.02339",
+    "question": "How does TP-N2F compare to LSTM-based Seq2Seq in terms of training and inference speed?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Full Testing Set accuracy: 84.02\nCleaned Testing Set accuracy: 93.48",
+      "evidence": [
+        "FLOAT SELECTED: Table 2: Results of AlgoLisp dataset",
+        "Generating Lisp programs requires sensitivity to structural information because Lisp code can be regarded as tree-structured. Given a natural-language query, we need to generate code containing function calls with parameters. Each function call is a relational tuple, which has a function as the relation and parameters as arguments. We evaluate our model on the AlgoLisp dataset for this task and achieve state-of-the-art performance. The AlgoLisp dataset BIBREF17 is a program synthesis dataset. Each sample contains a problem description, a corresponding Lisp program tree, and 10 input-output testing pairs. We parse the program tree into a straight-line sequence of tuples (same style as in MathQA). AlgoLisp provides an execution script to run the generated program and has three evaluation metrics: the accuracy of passing all test cases (Acc), the accuracy of passing 50% of test cases (50p-Acc), and the accuracy of generating an exactly matching program (M-Acc). AlgoLisp has about 10% noisy data (details in the Appendix), so we report results both on the full test set and the cleaned test set (in which all noisy testing samples are removed). TP-N2F is compared with an LSTM seq2seq with attention model, the Seq2Tree model in BIBREF17, and a seq2seq model with a pre-trained tree decoder from the Tree2Tree autoencoder (SAPS) reported in BIBREF18. As shown in Table TABREF18, TP-N2F outperforms all existing models on both the full test set and the cleaned test set. Ablation experiments with TP2LSTM and LSTM2TP show that, for this task, the TP-N2F Decoder is more helpful than TP-N2F Encoder. This may be because lisp codes rely more heavily on structure representations."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Table 2: Results of AlgoLisp dataset",
+        "As shown in Table TABREF18, TP-N2F outperforms all existing models on both the full test set and the cleaned test set."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.02339",
+    "question": "What is the performance proposed model achieved on AlgoList benchmark?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Full Testing Set Accuracy: 84.02\nCleaned Testing Set Accuracy: 93.48",
+      "evidence": [
+        "FLOAT SELECTED: Table 2: Results of AlgoLisp dataset",
+        "Generating Lisp programs requires sensitivity to structural information because Lisp code can be regarded as tree-structured. Given a natural-language query, we need to generate code containing function calls with parameters. Each function call is a relational tuple, which has a function as the relation and parameters as arguments. We evaluate our model on the AlgoLisp dataset for this task and achieve state-of-the-art performance. The AlgoLisp dataset BIBREF17 is a program synthesis dataset. Each sample contains a problem description, a corresponding Lisp program tree, and 10 input-output testing pairs. We parse the program tree into a straight-line sequence of tuples (same style as in MathQA). AlgoLisp provides an execution script to run the generated program and has three evaluation metrics: the accuracy of passing all test cases (Acc), the accuracy of passing 50% of test cases (50p-Acc), and the accuracy of generating an exactly matching program (M-Acc). AlgoLisp has about 10% noisy data (details in the Appendix), so we report results both on the full test set and the cleaned test set (in which all noisy testing samples are removed). TP-N2F is compared with an LSTM seq2seq with attention model, the Seq2Tree model in BIBREF17, and a seq2seq model with a pre-trained tree decoder from the Tree2Tree autoencoder (SAPS) reported in BIBREF18. As shown in Table TABREF18, TP-N2F outperforms all existing models on both the full test set and the cleaned test set. Ablation experiments with TP2LSTM and LSTM2TP show that, for this task, the TP-N2F Decoder is more helpful than TP-N2F Encoder. This may be because lisp codes rely more heavily on structure representations."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Table 2: Results of AlgoLisp dataset",
+        "As shown in Table TABREF18, TP-N2F outperforms all existing models on both the full test set and the cleaned test set."
+      ]
+    }
+  },
+  {
+    "paper_id": "1910.02339",
+    "question": "What is the performance proposed model achieved on MathQA?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Operation accuracy: 71.89\nExecution accuracy: 55.95",
+      "evidence": [
+        "Given a natural-language math problem, we need to generate a sequence of operations (operators and corresponding arguments) from a set of operators and arguments to solve the given problem. Each operation is regarded as a relational tuple by viewing the operator as relation, e.g., $(add, n1, n2)$. We test TP-N2F for this task on the MathQA dataset BIBREF16. The MathQA dataset consists of about 37k math word problems, each with a corresponding list of multi-choice options and the corresponding operation sequence. In this task, TP-N2F is deployed to generate the operation sequence given the question. The generated operations are executed with the execution script from BIBREF16 to select a multi-choice answer. As there are about 30% noisy data (where the execution script returns the wrong answer when given the ground-truth program; see Sec. SECREF20 of the Appendix), we report both execution accuracy (of the final multi-choice answer after running the execution engine) and operation sequence accuracy (where the generated operation sequence must match the ground truth sequence exactly). TP-N2F is compared to a baseline provided by the seq2prog model in BIBREF16, an LSTM-based seq2seq model with attention. Our model outperforms both the original seq2prog, designated SEQ2PROG-orig, and the best reimplemented seq2prog after an extensive hyperparameter search, designated SEQ2PROG-best. Table TABREF16 presents the results. To verify the importance of the TP-N2F encoder and decoder, we conducted experiments to replace either the encoder with a standard LSTM (denoted LSTM2TP) or the decoder with a standard attentional LSTM (denoted TP2LSTM). We observe that both the TPR components of TP-N2F are important for achieving the observed performance gain relative to the baseline.",
+        "FLOAT SELECTED: Table 1: Results on MathQA dataset testing set"
+      ],
+      "highlighted_evidence": [
+        "Our model outperforms both the original seq2prog, designated SEQ2PROG-orig, and the best reimplemented seq2prog after an extensive hyperparameter search, designated SEQ2PROG-best. Table TABREF16 presents the results.",
+        "FLOAT SELECTED: Table 1: Results on MathQA dataset testing set"
+      ]
+    }
+  },
+  {
+    "paper_id": "1808.06834",
+    "question": "How many speeches are in the dataset?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "5575 speeches",
+      "evidence": [],
+      "highlighted_evidence": []
+    }
+  },
+  {
+    "paper_id": "1905.10044",
+    "question": "how was the dataset built?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "Questions are gathered from anonymized, aggregated queries to the Google search engine. Queries that are likely to be yes/no questions are heuristically identified: we found selecting queries where the first word is in a manually constructed set of indicator words and are of sufficient length, to be effective. Questions are only kept if a Wikipedia page is returned as one of the first five results, in which case the question and Wikipedia page are given to a human annotator for further processing. Annotators label question/article pairs in a three-step process. First, they decide if the question is good, meaning it is comprehensible, unambiguous, and requesting factual information. This judgment is made before the annotator sees the Wikipedia page. Next, for good questions, annotators find a passage within the document that contains enough information to answer the question. Annotators can mark questions as “not answerable\" if the Wikipedia article does not contain the requested information. Finally, annotators mark whether the question's answer is “yes\" or “no\"",
+      "evidence": [
+        "Questions are gathered from anonymized, aggregated queries to the Google search engine. Queries that are likely to be yes/no questions are heuristically identified: we found selecting queries where the first word is in a manually constructed set of indicator words and are of sufficient length, to be effective.",
+        "Questions are only kept if a Wikipedia page is returned as one of the first five results, in which case the question and Wikipedia page are given to a human annotator for further processing.",
+        "Annotators label question/article pairs in a three-step process. First, they decide if the question is good, meaning it is comprehensible, unambiguous, and requesting factual information. This judgment is made before the annotator sees the Wikipedia page. Next, for good questions, annotators find a passage within the document that contains enough information to answer the question. Annotators can mark questions as “not answerable\" if the Wikipedia article does not contain the requested information. Finally, annotators mark whether the question's answer is “yes\" or “no\". Annotating data in this manner is quite expensive since annotators need to search entire Wikipedia documents for relevant evidence and read the text carefully."
+      ],
+      "highlighted_evidence": [
+        "Questions are gathered from anonymized, aggregated queries to the Google search engine. Queries that are likely to be yes/no questions are heuristically identified: we found selecting queries where the first word is in a manually constructed set of indicator words and are of sufficient length, to be effective.\n\nQuestions are only kept if a Wikipedia page is returned as one of the first five results, in which case the question and Wikipedia page are given to a human annotator for further processing.\n\nAnnotators label question/article pairs in a three-step process. First, they decide if the question is good, meaning it is comprehensible, unambiguous, and requesting factual information. This judgment is made before the annotator sees the Wikipedia page. Next, for good questions, annotators find a passage within the document that contains enough information to answer the question. Annotators can mark questions as “not answerable\" if the Wikipedia article does not contain the requested information. Finally, annotators mark whether the question's answer is “yes\" or “no\". Annotating data in this manner is quite expensive since annotators need to search entire Wikipedia documents for relevant evidence and read the text carefully."
+      ]
+    }
+  },
+  {
+    "paper_id": "2003.12932",
+    "question": "What is the performance change of the textual semantic similarity task when no error and maximum errors (noise) are present?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "10 Epochs: pearson-Spearman correlation  drops  60 points when error increase by 20%\n50 Epochs: pearson-Spearman correlation  drops  55 points when error increase by 20%",
+      "evidence": [
+        "Figure FIGREF12stsa and FIGREF12stsb shows Pearson-Spearman correlation vs % of error for textual semantic similarity on STS-B dataset after fine tuning for 10 and 50 epochs respectively.",
+        "FLOAT SELECTED: Figure 5: Pearson-Spearman correlation vs % of error for textual semantic similarity on STS-B dataset"
+      ],
+      "highlighted_evidence": [
+        "Figure FIGREF12stsa and FIGREF12stsb shows Pearson-Spearman correlation vs % of error for textual semantic similarity on STS-B dataset after fine tuning for 10 and 50 epochs respectively.",
+        "FLOAT SELECTED: Figure 5: Pearson-Spearman correlation vs % of error for textual semantic similarity on STS-B dataset"
+      ]
+    }
+  },
+  {
+    "paper_id": "2003.12932",
+    "question": "Which sentiment analysis data set has a larger performance drop when a 10% error is introduced?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "SST-2 dataset",
+      "evidence": [
+        "Let us discuss the results from the above mentioned experiments. We show the plots of accuracy vs noise for each of the tasks. For IMDB, we fine tune the model for the sentiment analysis task. We plot F1 score vs % of error, as shown in Figure FIGREF6. Figure FIGREF6imdba shows the performance after fine tuning for 10 epochs, while Figure FIGREF6imdbb shows the performance after fine tuning for 50 epochs.",
+        "Similarly, Figure FIGREF9ssta and Figure FIGREF9sstb) shows F1 score vs % of error for Sentiment analysis on SST-2 dataset after fine tuning for 10 and 50 epochs respectively.",
+        "FLOAT SELECTED: Figure 3: F1 score vs % of error for Sentiment analysis on IMDB dataset"
+      ],
+      "highlighted_evidence": [
+        "We show the plots of accuracy vs noise for each of the tasks. For IMDB, we fine tune the model for the sentiment analysis task. We plot F1 score vs % of error, as shown in Figure FIGREF6. Figure FIGREF6imdba shows the performance after fine tuning for 10 epochs, while Figure FIGREF6imdbb shows the performance after fine tuning for 50 epochs.",
+        "Similarly, Figure FIGREF9ssta and Figure FIGREF9sstb) shows F1 score vs % of error for Sentiment analysis on SST-2 dataset after fine tuning for 10 and 50 epochs respectively.",
+        "FLOAT SELECTED: Figure 3: F1 score vs % of error for Sentiment analysis on IMDB dataset"
+      ]
+    }
+  },
+  {
+    "paper_id": "1912.00864",
+    "question": "How much more accurate is the model than the baseline?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "For the Oshiete-goo dataset, the NAGM model's ROUGE-L score is higher than the highest performing conventional model, Trans, by 0.021, and its BLEU-4 score is higher than the highest performing model CLSTM by 0.037.  For the nfL6 dataset, the NAGM model's ROUGE-L score is higher than the highest performing conventional model, CLSTM, by 0.028, and its BLEU-4 score is higher than the highest performing model CLSTM by 0.040. Human evaluation of the NAGM's generated outputs for the Oshiete-goo dataset had 47% ratings of (1), the highest rating, while CLSTM only received 21% ratings of (1). For the nfL6 dataset, the comparison of (1)'s was NAGM's 50% to CLSTM's 30%. ",
+      "evidence": [
+        "NAGMWA is much better than the other methods except NAGM, since it generates answers whose conclusions and supplements as well as their combinations closely match the questions. Thus, conclusions and supplements in the answers are consistent with each other and avoid confusion made by several different conclusion-supplement answers assigned to a single non-factoid questions. Finally, NAGM is consistently superior to the conventional attentive encoder-decoders regardless of the metric. Its ROUGE-L and BLEU-4 scores are much higher than those of CLSTM. Thus, NAGM generates more fluent sentences by assessing the context from conclusion to supplement sentences in addition to the closeness of the question and sentences as well as that of the question and sentence combinations.",
+        "The experts asked questions, which were not included in our training datasets, to the AI system and rated the answers; one answer per question. The experts rated the answers as follows: (1) the content of the answer matched the question, and the grammar was okay; (2) the content was suitable, but the grammar was poor; (3) the content was not suitable, but the grammar was okay; (4) both the content and grammar were poor. Note that our evaluation followed the DUC-style strategy. Here, we mean “grammar” to cover grammaticality, non-redundancy, and referential clarity in the DUC strategy, whereas we mean the “content matched the questions” to refer to “focus” and “structure and coherence” in the DUC strategy. The evaluators were given more than a week to carefully evaluate the generated answers, so we consider that their judgments are reliable. Each expert evaluated 50 questions. We combined the scores of the experts by summing them. They did not know the identity of the system in the evaluation and reached their decisions independently.",
+        "These results indicate that the experts were much more satisfied with the outputs of NAGM than those of CLSTM. This is because, as can be seen in Table 7, NAGM generated longer and better question-related sentences than CLSTM did. NAGM generated grammatically good answers whose conclusion and supplement statements are well matched with the question and the supplement statement naturally follows the conclusion statement.",
+        "FLOAT SELECTED: Table 4: ROUGE-L/BLEU-4 for nfL6.",
+        "FLOAT SELECTED: Table 6: Human evaluation (nfL6)."
+      ],
+      "highlighted_evidence": [
+        "Finally, NAGM is consistently superior to the conventional attentive encoder-decoders regardless of the metric. Its ROUGE-L and BLEU-4 scores are much higher than those of CLSTM. ",
+        "The experts asked questions, which were not included in our training datasets, to the AI system and rated the answers; one answer per question. The experts rated the answers as follows: (1) the content of the answer matched the question, and the grammar was okay; (2) the content was suitable, but the grammar was poor; (3) the content was not suitable, but the grammar was okay; (4) both the content and grammar were poor. ",
+        "These results indicate that the experts were much more satisfied with the outputs of NAGM than those of CLSTM.",
+        "FLOAT SELECTED: Table 4: ROUGE-L/BLEU-4 for nfL6.",
+        "FLOAT SELECTED: Table 6: Human evaluation (nfL6)."
+      ]
+    }
+  },
+  {
+    "paper_id": "1808.08780",
+    "question": "What are the tasks that this method has shown improvements?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "bilingual dictionary induction, monolingual and cross-lingual word similarity, and cross-lingual hypernym discovery",
+      "evidence": [
+        "Our experimental results show that the proposed additional transformation does not only benefit cross-lingual evaluation tasks, but, perhaps surprisingly, also monolingual ones. In particular, we perform an extensive set of experiments on standard benchmarks for bilingual dictionary induction and monolingual and cross-lingual word similarity, as well as on an extrinsic task: cross-lingual hypernym discovery.",
+        "Tables 2 and 3 show the monolingual and cross-lingual word similarity results, respectively. For both the monolingual and cross-lingual settings, we can notice that our models generally outperform the corresponding baselines. Moreover, in cases where no improvement is obtained, the differences tend to be minimal, with the exception of RG-65, but this is a very small test set for which larger variations can thus be expected. In contrast, there are a few cases where substantial gains were obtained by using our model. This is most notable for English WordSim and SimLex in the monolingual setting.",
+        "As can be seen in Table 1 , our refinement method consistently improves over the baselines (i.e., VecMap and MUSE) on all language pairs and metrics. The higher scores indicate that the two monolingual embedding spaces become more tightly integrated because of our additional transformation. It is worth highlighting here the case of English-Finnish, where the gains obtained in $P@5$ and $P@10$ are considerable. This might indicate that our approach is especially useful for morphologically richer languages such as Finnish, where the limitations of the previous bilingual mappings are most apparent.",
+        "The results listed in Table 4 indicate several trends. First and foremost, in terms of model-wise comparisons, we observe that our proposed alterations of both VecMap and MUSE improve their quality in a consistent manner, across most metrics and data configurations. In Italian our proposed model shows an improvement across all configurations. However, in Spanish VecMap emerges as a highly competitive baseline, with our model only showing an improved performance when training data in this language abounds (in this specific case there is an increase from 17.2 to 19.5 points in the MRR metric). This suggests that the fact that the monolingual spaces are closer in our model is clearly beneficial when hybrid training data is given as input, opening up avenues for future work on weakly-supervised learning. Concerning the other baseline, MUSE, the contribution of our proposed model is consistent for both languages, again becoming more apparent in the Italian split and in a fully cross-lingual setting, where the improvement in MRR is almost 3 points (from 10.6 to 13.3). Finally, it is noteworthy that even in the setting where no training data from the target language is leveraged, all the systems based on cross-lingual embeddings outperform the best unsupervised baseline, which is a very encouraging result with regards to solving tasks for languages on which training data is not easily accessible or not directly available."
+      ],
+      "highlighted_evidence": [
+        "In particular, we perform an extensive set of experiments on standard benchmarks for bilingual dictionary induction and monolingual and cross-lingual word similarity, as well as on an extrinsic task: cross-lingual hypernym discovery.",
+        "For both the monolingual and cross-lingual settings, we can notice that our models generally outperform the corresponding baselines. ",
+        "As can be seen in Table 1 , our refinement method consistently improves over the baselines (i.e., VecMap and MUSE) on all language pairs and metrics.",
+        "First and foremost, in terms of model-wise comparisons, we observe that our proposed alterations of both VecMap and MUSE improve their quality in a consistent manner, across most metrics and data configurations."
+      ]
+    }
+  },
+  {
+    "paper_id": "1808.08780",
+    "question": "Why does the model improve in monolingual spaces as well? ",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "because word pair similarity increases if the two words translate to similar parts of the cross-lingual embedding space",
+      "evidence": [
+        "As a complement of this analysis we show some qualitative results which give us further insights on the transformations of the vector space after our average approximation. In particular, we analyze the reasons behind the higher quality displayed by our bilingual embeddings in monolingual settings. While VecMap and MUSE do not transform the initial monolingual spaces, our model transforms both spaces simultaneously. In this analysis we focus on the source language of our experiments (i.e., English). We found interesting patterns which are learned by our model and help understand these monolingual gains. For example, a recurring pattern is that words in English which are translated to the same word, or to semantically close words, in the target language end up closer together after our transformation. For example, in the case of English-Spanish the following pairs were among the pairs whose similarity increased the most by applying our transformation: cellphone-telephone, movie-film, book-manuscript or rhythm-cadence, which are either translated to the same word in Spanish (i.e., teléfono and película in the first two cases) or are already very close in the Spanish space. More generally, we found that word pairs which move together the most tend to be semantically very similar and belong to the same domain, e.g., car-bicycle, opera-cinema, or snow-ice."
+      ],
+      "highlighted_evidence": [
+        "We found interesting patterns which are learned by our model and help understand these monolingual gains. For example, a recurring pattern is that words in English which are translated to the same word, or to semantically close words, in the target language end up closer together after our transformation. For example, in the case of English-Spanish the following pairs were among the pairs whose similarity increased the most by applying our transformation: cellphone-telephone, movie-film, book-manuscript or rhythm-cadence, which are either translated to the same word in Spanish (i.e., teléfono and película in the first two cases) or are already very close in the Spanish space.",
+        "More generally, we found that word pairs which move together the most tend to be semantically very similar and belong to the same domain, e.g., car-bicycle, opera-cinema, or snow-ice.\n\n"
+      ]
+    }
+  },
+  {
+    "paper_id": "1808.07625",
+    "question": "How does the model compute the likelihood of executing to the correction semantic denotation?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "By treating logical forms as a latent variable and training a discriminative log-linear model over logical form y given x.",
+      "evidence": [
+        "Since the training data consists only of utterance-denotation pairs, the ranker is trained to maximize the log-likelihood of the correct answer $z$ by treating logical forms as a latent variable:",
+        "It is impractical to rely solely on a neural decoder to find the most likely logical form at run time in the weakly-supervised setting. One reason is that although the decoder utilizes global utterance features for generation, it cannot leverage global features of the logical form since a logical form is conditionally generated following a specific tree-traversal order. To this end, we follow previous work BIBREF21 and introduce a ranker to the system. The role of the ranker is to score the candidate logical forms generated by the parser; at test time, the logical form receiving the highest score will be used for execution. The ranker is a discriminative log-linear model over logical form $y$ given utterance $x$ :"
+      ],
+      "highlighted_evidence": [
+        "Since the training data consists only of utterance-denotation pairs, the ranker is trained to maximize the log-likelihood of the correct answer $z$ by treating logical forms as a latent variable",
+        "The role of the ranker is to score the candidate logical forms generated by the parser; at test time, the logical form receiving the highest score will be used for execution. The ranker is a discriminative log-linear model over logical form $y$ given utterance $x$ : "
+      ]
+    }
+  },
+  {
+    "paper_id": "1605.07683",
+    "question": "How large is the Dialog State Tracking Dataset?",
+    "answer": {
+      "unanswerable": false,
+      "extractive_spans": [],
+      "yes_no": null,
+      "free_form_answer": "1,618 training dialogs, 500 validation dialogs, and 1,117 test dialogs",
+      "evidence": [
+        "FLOAT SELECTED: Table 1: Data used in this paper. Tasks 1-5 were generated using our simulator and share the same KB. Task 6 was converted from the 2nd Dialog State Tracking Challenge (Henderson et al., 2014a). Concierge is made of chats extracted from a real online concierge service. (∗) Tasks 1-5 have two test sets, one using the vocabulary of the training set and the other using out-of-vocabulary words."
+      ],
+      "highlighted_evidence": [
+        "FLOAT SELECTED: Table 1: Data used in this paper. Tasks 1-5 were generated using our simulator and share the same KB. Task 6 was converted from the 2nd Dialog State Tracking Challenge (Henderson et al., 2014a). Concierge is made of chats extracted from a real online concierge service. (∗) Tasks 1-5 have two test sets, one using the vocabulary of the training set and the other using out-of-vocabulary words."
+      ]
+    }
+  }
+]
