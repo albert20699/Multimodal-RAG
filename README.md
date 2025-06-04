@@ -1,6 +1,6 @@
-👉 [English Version](README.md)
-
 # Multimodal-RAG：基於多模態模型的檢索增強生成
+
+👉 [English Version](README.md)
 
 本專案整合 **檢索增強生成（RAG）** 與多模態模型，應用於 [Qasper](https://allenai.org/data/qasper) 問答資料集，評估其在處理複雜文檔時的表現。
 
@@ -91,14 +91,15 @@ Multimodal-RAG/
 pip install -r requirements.txt
 ```
 
-2. 創建並設置環境 .env（已提供範例 .env.example）
+2. 建立並設定 .env 環境變數檔（專案中已提供範例檔 .env.example）。
+
+- 本專案預設採用 Azure 平台資源，若欲改為串接 OpenAI API，請依需求調整相關程式碼設定。
 
 3. 使用者可透過修改 `main.py` 檔案中的以下參數，自由切換六種組合（3 類問題 × 2 種模式）：
 
 ```python
 # 選擇問題類型：extractive / free_form / yes_no
 QUESTION_TYPE = "extractive"
-
 # 是否啟用圖像處理與多模態強化檢索
 WITH_IMAGE_ALGO = True
 ```
