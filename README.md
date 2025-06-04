@@ -30,23 +30,24 @@
 ## 🗂️ 檔案資料夾
 
 ```mathematica
-project_root/
+Multimodal-RAG/
 ├── evaluation_results/
 │   ├── score_extractive_with_algo_example.csv
 │   └── …
 │       ──(最終使用 Qasper 進行評估後產生的 CSV 檔案，記錄各種指標與結果)
 │
-├── extracted_images/
-│   └── …
-│       ──(從多個被切割的小圖中重構而成的完整圖像，放置所有還原後的圖片)
-│
-├── extracted_individual_images/
-│   └── …
-│       ──(原本從 PDF 擷取時所產生的零散小圖，尚未經過整併的原始截取結果)
-│
-├── images_data/
-│   └── …
-│       ──(將整本 PDF 的每一頁逐頁截圖後的圖檔，用於後續影像處理／向量化)
+├── images/
+│   ├── extracted_images/
+│   │   └── …
+│   │       ──(從多個被切割的小圖中重構而成的完整圖像，放置所有還原後的圖片)
+│   │       
+│   ├── extracted_individual_images/
+│   │   └── …
+│   │       ──(原本從 PDF 擷取時所產生的零散小圖，尚未經過整併的原始截取結果)
+│   │       
+│   └── pdf_page_images/
+│       └── …
+│           ──(本 PDF 的每一頁逐頁截圖後的圖檔)
 │
 ├── RAG_raw_data/
 │   ├── example1.docx
@@ -77,7 +78,7 @@ project_root/
             │       
             ├── sampled_qasper_extractive.json
             └── … 
-                ──(從 allenai-qasper 資料集中隨機抽取的 20 份不同類型問答資料，供系統驗證使用)
+                ──(從 Qasper 資料集中隨機抽取的 20 份不同類型問答資料，供系統驗證使用)
 ```
 
 ---
@@ -90,7 +91,9 @@ project_root/
 pip install -r requirements.txt
 ```
 
-2. 使用者可透過修改 `main.py` 檔案中的以下參數，自由切換六種組合（3 類問題 × 2 種模式）：
+2. 創建並設置環境 .env（已提供範例 .env.example）
+
+3. 使用者可透過修改 `main.py` 檔案中的以下參數，自由切換六種組合（3 類問題 × 2 種模式）：
 
 ```python
 # 選擇問題類型：extractive / free_form / yes_no
@@ -100,7 +103,7 @@ QUESTION_TYPE = "extractive"
 WITH_IMAGE_ALGO = True
 ```
 
-3. 執行主程式腳本
+4. 執行主程式腳本
 
 ```bash
 python main.py

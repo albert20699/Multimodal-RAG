@@ -186,7 +186,7 @@ def refine_ocr_text(ocr_text):
         return ""
 
 if __name__ == "__main__":
-    test_path = "./extracted_images/20240130_智能客服機器人_智域_page6_box1.png"
+    test_path = "請你改一個你想要測試的圖片 path"
     
     # 讀入圖片 bytes
     with open(test_path, "rb") as f:

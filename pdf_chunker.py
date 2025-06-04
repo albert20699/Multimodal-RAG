@@ -67,9 +67,9 @@ def process_pdf_with_ocr(pdf_path, chunk_size=512, merge_threshold=20, padding=1
         return split_texts
 
     # 以下為圖片處理區塊
-    output_folder_merged = "extracted_images"
+    output_folder_merged = "images/extracted_images"
     os.makedirs(output_folder_merged, exist_ok=True)
-    output_folder_individual = "extracted_individual_images"
+    output_folder_individual = "images/extracted_individual_images"
     os.makedirs(output_folder_individual, exist_ok=True)
 
     pdf_file = fitz.open(pdf_path)

@@ -139,7 +139,7 @@ def rag_query_pipeline(query_text, text_collection, image_collection, dataset_ty
             full_pdf_path = os.path.join(RAG_FILE_PATH, file_name)
             image = pdf_chunker.pdf_page_to_image(full_pdf_path, page_num)
             hash_name = str(uuid.uuid4())
-            image_path = f"./images_data/output_page_{hash_name}.png"
+            image_path = f"./pdf_page_images/output_page_{hash_name}.png"
             os.makedirs(os.path.dirname(image_path), exist_ok=True)
             image.save(image_path)
             selected_image_path = image_path
